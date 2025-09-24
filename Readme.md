@@ -23,6 +23,7 @@ palavras válidas);
 
 De forma a simplificar a análise do ficheiro, só deverão ser consideradas como
 válidas:
+
 - As palavras constituídas por letras de a a z (acentuadas ou não, maiúsculas e minúsculas) e de dimensão entre 4 e 11 caracteres inclusive (todas as restantes deverão ser ignoradas).
 - Considere como palavra o conjunto de caracteres que está separado dos restantes por um dos seguintes caracteres: ‘ ‘ (espaço), ‘,’ (vírgula) e ‘.’ (ponto)
 - Não deverá ser feita diferenciação entre maiúsculas e minúsculas, ou seja a palavra “PedRo” deverá ser considerada igual à palavra “pedro”.
@@ -43,9 +44,9 @@ Linguagem: C#
 
 Plataforma: .NET (Console Application)
 
-Estruturas de Dados: Tabela de Hahs 
+Estruturas de Dados: Tabela de Hahs
 
-Algoritmo de ordenação: QuickSort 
+Algoritmo de ordenação: QuickSort
 
 ### 📌 Melhorias Futuras
 
@@ -54,4 +55,3 @@ Algoritmo de ordenação: QuickSort
 I- gnorar “stopwords” (ex.: artigos e preposições)
 
 - Exportar resultados para CSV ou HTML
-
