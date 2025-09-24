@@ -30,28 +30,28 @@ válidas:
 
 ### 🗂️ Estrutura do Projeto
 
-MainForm.cs: interface gráfica e lógica principal <br>
+- MainForm.cs: interface gráfica e lógica principal <br>
 
-TabelaHash.cs: implementação de tabela de hash para armazenamento e contagem das palavras <br>
+- TabelaHash.cs: implementação de tabela de hash para armazenamento e contagem das palavras <br>
 
-ParChaveInfo.cs: estrutura auxiliar para pares (palavra, ocorrências) <br>
+- ParChaveInfo.cs: estrutura auxiliar para pares (palavra, ocorrências) <br>
 
-Ordenacao.cs: algoritmo de ordenação (QuickSort) usado para organizar as palavras por número de ocorrências<br>
+- Ordenacao.cs: algoritmo de ordenação (QuickSort) usado para organizar as palavras por número de ocorrências<br>
 
 ### ⚙️ Tecnologias Utilizadas
 
-Linguagem: C#
+- Linguagem: C#
 
-Plataforma: .NET (Console Application)
+- Plataforma: .NET (Console Application)
 
-Estruturas de Dados: Tabela de Hahs
+- Estruturas de Dados: Tabela de Hahs
 
-Algoritmo de ordenação: QuickSort
+- Algoritmo de ordenação: QuickSort
 
 ### 📌 Melhorias Futuras
 
 - Suporte para múltiplos idiomas e conjuntos de caracteres
 
-I- gnorar “stopwords” (ex.: artigos e preposições)
+- Implementar normalização de acentos (ex.: tratar "ação" e "acao" como iguais)
 
 - Exportar resultados para CSV ou HTML
