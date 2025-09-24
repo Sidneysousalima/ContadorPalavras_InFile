@@ -1,0 +1,4389 @@
+﻿Programação 3
+
+Ano lectivo 2019 / 2020
+
+Textos de Apoio
+
+Curso
+   Informática e Comunicações - 2º ano
+
+Sebenta elaborada pelo Eng. Paulo Matos com a participação Eng. António Mourão, no âmbito da disciplina de Técnicas de Programação, dos cursos de Informática de Gestão e Engenharia Informática, da Escola Superior de Tecnologia e Gestão do Instituto Politécnico de Bragança.
+A sebenta tem sido revista e actualizada pelo Eng. António Mourão, nos anos útimos anos lectivos. 
+
+Apresentação
+Objectivos/Competências a Adquirir
+Objectivos:
+- Desenvolver maneiras eficazes de resolver problemas computando.
+- Analisar um determinado problema e para esse problema escolher, justificar e implementar a melhor solução em ambientes de programação de complexidade média.
+- Determinar quando uma solução recursiva poderá ser resposta para um determinado problema
+
+Resultados da aprendizagem/Competências adquiridas:
+- Descrever aplicações típicas para cada uma das estruturas de dados abordadas;
+- Desenvolver programas de complexidade média que usem as estruturas de dados abordadas;
+- Escolher a estrutura de dados mais apropriada para a resolução de um determinado problema, compreendendo que existem outros factores que influenciam na escolha de algoritmos, tais como: tempos de execução, espaço e especificidade do problema.
+- Adquirir, por esforço próprio, conhecimentos sobre estruturas de dados não abordadas na disciplina.
+Programa Detalhado
+Introdução
+	Noção de Algoritmo
+	Estruturas de Dados
+Estruturas de dados x Eficiência algorítmica	
+Do algoritmo ao programa, boas e más técnicas de programação
+
+Análise de Algoritmos
+	Complexidade espacial e temporal
+	Notação de O Grande
+
+Análise de algoritmos de Pesquisa e Ordenação
+	Pesquisa Sequencial e Binária
+	Métodos de Ordenação 
+			InsertSort;
+			SelectionSort;
+			Bubble Sort;
+			QuickSort;
+			Merge Sort, Heap Sort;
+
+Estruturas de Dados Lineares
+	Listas ligadas simples
+	Listas duplamente ligadas
+	Listas circulares
+	Pilhas (Stack)
+	Filas (Queue)
+	Tabelas de Hash
+
+Estruturas de Dados Não Lineares
+	Árvores Genéricas
+	Árvores Binárias
+	Árvores Binárias de Pesquisa
+	Grafos
+Metodologia Pedagógica – Estratégias Funcionais
+	O método pedagógico utilizado nas aulas teóricas é o método expositivo que possibilita a transmissão de informações e conhecimentos com continuidade, logicamente estruturados com um dispêndio mínimo de tempo. É também aplicado o método interrogativo, questionando sistematicamente os alunos por forma a que os próprios descubram as coisas consideradas importantes.
+	Nas aulas práticas, embora o método mais utilizado seja o activo, suscitando dessa forma a actividade dos alunos através da resolução de exercícios e análise de casos práticos semelhantes à sua realidade profissional, é também usado o método interrogativo como forma de rever a matéria leccionada nas aulas teóricas.
+
+
+
+
+
+Avaliação
+	A avaliação da disciplina tem por objectivo avaliar a capacidade do aluno em aplicar os conhecimentos adquiridos ao longo do semestre (Testes escritos - sem consulta), bem como avaliar a capacidade de análise e implementação de soluções para problemas concretos (Trabalhos práticos realizados ao longo do semestre).
+Época de Avaliação Normal, Recurso e Especiais:
+- Exame Final Escrito (50%): Avaliação da capacidade do aluno em aplicar os conhecimentos adquiridos ao longo do semestre - a esta parte da avaliação corresponde um esforço de 3 créditos
+- Trabalhos Práticos Individuais (50% da nota final): Avaliação da capacidade de análise e implementação de soluções para problemas concretos - a esta parte da avaliação corresponde um esforço de 3 créditos
+Bibliografia
+    • Textos de Apoio elaborados pelo professor para a cadeira. 
+    • MARQUES, Paulo; Hernâni Pedroso - "C# 2.0", 2ª ed., FCA, 2005. ISBN-10: 972-722-508-X
+    • PETZOLD, Charles - ".NET Book Zero - What the C or C++ Programmer Needs to Know About C# and the .NET Framework" - weblink: http://www.charlespetzold.com/dotnet/index.html (acesso 02/02/2007)
+    • Bruno R. Preiss - Data Structures and Algorithms with Object-Oriented Design Patterns in C# - weblink: http://www.brpreiss.com/books/opus6/ (acesso 01/10/2007)
+    • Jeffrey Esakov e Tom Weiss - Data Structures, An Advanced Approach Using C - Prentice Hall International Editions
+    • Joffre Dan Swait Jr - "Fundamentos Computacionais, Algoritmos e Estruturas de Dados" - Makron Books
+    • Jean-Paul Tremblay e Paul G. Sorenson - "An Introduction to Data Structures with Applications" - McGraw-Hill International Editions, Computer Sciences Series
+    • Robert Lafore - Estruturas de Dados e Algoritmos - Editora Campus - ISBN: 0-672-31633-1
+
+Introdução
+
+Noção de Algoritmo
+	Um algoritmo consiste numa sequência ordenada de operações bem definidas e sem ambiguidades que descreve uma solução exequível computacionalmente de um problema, independentemente da linguagem de programação a utilizar.
+- noção de algoritmo muito próxima da noção de programa (imperativo)
+- o mesmo algoritmo pode ser "implementado" por muitos programas de
+computador diferentes
+- o mesmo problema pode ser resolvido por N algoritmos diferentes
+
+Descrição de algoritmos:
+- em linguagem natural, pseudo-código, numa linguagem de programação, etc.
+
+A implementação prática de um algoritmo pode variar com:
+- a linguagem a utilizar
+- e de programador para programador.
+
+Para um mesmo estado inicial e conjunto de dados de entrada (definidos como instância inicial do problema) deve produzir sempre a mesma solução.
+
+	Na estruturação do algoritmo é conveniente descrever inicialmente as operações mais genéricas e de seguida decompõem-se estas em operações mais primitivas. 
+
+Estruturas de Dados
+	Para além dos tipos primitivos de dados, tal como INTEIRO ou REAL, uma linguagem algorítmica deve permitir definir estruturas mais complexas de dados.
+
+	Uma Estrutura de Dados não é mais do que uma organização de dados em memória (ou até mesmo em disco).
+- Exemplos de estruturas de dados são: Listas Ligadas, Pilhas, Filas, Árvores, Tabelas de Hash, Grafos, etc.
+
+Muitas das técnicas e estruturas de dados a estudar nesta disciplina estão relacionadas com o armazenamento de dados do mundo real. Por dados do mundo real podemos entende-se dados que descrevem entidades físicas externas ao computador:
+- registos pessoais, agenda de contactos, registos de contas bancárias, listas de espera para consultas médicas, etc.
+
+Um exemplo de armazenamento de dados do mundo real que pode ser as nossas agendas de contactos, onde guardamos para uma série de pessoas as mais variadas informações: nome, morada, telefone, telemóvel, dia de aniversário, etc. Todos estes dados são interessantes de se terem, mas, vamos supor que temos que desenvolver o nosso próprio programa de agenda de contactos. Para tal teremos que responder a uma série de questões iniciais:
+- Como armazenar toda essa informação no memória do PC;
+- O método a utilizar funcionaria para dezenas de contactos ? e para centenas? e para milhões?
+- O método permitiria a inserção rápida de novos contactos e a exclusão igualmente rápida de contactos antigos;
+- permitiria a busca rápida de um contacto específico;
+- Supondo que queríamos a lista de contactos ordenada alfabeticamente. Como efectuaríamos tal operação.
+
+	Um dos aspectos mais importantes na programação é a possibilidade de criação de novos tipos de dados apropriados para a resolução de um determinado problema.
+
+	Mas, nem todas as estruturas de dados são utilizadas para armazenar dados do mundo real. Normalmente, os dados do mundo real são mais ou menos directamente acedidos pelos utilizadores de programas. Entretanto, existem algumas estruturas de dados que não são feitas para serem acedidas pelos utilizadores, mas sim para serem acedidas pelo próprio programa. Um programador utiliza tais estruturas como ferramentas a fim de facilitar algumas tarefas. Ex: por exemplos os trabalhos enviados para uma impressora ligada em rede são antes enviados para um programa especial que os coloca em “Fila de espera”.
+Estruturas de dados x Eficiência algorítmica
+	Na representação algorítmica as estruturas de dados são normalmente apresentadas como entidades abstractas, principalmente no caso das estruturas mais complexas.
+	A implementação do algoritmo passa por escolher as estruturas de dados que melhor se adequam à execução do mesmo, pois depende destas grande parte da eficiência da implementação final, pode-se mesmo afirmar que existe uma dependência directa entra esta e as estruturas utilizadas.
+
+Do algor. ao prog., boas e más técnicas de prog.
+	Uma boa solução não depende só do algoritmo desenvolvido ou das estruturas de dados escolhidas para implementação do problema. É necessário saber distinguir uma boa tradução da linguagem algorítmica para linguagem de programação, de uma má tradução.
+	Pretende-se neste ponto deste capítulo, apresentar algumas técnicas de boa programação, e prestar alguns avisos para erros habituais dos programadores menos experientes.
+	De salientar no entanto que, não são os conhecimentos aqui transmitidos que fazem um bom programador, mas sim os conhecimentos acumulados através da experiência.
+
+Simplificação Algébrica de Expressões
+	A simplificação de determinadas expressões através das suas propriedades algébricas, permite por vezes dar indicações ao compilador de melhores soluções para a geração do código final (binário).
+		- ( - i ) = i
+		i + ( -j) = i - j
+		b v TRUE = TRUE v b = TRUE
+		i * 8 =		i >> 3
+
+Propriedade distributiva dos operadores.
+	Simplificações algébricas com base na propriedade associativa, comutativa e distributiva, com o objectivo de compor/decompor expressões, simplificando as suas componentes.
+	(i-j) + (i-j) + (i-j) + (i-j) = 4 * i - 4 * j = 4 * ( i -j )
+
+Expressões equivalentes
+	Substituição de expressões quando estas são equivalentes.
+		j  i +1
+		k  i
+		M  k +1		(M  j)
+
+Propagação de cópias
+	Em expressões tipo x  y, substituir as utilizações posteriores de x por y.
+	x  y
+	r  x * 4 +2		r  y * 4 + 2
+	s  y+5*x			s  y + 5 * y			s  6*y
+
+Propagação de constantes
+	Quando ocorre uma atribuição do tipo x   constante, substituir as utilizações posteriores de x pelo valor da constante.
+	x  3
+	b  4 * x			b  12
+
+Eliminação de expressões comuns
+	Consiste em detectar sub expressões comuns e realizar o calculo separadamente de forma a reutilizar o resultado.
+						p  i*4
+	x  a + i*4			x  a + p
+	y  (i*4)/3			y  p/3
+
+Evidenciar expressões comuns
+	Determinar expressões que são comuns entre os possíveis caminhos de execução e colocá-las em evidência.
+	SE a > 0 ENTÃO				SE a > 0 ENTÃO
+			a  a-1						a  a-1
+			b  a-c					SENÃO
+		SENÃO							a  a+1
+			a  a+1				FIMSE
+			b  a-c				b  a-c
+	FIMSE
+
+Remoção expressões constantes de dentro de ciclos
+	Consiste em remover as expressões que se encontram dentro de estruturas de controlo cíclicas e que são constantes ao longo da execução de todo o ciclo, colocando-as fora do ciclo.
+	ENQUANTO b > 0 FAZER				c   x + z
+		c  x + z						ENQUANTO b > 0 FAZER
+		...								...
+	[Não ocorre qualquer atribuição			FIMENQUANTO
+	 de x ou z dentro do ciclo] 
+	FIMENQUANTO									
+
+Reordenação do encadeamento de estruturas
+	Nas situações onde existem estruturas de controlo encadeadas, é por vezes possível inverter a sua ordem, de forma a minimizar o tempo de execução.
+
+Substituição de estruturas condicionais por estruturas de atribuição
+	Consiste em substituir estruturas condicionais tipo SE ... ENTÃO ..SENÃO.., por instruções simples.
+	SE a > b ENTÃO				(em C)
+			c  a				t1  a > b
+		SENÃO					c  t1 * a + !t1 * b
+			c  b
+	FIMSE
+
+	Existem muitas mais técnicas para optimizar código, muitas das quais típicas da linguagem utilizada para programar. As técnicas aqui apresentadas são as mais vulgares e aplicáveis a qualquer tipo de linguagem.
+
+
+Análise de Algoritmos
+
+	A existência de um algoritmo para resolver um determinado problema não implica, necessariamente, que este problema possa ser realmente resolvido na prática. Há restrições de tempo e espaço.
+
+Análise de algoritmos
+- Provar que um algoritmo está correcto
+- Determinar recursos exigidos por um algoritmo (tempo, espaço, etc.)
+- comparar os recursos exigidos por diferentes algoritmos que resolvem o mesmo problema (um algoritmo mais eficiente exige menos recursos para resolver o mesmo problema)
+- prever o crescimento dos recursos exigidos por um algoritmo à medida que o tamanho dos dados de entrada cresce
+
+A análise de algoritmos pode ser definida como o estudo da estimativa de tempo de execução de algoritmos.
+
+O tempo de execução de um programa é uma grandeza física que é determinado pelos seguintes aspectos:
+    • Tempo que a máquina leva para executar uma instrução ou passo do programa;
+    • A natureza do algoritmo, ou seja, de quantos passos são necessários para se resolver o problema para um dado.
+    • O tamanho do conjunto de dados que constitui o problema
+
+Complexidade Temporal e Espacial
+	Tal como já foi referido anteriormente, quase sempre existe mais de uma maneira de resolver um problema. Deverão ser ponderados todos os algoritmos propostos para a solução desse mesmo problema.
+	É função do programador implementar a solução mais adequada, considerando as restrições da linguagem a utilizar e as necessidades do problema.
+
+	Dados 2 ou mais algoritmos para solucionar o mesmo problema, é sensato escolher aquele que obtém uma solução no menor tempo possível (complexidade temporal) e utiliza o menor espaço (complexidade espacial) para a representação dos dados do problema
+
+Complexidade espacial de um programa ou algoritmo : é o espaço
+de memória que necessita para executar até ao fim
+S(n) - espaço de memória exigido em função do tamanho (n) da entrada
+
+Complexidade temporal de um programa ou algoritmo : é o tempo
+que demora a executar (tempo de execução)
+T(n) - complexidade temporal em função do tamanho (n) da entrada
+
+Complexidade ? versus Eficiência ?
+Obter uma solução que satisfaça ambas é raro! Por isso é necessário analisar qual terá mais peso.
+Exemplo 1: Armazenar texto digitado pelo utilizador - neste caso o tempo não será muito importante.
+Exemplo 2: Registo de passagem de veículos - neste caso o tempo já é um factor a ter em conta, logo deverá ser escolhida a solução que seja mais rápida, mesmo que isso implique ocupar mais espaço na representação dos dados.
+
+	É necessário ter uma forma de criar medidas de comparação entre algoritmos que resolvam um mesmo problema. Desta forma, é possível determinar:
+    • A viabilidade de um algoritmo.
+    • Qual é o melhor algoritmo para a solução de um determinado problema.
+
+	Na prática, é difícil (senão impossível) prever com rigor o tempo de execução de um algoritmo ou programa
+
+O Relevante é ter uma comparação relativa entre algoritmos
+Assumir que a execução de todo e qualquer passo de um algoritmo leva um tempo fixo e igual a uma unidade de tempo
+O tempo de execução de um computador não é interessante.
+
+Complexidade (Análise Assimptótica)
+	Nem sempre a representação algorítmica traduz directamente a implementação mais eficaz de um problema. 	É no entanto possível medir a qualidade da estrutura base de um determinado  algoritmo. 
+	Uma forma de avaliação consiste em fazer uma análise matemática dos algoritmos, independentemente de uma implementação e/ou entrada particulares (medição do esforço computacional para a resolução de um determinado problema).
+Ex:
+PROCEDIMENTO SomaNumeros(IN num:INTEIRO): INTEIRO;
+Soma,i,valor: INTEIRO;
+INCIO
+Soma  0
+PARA i 1 ATÉ num FAZER
+		 LER(valor);
+		 Soma Soma + valor;
+FIM PARA 
+RETORNAR (Soma);
+FIM
+- parâmetro que caracteriza a dimensão da entrada: n = num
+- medida que reflecte o tempo de execução (exº: número de operações de atribuição, adição, saltos, referência a arrays, etc): T(n) (= 1 + n(1+1) + 1 no exemplo)
+
+	Fala-se de Análise Assimptótica porque estamos apenas a considerar a situação em que n  oo
+	É através do valor do esforço computacional que se pode comparar a eficiência entre algoritmos.
+	O esforço computacional pode ser determinado através da Ordem de Complexidade do algoritmo, a qual se define da seguinte forma:
+
+	Um algoritmo tem como Ordem de Complexidade O(f(N)) - notação "Big O" (lê-se O grande), quando o número de operações primitivas executadas para obter a solução para a instância do problema, cujo tamanho é N, não exceder uma constante(c) vezes f(N), para um N suficientemente grande.
+
+
+T(n) = O(f(n)) se existem constantes c e n0 tais que  T(n) <= c.f(n) quando n>=n0. 
+Esta definição indica que eventualmente existe algum ponto n0 onde c.f(n) é sempre pelo menos tão grande quanto T(n).
+
+
+
+Por exemplo, dizemos que, para grandes valores de n,
+	O(n) é melhor do que O(n2) 
+	O uso de O( ) é mais simples mas menos preciso que o de T( ), dado que ignoramos os factores constantes
+	Ex:
+		Algoritmo A executa em T(n2+1)			O(n2)
+		Algoritmo B executa em T(100n+1000)		O(n)
+			A é melhor do que B para n <=110 !!
+
+Ordens de Complexidade mais comuns
+
+
+
+
+
+
+
+
+
+
+
+Complexidade
+N=2
+N= 10
+N=100
+N=1 000
+N=10 000
+O(1)
+1
+1
+1
+1
+1
+O(log n)
+1
+3. ..
+6. ...
+9....
+13. ...
+O(n)
+2
+10
+100
+1 000
+10 000
+O(n log n)
+2
+30.   
+600
+9 000
+130 000
+O(n²)
+4
+100
+10 000
+1 000 000
+100 000 000
+O(n3)
+8
+1000
+1 000 000
+1 000 000 000
+1012
+O(2n)
+4
+1024
+2100 (31 dig.)
+21000  (301 dig.)
+210000
+Tabela de Complexidade para alguns valores de N
+
+Algumas propriedades da notação Big O
+    • Os factores constantes podem ser ignorados:
+	Para um k >0, 		kF 	é 	O(kF) <=> O(F)
+	Ou seja 	aN2 e bN2 são ambas O(N2)
+	
+    • As potências mais elevadas de N crescem mais rapidamente do que as mais baixas
+	Nr é	 O(Ns)	se	0 < r < s
+
+    • Grau de complexidade da soma de duas funções é a de maior grau
+	aN3 + bN2 é	 O(N3)
+
+    • Se f tem maior grau do que g e g tem maior grau do que h, então f tem maior grau do que h.
+
+    • produto do grau de complexidade de duas funções é dado pelo produto das funções.
+	Se f é O(f)	e g é O(g)	 então	fg é O(f.g)
+	Se f é O(N2)	e g é O(logN) então	fg é O(N2.logN)	
+
+Análise de alguns algoritmos e valores típicos de O()
+    • Primitivas simples
+	Uma sequência de primitivas que são executadas apenas uma vez, têm grau de complexidade O(1) - Constante. Não interessa quantas primitivas existem nessa sequência, apenas que o número de primitivas (ou o tempo que demoram a ser executadas) é sempre constante (pois c.O(1) = O(1)).
+
+
+    • Ciclos Simples
+	Se um problema de tamanho N, possa ser resolvido com um ciclo simples:
+for (i=0 ;i<n; i++) {s}, onde s é uma sequência de primitivas de O(1), então a ordem de complexidade do algoritmo é nO(1) ou O(N) - Linear.
+ 
+    • Ciclos encadeados 
+	for(j=0;j<n;j++)
+		for(i=0;i<n;i++) 
+				{s}
+	Temos N repetições de O(N), dando uma complexidade de NO(N) ou seja O(N2) - Quadrática. Os ciclos exteriores têm efeito multiplicativo sobre as operações nos ciclos interiores
+
+    • Ciclo em que o contador é multiplicado por um valor > 1 
+	Exemplo:
+	h = 1; 
+	while( h < n ) 
+		{s;
+		 h = 2*h; } 
+	Neste caso, h vai tomar os valores 1,2,4,.. até ultrapassar N. Esta sequência tem complexidade de 1 + log2N ou seja O(log N) - Logaritmica.
+    • Ciclos encadeados em que o ciclo interior depende do ciclo exterior
+	Exemplo:
+	for(j=0; j<n; j++) 
+	    for(i=0; i<j;i++) 
+		{s;}
+	Neste caso o ciclo interior é executado de cada vez: j vezes até N. o total é:
+	A complexidade é de ordem O(N2). O mesmo resultado que foi obtido para dois ciclos encadeados (visto antes). Ou seja o número de iterações do ciclo interior (desde que variáveis) é irrelevante para o cálculo da complexidade, nestes casos.
+    • IF / ELSE 
+O tempo de execução de uma instrução if/else nunca é maior do que o tempo de execução do teste, mais o maior dos tempos de execução de S1 e S2. sendo que S1 e S2 representam as instruções do then e else, respectivamente.
+ 
+    • Chamada de funções 
+A análise é feita como no caso de ciclos encadeados. Para calcular a complexidade de um programa com várias funções, determina-se primeiro a complexidade de cada uma das funções. Desta forma, na análise, cada uma das funções é vista como uma instrução com a complexidade que foi calculada.
+ 
+    • Recursividade 
+É a parte mais difícil da análise de complexidade. Em muitos casos, pode-se fazer a linearização através da substituição da chamada recursiva por alguns ciclos encadeados, por exemplo. Entretanto, existem algoritmos que não possibilitam a linearização. Nestes caso, é necessário usar uma relação de recorrência que tem que ser resolvida.
+
+Informalmente, para se determinar a ordem de complexidade de uma determinada função f(n), podemos efectuar as seguintes etapas: 
+1. separar f(n) em duas partes: termo dominante e termos de ordem inferior. 
+2. ignorar os termos de ordem inferior. 
+3. ignorar as constantes de proporcionalidade. 
+
+Exemplos:
+Para ilustrar, vamos considerar que o tempo de execução de um determinado algoritmo é caracterizado pela função f(n) = a.n2 + b.n + c. Qual seria a complexidade deste algoritmo?
+O termo a n2 é dominante (maior ordem) sobre os demais. Os termos de ordem inferior podem ser desprezados.
+Uma vez que o objectivo é descobrir a família da curva que caracteriza o tempo de execução do algoritmo, a constante de proporcionalidade no termo a.n2 pode ser desprezada.
+Conclui-se que f(n) = O(n2), isto é, a complexidade do algoritmo é de ordem quadrática.
+
+Qual a ordem de complexidade do seguinte programa ?
+1  i=n;						(1) Uma unidade de tempo
+2  y=1;						(1) Uma unidade de tempo
+3  while (i>0)				(n)+(1) unidades de tempo
+4  	  {y=y*i;						(1) Uma unidade de tempo
+5  	   i=i-1;						(1) Uma unidade de tempo
+6  	  }
+7  return y;				(1) Uma unidade de tempo
+
+Tempo de execução é 1+1+1+n*(1+1)+1 = 2.n+4 que é O(N)
+
+	De notar que a ordem de complexidade apenas permite comparar algoritmos de ordens distintas, caso contrário é necessário ter em conta a soma dos tempos de execução das instruções primitivas, bem como uma análise mais detalhada da estratégia do algoritmo. 
+
+	Por vezes, ocorre que um algoritmo de ordem elevada, se revele na prática bastante eficiente. Tais situações dependem de heurísticas que, permitem “desprezar” grande parte do espaço de soluções, tornando a sua eficiência comparável à um algoritmo de ordem inferior.
+
+	A Ordem de Complexidade trata-se de uma medida a priori, ou seja permite antever a eficiência da implementação prática do algoritmo.
+	Existem outras medidas para avaliar a qualidade de uma solução e que se aplicam a postriori. Ou seja, medem o tempo que a implementação do algoritmo leva a executar. Ocorre, por vezes, que o domínio dos valores de entrada de um algoritmo é muito grande e diversificado, não sendo possível medir a eficiência da solução para todas as hipóteses de entrada. Torna-se então necessário escolher um sub domínio representativo que permita avaliar a qualidade da solução. A este tipo de estratégia designa-se por bench marketing. 
+
+Por vezes estima-se a complexidade para:
+	o "melhor caso" (pouco útil),
+	o "pior caso" (mais útil)
+	e o "caso médio" (igualmente útil)
+
+
+Algoritmos de Pesquisa em arrays
+
+Pesquisa Sequencial
+Problema (pesquisa de valor em array): verificar se um valor existe num array e, no caso de existir, indicar a sua posição
+- variantes para o caso de arrays com valores repetidos:
+(a) indicar a posição da primeira ocorrência
+(b) indicar a posição da última ocorrência
+(c) indicar a posição de uma ocorrência qualquer
+
+Algoritmo (pesquisa sequencial): 
+Percorrer sequencialmente todas as posições do array, da primeira para a última (a) ou da última para a primeira (b), até encontrar o valor pretendido ou chegar ao fim do array
+(a) caso se pretenda saber a posição da primeira ocorrência
+(b) caso se pretenda saber a posição da última ocorrência
+
+Adequado para arrays não ordenados ou pequenos
+
+Implementação em C, na variante (a)
+/* Procura um valor x num array vec de n elementos (n>=0). Retorna o índice da primeira ocorrência de x em vec, se encontrar; senão, retorna -1. */
+int PesquisaSequencial(int vec[], int n, int x)
+{int i;
+  for (i = 0; i < n; i++)	na variante (b)-> for (i=n-1; i>=0;i--)
+     if (v[i] == x)
+         return i; 		// encontrou
+return -1; 				// não encontrou
+}
+
+
+Análise de Complexidade temporal
+i=0;						(1)
+while (i<n)					(n)+(1)
+  {if (v[i]==x)				(1)
+	  return i;				  +(1)
+   i++;						(1)
+  }
+return –1;					(1)
+f(n) é 1+1 + n*(2+1)+1 = 3+3.N que é de O(N)
+
+Resumindo
+- A operação realizada mais vezes é o teste da condição de continuação do ciclo for, no máximo n+1 vezes (no caso de não encontrar x).
+- Se x existir no array, o teste é realizado aproximadamente n/2 vezes em média (1 vez no melhor caso)
+
+Logo T(n) = O(n) (linear) no pior caso e no caso médio
+
+Análise de Complexidade espacial
+- Gasta o espaço das variáveis locais (incluindo argumentos)
+- Como os arrays são passados "por referência" (de facto o que é passado é o endereço do array), o espaço gasto pelas variáveis locais é constante e independente do tamanho do array
+
+Logo S(n) = O(1) (constante) em qualquer caso
+
+Pesquisa Binária
+Problema (pesquisa de um valor num array ordenado): verificar se um valor (x) existe num array (vec) previamente ordenado e, no caso de existir, indicar a sua posição
+- no caso de arrays com valores repetidos, consideramos a variante em que basta indicar a posição de uma ocorrência qualquer (as outras ocorrências do mesmo valor estão em posições contíguas)
+
+Algoritmo (pesquisa binária):
+Comparar o valor que se encontra a meio do array com o valor procurado,
+podendo acontecer uma de três coisas:
+• é igual ao valor procurado? está encontrado
+• é maior do que o valor procurado  continuar a procurar (do mesmo modo) no sub-array à esquerda da posição inspeccionada
+• é menor do que o valor procurado  continuar a procurar (do mesmo modo) no sub-array à direita da posição inspeccionada.
+Se o array a inspeccionar se reduzir a um array vazio, conclui-se que o valor procurado não existe no array inicial.
+
+Exemplo de uma pesquisa binária (procurar pelo valor x=2)
+
+	1ª Iteração
+
+
+	2ª Iteração
+
+
+
+	3ª Iteração
+
+
+
+	4ª Iteração
+
+
+Como o vector a inspeccionar é vazio (dir<esq) o valor 2 não existe no vector inicial 
+
+
+Implementação em C
+/* Procura um valor x num array vec de tamanho n previamente ordenado. Retorna o índice de uma ocorrência de x em vec, se encontrar; senão, retorna -1. */
+
+int PesquisaBinaria(int vec[], int n, int x)
+{int esq = 0, dir = n – 1, meio;
+ while (esq <= dir)
+ {meio = (esq + dir) / 2;
+  if (x == v[meio])
+     return meio; 					// encontrou
+	else 
+	  if (x > v[meio])
+			esq = meio + 1;
+		else
+			dir = meio - 1;
+ }
+return -1; 							// não encontrou
+}
+
+Análise de Complexidade temporal
+- Em cada iteração, o tamanho do sub-array a analisar é dividido por um factor de aproximadamente 2
+- Ao fim de k iterações, o tamanho do sub-array a analisar é aproximadamente   n/2k 
+- Se não existir no array o valor procurado, o ciclo só termina quando   n / 2k  1      log2 n - k   0    k   log2 n
+
+- Assim, no pior caso, o nº de iterações é aproximadamente log2 n
+	T(n) = O(log n)  (logarítmico)
+
+É muito mais eficiente que a pesquisa sequencial, mas só é aplicável a arrays ordenados!, 
+a pesquisa sequencial funciona também caso os elementos estejam armazenados em forma de Listas Ligadas, o mesmo já não se passa para a pesquisa binária
+
+Repetindo:
+É muito mais eficiente que a pesquisa sequencial, mas só é aplicável a arrays ordenados!
+
+Algoritmos de Ordenação
+
+Introdução
+Problema: 
+	Rearranjar os n elementos de uma sequência (array ou lista ligada)  por ordem crescente
+ou melhor, por ordem não decrescente, porque podem existir valores repetidos
+
+	O objectivo da ordenação dos elementos de uma estrutura de dados, é facilitar e aumentar a eficiência das operações de pesquisa sobre esses dados. A ordenação pode ser crescente ou decrescente. O problema a ser resolvido com a ordenação é o seguinte:
+
+Entrada: 
+	sequência de n números <a1, a2, ..., an>
+Saída: 
+Sequência dos n números de entrada reordenada, gerando <a1', a2', ..., an'> de forma que: a1' < a2', ..., < an' (para o caso de ordenação crescente) ou a1'>a2',..., > an' (para o caso de ordenação decrescente).
+
+A sequência de entrada, normalmente, é um vector com n elementos, embora possa ser representada por intermédio de outras estruturas de dados como por exemplo, uma lista ligada.
+
+Existem diversos métodos de ordenação (alguns exemplos):
+Ordenação por Inserção
+	inserção directa (Insertion Sort)
+	incrementos decrescentes (Shell Sort)
+Ordenação por Selecção
+	selecção directa (Selection Sort)
+	selecção em árvore (Heap Sort)
+Ordenação por Troca
+	método da bolha (Bubble Sort)
+	método da troca e partição (Quick Sort)
+
+	A escolha do processo de ordenação a utilizar dependerá muito da dimensão do problema a resolver, bem como do tempo de execução necessário, espaço de memória ocupado e complexidade de implementação.
+
+Bubble Sort (Ordenação por troca)
+Este método é um dos mais simples de se entender e também de se implementar. 
+
+Algoritmo (ordenação por troca):
+- Percorre-se o vector do início para o fim (ou do fim para o início), comparando elementos contíguos e trocando-os se estiverem fora de ordem. Desta forma consegue-se que ao fim da primeira passagem o maior elemento estará na última posição, que é a sua posição definitiva (diz-se que o elemento borbulhou para a sua posição) 
+- Recomeça-se, com novo percurso, mas comparando apenas até ao penúltimo elemento. No fim do segundo percurso, o maior elemento está na última posição e o segundo maior na penúltima.
+- E assim sucessivamente, até todos os elementos terem alcançado a sua posição definitiva de acordo com a relação de ordem usada.
+
+Exemplo de uma Ordenação por troca
+
+
+0
+1
+2
+3
+4
+
+
+5
+2
+7
+4
+3
+
+
+1ª Iteração
+
+
+
+
+
+
+
+2
+5
+4
+3
+7
+
+
+2ª Iteração
+
+
+
+2
+4
+3
+5
+7
+
+
+3ª Iteração
+
+
+
+
+
+
+
+2
+3
+4
+5
+7
+
+
+4ª Iteração
+
+
+
+
+
+
+
+2
+3
+4
+5
+7
+
+
+
+
+Implementação em C
+/* Procedimento que ordena um vector (vec) de N elementos, ficabdo vec[0]<vec[1]<...<vec[n-1] */
+
+void troca(int *x, int *y) // função que troca 2 elementos
+{int t ;
+ t=*x ;
+ *x=*y ;
+ *y=t
+}
+
+void BubbleSort(int vec[], int n)
+{int i,j;
+for(i=0;i<n;i++)			// n passagens
+  for(j=1;j<n-i;j++)
+     if(vec[j-1]>vec[j]) 
+		troca(&vec[j-1],&vec[j]);		
+}
+
+Análise de Complexidade temporal
+Os termos dominantes na função anterior são os ciclos for (desprezam-se os restantes)
+- A condição do 1º ciclo for é executada n vezes (sempre)
+- A condição do ciclo interior é executada (sempre) n-1+ .. +3+2+1 vezes.
+
+Juntando os dois, teremos sempre (no melhor, pior e caso médio), uma ordem de complexidade de
+
+Ou seja, ordem de Complexidade O(N2).
+
+Análise de Complexidade espacial
+- Gasta o espaço das variáveis locais (incluindo argumentos)
+- Como os arrays são passados "por referência" (de facto o que é passado é o endereço do array), o espaço gasto pelas variáveis locais é constante e independente do tamanho do array
+
+Logo S(n) = O(1) (constante) em qualquer caso
+
+Como se pode ver pela análise de complexidade temporal, este algoritmo (na sua forma original) é bastante fraco em termos de desempenho. 
+Mesmo no caso de o vector de elementos já se encontrar ordenado, este algoritmo é tem complexidade O(N2)
+	
+Existem no entanto variantes que permitem melhorar um pouco a performance do método para o melhor caso e caso médio (caso em que o vector está parcialmente ordenado)
+
+void BubbleSort1(int vec[], int n)
+{int i,f;
+do
+ {f=0;						// não há trocas
+  for(i=1;i<n;i++)
+     if(vec[i-1]>vec[i]) 
+		{troca(&vec[i-1],&vec[i]);		
+		 f=1;				// assinala troca
+        }
+ }while (f==1);				// enquanto existirem trocas
+}
+
+No algoritmo apresentado vão-se fazendo passagens (e trocas de elementos) pelo vector até que se consiga fazer uma passagem sem efectuar nenhuma troca, nessa altura já o vector estará ordenado.
+
+O exemplo que seguiu de base para a explicação deste método, utiliza arrays como sequencias de entrada, no entanto este método é também aplicável a sequências de entrada, onde os seus elementos estão organizados em forma de Lista Ligadas. 
+Com a utilização de listas não há necessidade de proceder a troca de elementos, bastará fazer o redireccionamento dos apontadores.
+	
+
+
+
+Selection Sort (Ordenação por Selecção)
+Este método é também dos mais simples de entender e implementar. O seu principio de funcionamento é o seguinte:
+- Na 1ª iteração descobre-se a posição do elemento mais pequeno (ou maior) do vector e no final faz-se a troca com o elemento que se encontra na 1ª posição do vector.
+- Na 2ª iteração descobre-se a posição do 2º elemento mais pequeno do vector e no final faz-se a troca com o elemento que se encontra na 2ª posição do vector.
+- E assim sucessivamente, até todos os elementos terem sido encontrados e colocados nas suas posições.
+
+Exemplo de uma Ordenação por Selecção
+
+0
+1
+2
+3
+4
+
+
+5
+2*
+7
+4
+3
+
+
+1ª Iteração
+
+
+
+
+
+
+
+2
+5
+7
+4
+3*
+
+
+2ª Iteração
+
+
+
+2
+3
+7
+4*
+5
+
+
+3ª Iteração
+
+
+
+
+
+
+
+2
+3
+4
+7
+5*
+
+
+4ª Iteração
+
+
+
+
+
+
+
+2
+3
+4
+5
+7
+
+
+Implementação em C
+/* Procedimento que ordena um vector (vec) de N elementos, ficabdo vec[0]<vec[1]<...<vec[n-1] */
+void SelectionSort(int vec[], int n)
+{int i,j,ind;
+for(i=0;i<n-1;i++)			// n-1 passagens
+   {ind=i;
+    for(j=i+1;j<n;j++)
+      if(vec[j]<vec[ind])
+		  ind=j;
+  troca(&vec[i],&vec[ind]);	// troca
+ }
+}
+
+Análise de Complexidade temporal e Espacial
+As ordens de complexidade temporal e espacial são idênticas ao do método de bubble sort, como facilmente se pode concluir. Ou seja, ordem de Complexidade temporal de O(N2) e espacial de S(1).
+
+O exemplo que seguiu de base para a explicação deste método, utiliza arrays como sequencias de entrada, no entanto este método é também aplicável a sequências de entrada, onde os seus elementos estão organizados em forma de Lista Ligadas. 
+Com a utilização de listas não há necessidade de proceder a troca de elementos, bastará fazer o redireccionamento dos apontadores.
+
+Insertion Sort (Ordenação por Inserção)
+Nesse método os elementos são inseridos na sua posição correcta, em relação aos elementos já classificados.
+	Exemplo: ordenar uma “mão” de um jogo de cartas
+
+InsertSort é o método mais simples, utilizado para um conjunto pequeno de dados.
+
+Algoritmo (ordenação por inserção):
+- Considera-se o array dividido em dois sub-arrays  (esquerdo e direito), com o da esquerda ordenado e o da direita desordenado
+- Começa-se com um elemento apenas no sub-array da esquerda
+- Move-se um elemento de cada vez do sub-array da direita para o sub-array da esquerda, inserindo-o na posição correcta por forma a manter o sub-array da esquerda ordenado. (deslocando alguns elementos do sub-array da esquerda uma “casa” para a direita)
+- Termina-se quando o sub-array da direita fica vazio
+
+
+
+
+
+Exemplo de uma Ordenação por Inserção
+
+
+0
+1
+2
+3
+4
+
+
+5
+2
+7
+4
+3
+
+
+1ª Iteração
+
+
+
+
+
+
+
+2
+5
+7
+4
+3
+
+
+2ª Iteração
+ordenado
+desordenado
+
+2
+5
+7
+4
+3
+
+
+3ª Iteração
+
+
+
+
+
+
+
+2
+4
+5
+7
+3
+
+
+4ª Iteração
+
+
+
+
+
+
+
+2
+3
+4
+5
+7
+
+
+Implementação em C
+/* Procedimento que ordena um vector (vec) de N elementos, ficabdo vec[0]<vec[1]<...<vec[n-1] */
+void InsertionSort(int vec[], int n)
+{int i,j;
+ int x;
+ for (i=1;i<n;i++)
+	{x=vec[i];
+     for (j=i;j>0 && x < vec[j-1];j--)
+		 vec[j]=vec[j-1];
+	 vec[j]=x;
+	}
+}
+Análise de Complexidade temporal
+Os termos dominantes na função anterior são os ciclos for (desprezam-se os restantes)
+- A condição do 1º ciclo for é executada n vezes (sempre)
+- A condição do ciclo interior é executada:
+	no melhor caso, apenas uma vez (valor já em ordem)
+	no pior caso, é executada 1+2+3+..+n-1 vezes (depende do exterior).
+		
+Juntando os dois:
+	Melhor caso : n.1 = n   N
+	Pior Caso: n.ciclo_interior = n.(1+2+3+..+(n-1))=n(n-1)/2   (N2/2)
+	Em Média: metade do anterior, isto é, aproximadamente N2/4 
+
+Complexidade é de ordem O(N2) no pior caso e média.
+
+Shell Sort
+	O método de Shell Sort (proposto por Ronald L. Shell (1959)), é uma extensão do algoritmo de inserção directa. A diferença com relação à inserção directa é o número de segmentos do vector. Na inserção directa é considerado um único segmento do vector onde os elementos são inseridos ordenadamente. No método do Shell são considerados diversos segmentos.
+
+QuickSort (Ordenação por troca e Partição)
+	É dos métodos mais rápidos, e também o mais utilizado para a ordenação de vectores. Esse método foi proposto por C. A. R. Hoare em 1962 e parte do princípio que é mais rápido classificar dois vectores com n/2 elementos cada um, do que um com n elementos (dividir um problema maior em dois menores).
+
+Algoritmo recursivo baseado na técnica divide and conquer!
+
+Algoritmo (ordenação por partição):
+1. Caso básico: Se o número (n) de elementos do array (vec) a ordenar for 0 ou 1, não é preciso fazer nada
+2. Passo de partição:
+2.1. Escolher um elemento arbitrário (x) do array (chamado pivot)
+2.2. Partir o array inicial em dois sub-arrays (esquerdo e direito), com valores  x no sub-array esquerdo e valores  x no sub-array direito (podendo existir um 3º sub-array contral com valores =x)
+3. Passo recursivo: Ordenar os sub-arrays esquerdo e direito, usando o mesmo método recursivamente
+
+Refinamento do passo da Partição
+(Supõe-se excluído pelo menos o caso em que n = 0)
+2.1. Escolher para pivot (x) o elemento do meio do array (vec[(inf+sup)/2])
+2.2. Inicializar i = inf  
+2.3. Inicializar j = sup  
+2.3. Enquanto i  j, fazer:
+2.3.1. Enquanto v[i] < x  (é sempre i  sup),  incrementar i
+2.3.2. Enquanto v[j] > x  (é sempre j  inf), decrementar j 
+2.3.3. Se i  j, trocar v[i] com v[j], incrementar i e decrementar j
+O sub-array esquerdo (com valores  x) é v[inf],...,v[j] (vazio se j<inf)
+O sub-array direito (com valores  x) é v[i],...,v[sup] (vazio se i>sup)
+
+Exemplo de um passo de Partição 
+
+
+0
+1
+2
+3
+4
+5
+6
+
+
+Inf
+i
+
+
+
+X=4
+
+
+Sup
+j
+
+2.1; 2.2; 2.3
+2
+5
+8
+4
+6
+7
+3
+
+
+
+Inf
+
+i
+
+
+X=4
+
+
+
+Sup
+j
+
+2.3.1; 2.3.2; 
+2
+5
+8
+4
+6
+7
+3
+
+2.3.3
+
+3
+i
+
+
+j
+5
+
+
+
+Inf
+
+
+
+
+i
+X=4
+j
+
+
+
+Sup
+
+
+2.3.1; 2.3.2; 
+2
+3
+8
+4
+6
+7
+5
+
+2.3.3
+
+
+4j
+8i
+
+
+
+
+
+
+inf
+
+
+
+j
+
+i
+
+
+
+Sup
+
+
+
+2
+3
+4
+8
+6
+7
+5
+
+
+
+x
+
+
+x
+
+
+
+
+
+/* Ordenar um array entre duas posições indicadas (inf e sup) */
+
+void QuickSort(int vec[], int inf, int sup)
+{int x,i,j;
+ if (inf>=sup)
+	return;					// caso do tamanho ser <=1
+ x = vec[(inf + sup) / 2]; 
+ i = inf;
+ j = sup;
+ while (i<=j)
+	{while (vec[i] < x) i++;
+     while (vec[j] > x) j--;
+     if (i<=j)
+       troca(&vec[i++],&vec[j--]);		// troca e incrementa
+	}
+QuickSort(vec,inf,j);		// passo recursivos
+QuickSort(vec,i,sup);		// passo recursivos
+}
+Análise de Complexidade temporal
+Pior Caso
+
+Profundidade de Recursão:  n
+Tempo de execução total (somando totais de linhas):
+	T(n)  = O[n+n+(n-1) + ... +2] 	 =  O[n+(n-1)(n + 2)/2] = O(n2)
+
+Melhor Caso
+
+
+
+
+
+
+
+
+
+
+Profundidade de recursão:  1+log2 n  (sem contar com a possibilidade de um elemento ser excluído dos sub-arrays esquerdo e direito)
+Tempo de execução total (uma vez que a soma de cada linha é n):
+	T(n) = O[(1+log2n) n]  =  O(n log n)
+
+Prova-se que no caso médio (na hipótese de os valores estarem aleatoriamente distribuídos pelo array), o tempo de execução é da mesma ordem que no melhor caso, isto é, 
+T(n) = O(n log n)
+
+Na implementação apresentada, a escolha do elemento pivot, recaiu sobre o elemento do meio do vector, no entanto esta não é a única possibilidade para a escolha do pivot, poderia ser um qualquer elemento do vector (o primeiro, um elemento aleatório, etc)
+
+Complexidade Espacial de QuickSort
+- O espaço de memória exigido por cada chamada de QuickSort, sem contar com chamadas recursivas, é independente do tamanho (n) do array
+- O espaço de memória total exigido pela chamada de QuickSort, incluindo as chamadas recursivas, é pois proporcional à profundidade de recursão
+- Assim, a complexidade espacial de QuickSort é:
+O(log n) no melhor caso (e no caso médio)
+O(n) no pior caso
+
+Em contrapartida, a complexidade espacial de InsertionSort é O(1)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Comparações finais
+Comparação de tempos médios de execução (observados) de diversos algoritmos de ordenação
+
+Método de ordenação por partição (quick sort) é na prática o mais eficiente, excepto para arrays pequenos (até cerca 20 elementos), em que o método de ordenação por inserção (insertion sort) é melhor!
+
+Nota Final
+	Na prática os números a serem ordenados, raramente, são valores isolados. Normalmente, cada número é componente de um conjunto de dados denominado registo, sendo que um conjunto de registos forma uma tabela. Cada registo contém uma chave, que é o valor a ser ordenado, e demais valores que sempre acompanham a chave. Assim, numa operação de ordenação, sempre que for preciso trocar a posição de uma chave, será necessário alterar a posição de todos os elementos do registo. Na prática, quando os registos possuem uma grande quantidade de dados (além da chave), a ordenação é realizada sobre um vector (ou lista) de apontadores para os registos, com o objectivo de minimizar as operações de movimentação de dados.
+
+
+Estruturas de Dados Lineares
+
+Sequencias (Arrays)
+	Tal como já é do conhecimento dos alunos, os arrays têm certas desvantagens como estruturas de armazenamento de dados. Num array Não-ordenado, a procura é lenta (de ordem O(N)), quanto que num array ordenado, a inserção é lenta (de ordem O(N)). Em ambos os tipos de array a exclusão é lenta. Além disso, e talvez a maior dificuldade seja: o tamanho de um array não pode ser modificado depois de criado (geralmente).
+	As listas ligadas vêm resolver alguns destes problemas. As listas ligadas são provavelmente as segundas estruturas de armazenamento para uso geral mais utilizadas depois dos arrays.
+
+
+Listas ligadas simples 
+	Este capítulo pretende rever alguns conceitos sobre listas ligadas simples.
+	Como deve ser do conhecimento dos alunos, uma lista é uma estrutura dinâmica, composta por um conjunto de nodos ou átomos, que se encontram interligados entre si, de forma sequencial. No caso concreto de uma lista ligada simples, cada nodo encontra-se apenas ligado ao seu sucessor. Esta situação encontra-se ilustrada na seguinte figura:
+
+Exemplo de uma lista ligada simples.
+
+	Cada Nodo é composto por duas partes distintas, uma (Info) que representa a informação a guardar na lista e uma segunda parte (Next) que faz a ligação com o elemento seguinte da lista.
+
+
+
+Formalmente (em C) cada nodo pode ser definido da seguinte forma:
+typedef struct info
+{…
+ …		(estrutura que contém a informação a guardar)
+}TINFO;
+
+typedef struct nodo
+{TINFO info;
+ struct nodo *next;
+}TNODO;
+
+	Para os quais poderiam ser definidos alguns operadores genéricos, tais como NovoNodo, GetInfo,  SetNext, etc.
+
+Os Operadores GetNext, SetNext, GetInfo, SetInfo podem ser directamente definidos utilizando as potencialidades das macros (directivas) de pré-processamento da linguagem C.
+- Uma macro substitui um pedaço de código. Uma macro pode conter argumentos, por isso é muito semelhante ás funções
+
+#define NEXT(L)	((L)->next)
+#define DATA(L)	((L)->info)
+#define CHAVE(L)	(((L)->info).chave)
+
+(sendo L um apontador para uma estrutura do tipo TNODO)
+
+Definição do operador Novo_Nodo (operador responsável pela alocação de memória para um Novo Nodo, procedendo também ao preenchimento dos seus campos info e next.
+Existem várias formas de definir este operador, a versão aqui apresentada é apenas uma delas, podendo não ser a mais eficiente nem a mais genérica.
+
+TNODO *NOVO_NODO(TINFO *dados)
+{TNODO *pnovo;
+pnovo=(TNODO *)malloc(sizeof(TNODO));
+if (pnovo==NULL) 
+  return NULL;
+DATA(pnovo)=*dados;
+NEXT(pnovo)=NULL;
+return pnovo;
+}
+
+- Para além dos operações ao nível do nodo existem as operações sobre a lista, tal como: Lista vazia, Pesquisa, Inserção, Remoção e Listagem dos elementos.
+
+Lista Vazia
+Para se saber se uma lista está ou não vazia, basta analisar o apontador associado a essa lista.
+
+BOOL ListaVazia(TNODO *lst)
+ If (lst==NULL)
+	return TRUE;
+ else
+	return FALSE;
+}						Tendo previamente definido o tipo BOOL: 
+								typedef enum {FALSE=0,TRUE} BOOL;
+
+Pesquisa de elementos numa lista ligada simples
+	Num array, cada elemento ocupa uma posição em particular. Esta posição pode ser acedida directamente através de um número de índice. É como uma Sequência de casas: podemos encontrar uma casa em particular utilizando o seu endereço.
+	Numa Lista, a única maneira de se encontrar um elemento em particular é seguindo a cadeia de ligações (links). É preciso passar por todos os elementos anteriores ao que queremos aceder. Não é possível aceder a um elemento de dados directamente; é preciso usar as relações entre os itens para localiza-lo.
+
+	A solução mais simples para pesquisar um elemento numa lista, consiste em percorrer toda a lista até encontrar o elemento pretendido, da seguinte forma:
+
+	ENQUANTO lista E DATA(lista)  valor FAZER 
+		lista    NEXT(lista)
+	FIMENQUANTO
+	SE lista  NULO ENTAO  
+				...			// encontrou
+	FIMSE
+
+	No fim da execução do ciclo ENQUANTO podem ocorrer duas situações: ou não foi encontrado o elemento a pesquisar, pelo que o a variável lista aponta para NULO, ou então, foi encontrado e o elemento encontra-se na posição apontada pela variável lista.
+	Caso se trate de uma lista ordenada, é ainda possível optimizar o ciclo da seguinte forma:
+
+	ENQUANTO lista E DATA(lista) < valor FAZER 
+		lista    NEXT(lista)
+	FIMENQUANTO
+	SE lista E DATA(lista) = val ENTÃO 
+				...							// encontrou
+	FIMSE
+
+	Esta solução permite que caso o elemento a pesquisar não exista na lista, esta não seja percorrida completamente. Obriga no entanto a testar se o valor apontado por lista é o que se pretende.
+
+Inserção de elementos numa lista simples
+	A inserção dos elementos numa lista faz-se segundo determinada estratégia, que pode ser no início da lista, no fim da lista, de forma ordenada, etc.
+
+	Apresenta-se em seguida o caso da inserção ordenada:
+	A função de inserção divide-se em duas partes:
+    • uma responsável por determinar a posição onde inserir o novo elemento, semelhante à rotina de pesquisa;
+    • e uma segunda parte que realiza a inserção propriamente dita.
+
+Na segunda parte, podem ocorrer quatro situações distintas:
+
+- Inserir numa lista vazia,
+- Inserir no topo,
+- Inserir numa posição intermédia,
+- Inserir no fim.
+
+Inserção numa lista vazia:
+
+
+
+
+
+
+
+Seja lista o apontador inicial e p o apontador para a estrutura a inserir (já com memória reservada: p=NOVO_NODO(&informacao), a reordenação dos apontadores faz-se da seguinte forma:
+lista = p;
+
+Inserção no topo (posição inicial da lista):
+
+Mantendo a convenção para lista e p, obtém-se o seguinte conjunto de instruções:
+
+NEXT(p)= lista;
+lista = p;
+
+Inserção numa posição intermédia:
+
+
+
+
+
+
+
+
+
+Depois de se ser encontrado o NODO anterior local onde se quer inserir o novo Nodo, a inserção é feita da seguinte forma (mantendo a convenção para lista e p e definindo ant como o nodo anterior)
+
+NEXT(p) = NEXT(ant);
+NEXT(ant) = p;
+
+
+Inserção no fim da lista:
+
+
+
+
+
+
+
+
+
+Depois de se ser encontrado o último NODO  da lista, a inserção é feita da seguinte forma (mantendo a convenção para lista e p e definindo ult como sendo o último Nodo):
+	
+NEXT(p) = NEXT(ult);  // ou NEXT(p)=NULL
+NEXT(ult) = p;
+
+	Normalmente, não se utilizam diferentes funções para a inserção de uma estrutura numa lista, cria-se sim, uma função de inserção geral que "cubra" todos os casos vistos até agora.
+
+A inserção numa lista ordenada, implica sempre a utilização de uma “rotina” de comparação de valores.
+Desta forma poderíamos definir uma macro que efectuaria a comparação:
+	
+No caso da chave ser um número inteiro:
+#define COMPARAR(num1,num2) (num1-num2)
+No caso da chave ser uma string:
+#define COMPARAR(str1,str2) (strcmp(str1,str2))
+
+	O algoritmo completo para a rotina de inserção ordenada pelo campo chave, poderá ser o seguinte:
+
+TNODO *InserirInfo(TNODO *lista, TINFO *dados)
+{TNODO *novo, *aux, *n_ant;
+novo=NOVO_NODO(dados);
+if (novo==NULL)
+  return lista;
+aux=n_ant=lista;
+while (aux && COMPARAR(CHAVE(aux),dados->chave)<0) 
+{n_ant = aux ;
+	 aux = NEXT(aux);
+}
+if (aux && COMPARAR(CHAVE(aux),dados->chave)==0)
+		free(novo)	//exemplo em que Não admite elementos repetidos
+ else
+   {NEXT(novo)=aux;
+    if (aux==lista)
+       lista=novo;
+     else
+       NEXT(n_ant)=novo;
+	}
+return lista;
+}
+	Está é uma solução, existem no entanto muitas outras também funcionais.
+
+Remoção de elementos numa lista simples
+	A rotina de remoção de uma lista divide-se em duas partes:
+
+    • a primeira das quais é responsável por detectar o elemento a remover e;
+    • a segunda que trata da remoção propriamente dita.
+
+Caso se detecte o elemento a remover, pode ocorrer uma das seguintes situações:
+- Remoção do topo da lista,
+- Remoção de uma posição intermédia da lista,
+- Remoção do fim da lista.
+
+Remoção do topo:
+
+	Seja lista o apontador inicial e qremover o apontador para a estrutura a remover, a remoção e respectiva actualização da lista obtém-se da seguinte forma:
+
+	lista = NEXT(qremover);
+	free(qremover);
+
+Remoção de uma posição intermédia
+
+Mantendo as convenções anteriores, e definindo n_ant como o apontador para a estrutura anterior à que se pretende remover, obtém-se as seguintes instruções:
+
+	NEXT(n_ant)= NEXT(qremover);
+	free(qremover);
+
+Remoção do fim da lista:
+
+Depois de se ter encontrado o último elemento da lista, o algoritmo de remoção é em tudo parecido com o anterior, podendo mesmo ser utilizado o algoritmo de remover numa posição intermédia.
+
+	NEXT(n_ant)= NEXT(qremover); // ou NEXT(n_ant)=NULL;
+	free(qremover);
+
+
+
+A função completa para a rotina de remoção, é o seguinte:
+
+TNODO *RemoverInfo(TNODO *lista, TipoX chave)
+{TNODO *aux, *q_ant;
+q_ant = aux = lista;
+while (aux && COMPARAR(CHAVE(aux),chave)<0) 
+{q_ant = aux ;
+	 aux = NEXT(aux);
+}
+if (aux && COMPARAR(CHAVE(aux),chave)==0)
+    {if (aux==lista)
+         lista=NEXT(aux);
+	  else
+		 NEXT(q_ant)=NEXT(aux);
+ free(aux);
+}
+return lista;
+}
+Listagem dos elementos de uma lista simples
+	A listagem consiste em percorrer a lista elemento a elemento até se atingir o fim. 
+
+aux  lista
+ENQUANTO aux FAZER
+	... [fazer qualquer tipo de operação desejada] 
+	aux  NEXT(aux)
+FIMENQUANTO
+
+A eficiência das listas ligadas
+	A inserção e exclusão no início de uma lista ligada são muito rápidas. Elas envolvem a mudança de um ou dois apontadores, utilizando tempo O(1).
+	Encontrar ou excluir um elemento específico requer a procura em metade dos elementos (em média). Isto requer O(N/2) = O(N) comparações. Num array ordenado também a procura significa O(N) para estas operações, mas a lista ligada é muito mais rápida, porque nada precisa de ser movido quando um item é inserido ou removido. Essa eficiência é tanto mais importante, especialmente se um cópia demorar mais tempo do que uma comparação.
+	Outra vantagem importante das listas em relação às sequências é que uma lista ligada utiliza exactamente a memória de que precisa, e pode ser expandida até preencher toda a memória disponível. O tamanho de um array é fixo quando é criado (geralmente); isto leva geralmente à ineficiência porque o array é muito grande, ou a ficar sem espaço porque o array é muito pequeno.
+
+Algumas variações aos algoritmos apresentados (como exercícios):
+
+Algoritmo para a listagem (de forma recursiva)
+PROCEDIMENTO Listar(lista : TNODO) 
+INÍCIO
+	SE lista  NULO ENTAO
+		... [visitar o NODO] 
+		Listar(NEXT(lista))
+	FIMSE	  
+FIM
+
+Algoritmo para a listagem recursiva mas de forma inversa (visita primeiro o último elemento da lista). A implementação iterativa deste algoritmo será também "tão fácil" ?
+PROCEDIMENTO Listar(lista : TNODO) 
+INÍCIO
+	SE lista  NULO ENTAO
+		Listar(NEXT(lista))
+		... [visitar o NODO] 
+	FIMSE	  
+FIM
+
+Algoritmo para a remoção de um elemento (forma recursiva)
+PROCEDIMENTO Remover(lista:TNODO, val:tipoX): NODO 
+VARIÁVEL aux:TNODO
+INÍCIO
+	SE lista = NULO ENTAO
+		RETORNAR NULO 
+	FIMSE
+	aux  lista
+	SE COMPARAR(CHAVE(aux),val)=0 ENTAO
+		aux = NEXT(lista)
+		free(lista)
+	 SENAO
+		SE COMPARAR(CHAVE(aux),val)<0 ENTAO
+			NEXT(lista)= Remover(NEXT(lista),val)
+		FIMSE
+	FIMSE
+RETORNAR aux;
+FIM
+
+
+Listas duplamente ligadas
+	As listas duplamente ligadas acrescentam às listas simples a capacidade de percorrer a lista em ambos sentidos. Para tal existe mais um apontador por nodo, que aponta para o nodo anterior.
+	A estrutura de uma lista duplamente ligada encontra-se representada na seguinte figura: 
+
+
+
+
+
+
+Estrutura de uma lista duplamente ligada.
+
+	Cada nodo possui três campos, um para a informação a reter em cada nodo (Info) e dois apontadores, um  para o elemento seguinte (next) e outro para o elemento anterior (prev).
+
+typedef struct nodod
+{TINFO info;
+ struct nodod *next;
+ struct nodod *prev;
+}TNODOD;				// nova definição TNODODuplo
+
+- Tal como na versão para lista Ligadas simples, também aqui, podemos utilizar macros para definir o operador GetPrev.
+
+#define PREV(L)	((L)->prev)
+
+(sendo L um apontador para uma estrutura do tipo TNODOD)
+
+	A lista duplamente ligada possui ainda funções de pesquisa, inserção, remoção e listagem, para as quais é necessário distinguir as diversas situações, à semelhança da lista simples.
+
+Pesquisa de elementos numa lista duplamente ligada
+	Todas as soluções apresentadas para a lista simples funcionam na lista duplamente ligada. É no entanto possível implementar outras estratégias de pesquisa, aproveitando o facto de ser possível percorrer a lista em ambos sentidos.
+	A título de exemplo, pode-se utilizar um apontador auxiliar para uma lista ordenada, o qual assinala o nodo posicionado a meio da lista. Esta estratégia permite que, com uma simples comparação inicial, seja possível eliminar metade do espaço de pesquisa, aumentando assim a eficiência do algoritmo.
+	Apresenta-se de seguida a representação algorítmica para esta situação, onde nmeio representa o apontador para o nodo que se encontra a meio da lista:
+
+aux  nmeio
+SE COMPARAR(CHAVE(aux),val)< 0 ENTÃO
+	ENQUANTO aux E COMPARAR(CHAVE(aux),val)<0 FAZER 
+		aux  NEXT(aux)
+	FIMENQUANTO
+SENÃO
+	ENQUANTO aux E COMPARAR(CHAVE(aux),val)>0 FAZER 
+		aux  PREV(aux)
+	FIMENQ
+FIMSE
+SE aux E COMPARAR(CHAVE(aux),val)=0 ENTÃO ...
+
+	Muitas outras estratégias tornam-se possíveis de implementar com a utilização de lista duplamente ligadas.
+
+Inserção de elementos numa lista duplamente ligada
+	É possível utilizar exactamente os mesmos algoritmos de inserção utilizados para a lista simples, mas tal significa desprezar as potencialidades de uma lista duplamente ligada.
+	A rotina de inserção necessita de localizar a posição onde inserir o novo nodo e só depois passar aos procedimentos de inserção.
+	Podem ocorrer as mesmas situações descritas para a lista simples:
+- Inserir numa lista vazia,
+- Inserir no topo,
+- Inserir numa posição intermédia,
+- Inserir no fim.
+
+Inserção numa lista vazia:
+
+	Seja lista o apontador inicial e p o apontador para a estrutura a inserir, a reordenação dos apontadores faz-se da seguinte forma:
+
+NEXT(p)=NULO;
+PREV(p)=NULO;
+Lista=p;
+
+Inserção no topo (posição inicial da lista):
+
+	Mantendo a convenção para lista e p, obtém-se o seguinte conjunto de instruções e respectiva representação gráfica:
+
+
+
+
+
+
+
+
+
+NEXT(p)=lista;
+PREV(p)=PREV(lista); ou PREV(p)=NULO;
+PREV(lista)=p;
+lista=p;
+
+Inserção numa posição intermédia:
+
+	Mantendo as convenções anteriores e definindo qaux como o nodo seguinte à posição onde se pretende inserir, obtém-se o seguinte conjunto de instruções:
+
+NEXT(p)=qaux;
+PREV(p)=PREV(qaux);
+NEXT(PREV(aux))=p;
+PREV(aux)=p;
+
+Inserção no fim da lista:
+
+	Mantendo a convenção para lista e p, e definindo qult como o último NODO da lista (Nodo anterior), obtém-se as seguintes instruções:
+
+
+NEXT(p)=NEXT(qult); ou NEXT(p)=NULO;
+PREV(p)=qult;
+NEXT(qult)=p;
+
+
+
+
+O procedimento completo para a rotina de inserção, é o seguinte:
+
+TNODOD *InserirD(TNODOD *lista, TINFO *dados)
+{TNODOD *quax,*pnovo;
+pnovo=NOVO_NODOD(dados);
+if (pnovo==NULL)
+  return NULL;
+if (lista==NULL)		// lista vazia
+  return pnovo;
+qaux=lista;
+while (NEXT(qaux) && COMPARAR(CHAVE(qaux),dados->chave)<0)
+  qaux=NEXT(qaux);    
+if (COMPARAR(CHAVE(qaux),dados->chave)>0)  // inicio/meio
+	{NEXT(pnovo)=qaux;							  //antes de qaux	
+     PREV(pnovo)=PREV(qaux);
+	 if (qaux==lista)
+         lista=pnovo;
+      else
+         NEXT(PREV(qaux))=pnovo;
+     PREV(qaux)=pnovo;
+}
+ else
+    {NEXT(pnovo)=NEXT(qaux);					// no fim da lista
+	 PREV(pnovo)=qaux;
+     NEXT(quax)=pnovo; 
+}
+return lista;
+}
+
+Remoção de elementos numa lista duplamente ligada
+	A remoção de um elemento da lista, passa por detectar a posição do elemento, procedendo-se em seguida à eliminação do nodo da lista.
+
+Caso se detecte o elemento a remover, pode ocorrer uma das seguintes situações:
+- Remoção do topo da lista,
+- Remoção de uma posição intermédia da lista,
+- Remoção do fim da lista.
+
+Remoção do topo:
+
+	Seja lista o apontador inicial e qremover o apontador para a estrutura a remover, obtém-se o seguinte:
+
+lista=NEXT(qremover);
+PREV(lista)=NULL;
+free(qremover);
+
+Remoção de uma posição intermédia:
+
+	Mantendo a convenção para lista e qremover, obtém-se as seguintes instruções:
+
+PREV(NEXT(qremover))=PREV(qremover)
+NEXT(PREV(qremover))=NEXT(qremover)
+free(qremover);
+
+
+
+
+
+Remoção do fim da lista:
+
+Mantendo a convenção anteriores, obtêm-se as seguintes instruções:
+
+NEXT(PREV(qremover))=NULL;
+free(qremover);
+
+O Procedimento completo para a rotina de remoção, será então:
+
+TNODOD *RemoverD(TNODOD *lista, Tipox val)
+{TNODOD *quax;
+if (lista==NULL)
+   retorn NULL;					//lista vazia
+qaux=lista;
+while (qaux && COMPARAR(CHAVE(qaux),val)<0)
+  qaux=NEXT(qaux);    
+if (quax && COMPARAR(CHAVE(qaux),val)==0) //encontrou ?
+  {if (NEXT(qaux)!=NULL)		// se existir seguinte (inicio/meio)
+       PREV(NEXT(qaux))=PREV(qaux);
+   if (PREV(qaux)!=NULL)			// se existir anterior (meio/fim)
+       NEXT(PREV(qaux))=NEXT(qaux);
+     else
+       lista= NEXT(qaux);			// inico da lista
+    free(qaux);
+  }
+return lista;
+}
+
+
+
+Listagem dos elementos de uma lista duplamente ligada
+	A listagem é em tudo semelhante à da lista simples, com a possibilidade de se poder percorrer a lista nos dois sentidos. O procedimento para efectuar esta operação fica para os alunos desenvolverem em casa.
+
+Listas Circulares
+	As listas circulares são listas do tipo simples ou duplamente ligadas, em que o nodo final da lista está ligado ao nodo inicial da lista, daí o nome de listas circulares.
+	Este tipo de estrutura de dados adapta-se bastante bem a problemas do tipo FIFO (First In First Out).
+	A estrutura de uma lista circular com utilização de nodos simples, encontra-se representada na seguinte figura: 
+
+
+
+
+
+
+
+
+
+Estrutura de uma lista circular simples.
+
+	Os nodos para este caso são semelhantes aos utilizados nas listas simples, ou seja, contém um campo que representa a informação a reter em cada nodo (Info) e um apontador para o elemento seguinte (next) da lista.
+Em C a estrutura pode então ser definida da seguinte forma (utilizando listas ligadas simples):
+
+typedef struct nodoc
+{TINFO info;
+ struct nodoc *next;
+}TNODOC;				
+
+	Para além dos operações ao nível do nodo, já referidos anteriormente, existem as operações sobre a lista, tal como: Pesquisa, Inserção, Remoção e Listagem dos elementos.
+Listagem de uma lista circular simples
+	Para listar os elementos de uma lista circular, é necessário percorrer a lista processando elemento a elemento, até se dar a volta completa à lista (ou seja até se chegar novamente ao primeiro elemento da lista).
+	A seguinte rotina recebe um apontador para um nodo da lista (lst) e a partir desse nodo percorre a lista processando elemento a elemento, até dar a volta completa, recorrendo para tal a uma variável auxiliar qaux.
+
+SE lst  NULO ENTÃO
+	qaux  lst
+	REPETIR
+		PROCESSAR(DATA(qaux))
+		qaux  NEXT(qaux)
+	ATÉ qaux = lst
+SENÃO
+		... [Lista vazia]
+FIMSE
+Pesquisa numa lista circular simples
+	A pesquisa de elementos numa lista circular simples, implica percorrer a lista até se encontrar o elemento pretendido ou até se ter completado uma volta completa à lista. Esta última condição é fundamental de forma a que a pesquisa não fique em ciclo infinito.
+	A pesquisa recorre a um apontador auxiliar que vai de elemento em elemento, testando se se trata do elemento pretendido. Esta termina caso seja encontrado o elemento, ou quando o apontador auxiliar apontar para a posição inicial da lista, o que significa que completou uma volta. 
+	A representação algorítmica para esta situação, encontra-se representada no seguinte trecho algorítmico, onde val representa o valor a pesquisar, lst o apontador inicial da lista e qaux o apontador auxiliar:
+
+SE lst  NULO ENTÃO
+	qaux  lst
+	ENQUANTO CHAVE(qaux)  val E NEXT(qaux)  lst FAZER
+		qaux  NEXT(qaux)
+	FIMENQUANTO
+	SE CHAVE(qaux) = val ENTÃO
+		... [ qaux aponta para o nodo que contém val]
+	SENÃO
+		... [ val não faz parte da lista]
+	FIMSE
+SENÃO
+		... [Lista vazia]
+FIMSE
+
+Inserção numa lista circular simples
+	Existem diversas formas de processar a inserção de um elemento numa lista circular. Para o caso que se apresenta em seguida, parte-se do princípio que a inserção é feita de forma a que os elementos da lista fiquem ordenados. Excepto para a ligação entre o último e o primeiro elemento da lista.
+	Considera-se ainda que o apontador para a lista (lst), se encontra posicionado no menor elemento caso esta possua mais do que um elemento.
+	O primeiro problema consiste em determinar a posição onde inserir o novo elemento. Como se trata de uma lista simples, o ideal é utilizar dois apontadores auxiliares, de forma a que um aponte para o elemento imediatamente superior ao que se pretende inserir (qaux) e outro para o elemento anterior a este (q_ant).
+	Considerando como E1 e En, respectivamente como o elemento de menor e maior valor da lista e Ex o valor do elemento a inserir, podem ocorrer as seguintes situações no processo de inserção:
+
+- Lista vazia
+- E1 < Ex < En
+- Ex > En
+- Ex < E1
+
+	Repare-se que as duas últimas condições são suficientes para o caso de só existir um elemento na lista, onde E1 = En.
+	As últimas três situações encontram-se representadas respectivamente pelas áreas A, B e C da seguinte figura:
+
+
+	Para um correcto posicionamento dos apontadores auxiliares, de forma a inserir um qualquer elemento na posição correcta é necessário considerar as quatro situações. O seguinte conjunto de instruções permite um correcto posicionamento dos apontadores. O valor a inserir é representado por val, o apontador inicial por lst e q e q_ant são dois apontadores auxiliares (nodo posterior e anterior ao nodo a inserir).
+
+SE lst = NULO ENTÃO
+	... [Inserir numa lista vazia, a fazer posteriormente]
+SENÃO
+	q  lst
+	q_ant  q
+	ENQUANTO  NÃO(CHAVE(q_ant) < val E CHAVE(q) > val) E
+										lst  NEXT(q_ant) FAZER
+			q_ant  q
+			q  NEXT(q)
+	FIMENQUANTO
+	... [tratado em seguida]
+FIMSE
+
+	No fim do algoritmo q e q_ant assinalam os dois nodos entre os quais se deve inserir o novo nodo, salvo para os casos em que a lista se encontra vazia ou só possua um nodo.
+	No entanto a inserção propriamente dita, divide-se apenas em duas situações, inserir numa lista vazia ou inserir numa lista com um ou mais elementos. Uma vez que é possível tratar a situação de inserir numa lista com um único elemento como se fosse uma lista com vários elementos.
+
+	Representando o nodo inicial por lst e o nodo a inserir por p, obtém-se o seguinte conjunto de instruções:
+
+NEXT(p)=p
+lst  p
+
+	No caso de uma lista com um ou mais elementos e uma vez encontradas as duas posições entre as quais se deve inserir o novo elemento, o processo de inserção é sempre igual. Esta situação está representada na figura seguinte.
+
+	Considerando p o novo nodo a inserir, lst o nodo inicial da lista e qaux e q_ant respectivamente os apontadores para os nodos posterior e anteriores à posição onde se deve inserir o novo nodo, obtém-se o seguinte conjunto de instruções:
+
+NEXT(p) = NEXT(q_ant)       // ou NEXT(p)=qaux
+NEXT(q_ant) = p
+
+	Caso o valor do nodo p seja inferior ao valor do nodo lst, é ainda necessário redireccionar lst, da seguinte forma:
+
+lst  p
+
+Reunindo todas as condições, obtém-se o seguinte procedimento: 
+
+TNODOC *InserirNODOC(TNODOC *lst,TINFO *dados)
+{TNODOC *q_ant,*qaux,*p;
+if ((p=NOVO_NODO(dados))==NULL)
+    return lst;
+if (lst==NULL)
+   {NEXT(p)=p;
+    return p;
+   }
+qaux = lst;
+q_ant = lst;
+WHILE ( !(COMPARAR(CHAVE(q_ant),dados->chave)<0 &&
+      COMPARAR(CHAVE(qaux),dados->chave)>0) && lst!=NEXT(q_ant))
+{q_ant  qaux;
+	 qaux  NEXT(qaux);
+}
+NEXT(p)=NEXT(q_ant);
+NEXT(q_ant)=p;
+if (COMPARAR(dados->chave,CHAVE(lst)<0)
+	lst=p;
+return lst;
+}
+Remoção numa lista circular simples
+	Para eliminar um qualquer elemento é necessário detectar a sua posição na lista de forma a ser possível remover o nodo correspondente. No entanto, como cada nodo só vê o nodo seguinte da lista, é necessário conhecer o nodo anterior ao qual se pretende eliminar de forma que, após a remoção seja possível manter a continuidade da lista (ligação entre o nodo anterior e posterior ao nodo removido). Torna-se assim necessário utilizar dois apontadores, um que assinala o nodo a remover (qaux) e outro que assinala o nodo imediatamente anterior (q_ant).
+
+	O processo de remoção encontra-se representado na figura seguinte.
+
+	Considerando qaux como o nodo a remover e q_ant o nodo anterior a qaux, obtém-se o seguinte conjunto instruções:
+
+NEXT(q_ant)= NEXT(qaux);
+free(qaux);
+
+	Caso o nodo a remover seja o nodo de menor valor, torna-se necessário redireccionar o apontador inicial da lista de forma a que esta não se perca. Para tal antes de se libertar o nodo a remover, há que realizar a seguinte operação:
+
+SE qaux = lst ENTÃO
+	lst  NEXT(qaux)
+FIMSE
+
+	Existe ainda a possibilidade em que o nodo a remover é o único da lista, o que obriga a colocar o apontador inicial a NULO. Esta situação encontra-se representada na figura seguinte.
+
+O que corresponde ao seguinte conjunto de instruções:
+
+lst  NULO
+free(q)
+
+	O possível procedimento para eliminar um Nodo encontra-se representado em seguida. O apontador inicial da lista é representado por lst, o valor a remover por val, qaux assinala o nodo a remover e q_ant o nodo anterior a qaux.
+
+TNODOC *RemoverNODOC(TNODOC *lst, TIPOX val)
+{TNODOC *q_ant, *qaux;
+if (lst==NULL)
+  return NULL;
+qaux=lst;
+do
+{q_ant=qaux;
+ qaux=NEXT(qaux);
+}while (COMPARAR(CHAVE(qaux),val)!=0 && qaux!=lst)
+if (CHAVE(qaux)==val)
+   {if (qaux=NEXT(qaux)		// se for único
+		lst=NULL;
+     else
+        {NEXT(q_ant)=NEXT(qaux);
+         if (lst=quax)      // se for o 1º
+		   lst=NEXT(qaux) ;
+}
+     free(qaux);
+   }
+ else
+   printf(“\n Não encontrado”);
+return lst ;
+}
+
+
+
+
+
+
+
+
+Stack’s -- Pilhas
+Modo de funcionamento
+	Como já se viu anteriormente, trata-te de uma estrutura abstracta linear que permite inserir ou apagar um elemento apenas no topo da stack (pilha). É uma das mais importantes subclasse da família das sequências.
+	A Stack, funciona como uma pilha de folhas num tabuleiro onde só é acessível a folha que se encontra no topo. O elemento mais difícil de aceder é o que se encontra no fundo da pilha, o qual só é acessível após remover todos os outros elementos.
+	Esta é portanto uma filosofia FILO (First-In-Last-Out) ou LIFO (Last-In-First-Out)
+
+Representação de uma stack.
+
+Implementação de stack’s sobre estruturas estáticas
+	Uma stack pode ser implementada, utilizando uma sequência (array ou vector) de tamanho suficientemente grande para conter todos os elementos nela colocados, e dois "campos": um para representação da localização do elemento que está no Topo da Stack (no caso da stack vazia, Top tem o valor -1) e um outro para se saber o tamanho máximo da Stack (devido à utilização de sequências
+
+Uma stack estática fica formalmente definida em C da seguinte forma:
+
+typedef struct
+  {TINFO *base;			// apontador para arrays de informações
+   int top,size;
+  }TSTACKE;
+
+
+Definição das operações sobre stack’s estáticas
+	Até aqui os operadores para stack’s foram apenas definidos formalmente, sem se apresentar qualquer tipo de implementação. Pretende-se agora detalhar o funcionamento desses operadores segundo a estrutura definida para STACKE.
+
+Inicialização da stack (new)
+
+	Para iniciar uma stack estática é necessário alocar espaço suficiente para a pilha e colocar o apontador do topo da stack com o valor a –1.
+Inicialização de uma stack estática.
+
+TSTACKE NovaPilha(int tammax)
+{TSTACKE pilha;
+ pilha.size=0;
+ pilha.base=(TINFO *)malloc(sizeof(TINFO)*tammax);
+ if (pilha.base==NULL)
+    return pilha;		// retorna uma pilha com tamanho zero
+ pilha.top=-1;
+ pilha.size=tammax;
+ return pilha;
+}
+
+Inserção de um novo elemento (Push)
+
+	A inserção de um novo elemento na stack obriga a incrementar o Top em 1 e só depois colocar o valor na stack (incrementa e coloca). Há no entanto, que ter o cuidado de verificar se a stack está ou não cheia.
+
+
+
+STATUS PUSH(TSTACKE *pilha,TINFO *dados)
+{if (pilha->top==pilha->size-1)
+    return ERRO;							// pilha cheia 
+ pilha->top = pilha->top + 1;
+ pilha->base[pilha->top]=*dados;
+ return OK;
+}
+
+Remoção de um elemento (Pop)
+
+	A operação Pop(...), remove e devolve o elemento que esta no topo da stack e decrementa o S_top em 1 (retira e decrementa). Em qualquer situação há que verificar se a stack está ou não vazia antes de tentar remover qualquer elemento.
+Remoção de um elemento de uma stack.
+
+STATUS POP(TSTACKE *pilha, TINFO *dados)
+{if (pilha->top==-1)
+   return ERRO;				// pilha vazia
+ *dados=pilha->base[pilha->top];
+ pilha->top = pilha->top -1;
+ return OK;
+}
+
+Determinar o elemento de topo (Top ou Head)
+
+	Existe muitas vezes a necessidade de saber qual o valor do elemento que se encontra no topo da stack, sem o remover, tal é possível de realizar à custa dos operadores atrás definidos, bastando para tal fazer:
+
+POP(&pilha, &X)
+....
+PUSH(&pilha, &X).
+
+	É no entanto habitual definir esta operação de forma independente. O algoritmo é muito parecido com o da operação Pop(...), mas não é necessário actualizar o top. A elaboração deste algoritmo fica para exercício.
+
+Implementação de stack’s sobre estruturas dinâmicas
+	Uma outra forma de implementar stack’s consiste em utilizar estruturas dinâmicas do tipo listas.
+	A implementação das stack’s sobre listas simples, faz-se inserindo e removendo os elementos pelo topo da lista (primeiro elemento da lista).
+	A estrutura física de uma stack sobre uma lista simples encontra-se representada na seguinte figura.
+
+
+
+
+
+
+
+
+
+
+Implementação de uma stack sobre listas simples.
+
+	Os nodos para este caso são semelhantes aos utilizados nas listas simples, ou seja, contêm um campo que representa a informação a reter em cada nodo (info) e um apontador para o elemento seguinte (next) da lista.
+
+Formalmente a estrutura é definida da seguinte forma:
+
+typedef struct stackD
+{TINFO info;
+ struct stackD *next;
+}TSTACKD;
+
+Utilizando-se os mesmos operadores definidos para as listas simples.
+
+
+Operações sobre stack’s dinâmicas
+	As funções típicas de uma lista, tal como a listagem, pesquisa, inserção e remoção, são agora redefinidas segunda o funcionamento de uma stack e de forma a permitir executar as seguintes operações:
+    • Inserir um elemento na stack,
+    • Retirar um elemento da stack,
+    • Ler valor do topo da stack.
+
+Inserir um elemento na stack
+
+O processo de inserção numa stack sobre uma lista simples, apenas tem em conta as seguintes situações:
+- Inserir numa lista vazia
+- Inserir no topo da lista
+
+	Para a primeira situação, considera-se lstack o apontador inicial da lista e novo o apontador para a estrutura a inserir. A reordenação dos apontadores faz-se da seguinte forma:
+
+NEXT(novo)=NULO		// ou NEXT(novo)=lstack
+lstack  novo
+
+	Caso a stack não se encontre vazia, então a inserção faz-se à cabeça da lista. A situação encontra-se representada na seguinte figura, onde se mantém a convenção para lstack e novo.
+	Juntamente com a figura, encontram-se as instruções necessárias à execução da operação.
+
+
+
+NEXT(novo)=lstack;
+lstack  novo
+
+	De onde se conclui que as instruções a executar para as duas situações são iguais, o que resulta no seguinte algoritmo:
+
+TSTACKD *PUSH(TSTACKD *lstack,TINFO *dados)
+{TSTACKD *novo;
+ novo=NODO_NOVO(dados);
+ if (novo==NULL)
+   return lstack;
+ NEXT(novo)=lstack;
+ lstack = novo;
+ return lstack;
+}
+
+Retirar um elemento da stack (Pop):
+
+	A remoção de um elemento da stack encontra-se representada na seguinte figura, onde lstack e quax são dois apontadores para a posição.
+
+
+O que corresponde ao seguinte algoritmo:
+
+TINFO POP(TSTACKD **lstack)  
+// devolve o valor de topo da STACK e actualiza o novo topo da stack (por 
+// isso temos que passar por “referencia” o endereço da lista)
+{TINFO dados;
+ TSTACKD *aux;
+ dados = DATA(*lstack);
+ aux=*lstack;
+ *lstack = NEXT(*lstack);
+ free(aux);
+ return dados;
+}
+
+Ler valor do topo da stack (Top ou Head):
+
+Mantendo a convenção para lstack, basta então executar o seguinte procedimento, para obter o valor do topo:
+
+TINFO HEAD(TSTACKD *lstack)  
+{if (lstack!=NULL)
+   return DATA(lstack);
+  else
+   return NULL;
+}
+
+Stack’s Estáticas  x  Stack’s Dinamicas:
+
+	A grande vantagem da implementação de stack’s, recorrendo a estruturas estáticas é a facilidade de implementação, visto conhecer-se a posição exacta dos elementos através do índice.
+	As estruturas estáticas permitem ainda economizar espaço de memória, visto que, não é necessário ter um apontador por cada elemento da stack que aponte para o seguinte, à semelhança das listas. Mas...
+	A desvantagem reside no facto de ser necessário reservar à partida uma quantidade de memória suficientemente grande para que, não surjam situações de “Stack Cheia”. O que por sua vez, pode levar a que o espaço reservado seja demasiado grande, existindo assim um desperdício de memória alocada, que nunca é utilizada.
+
+
+Queue’s -- Filas
+	A queue é uma estrutura abstracta, que permite guardar um conjunto de elementos do mesmo tipo, organizados segundo a ordem pela qual são inseridos, ou seja, o primeiro a ser inserido é o que se encontra à cabeça da queue.
+	Servem para implementar sistemas multiprogramados, em que é necessário uma gestão da queue do tipo FIFO (First In First OUT) ou LILO (Last In Last Out). Onde o 1º “utilizador” a entrar na queue, é o 1º a ser atendido. O 2º “utilizador a entrar na queue é o segundo a ser atendido e assim por adiante.
+	As queue’s poderão, como acontece no caso das stack’s, ser implementadas com base em estruturas estáticas ou dinâmicas. Em ambos casos, é necessário manter a localização do primeiro e último elemento da queue.
+	Define-se geralmente, QRear como sendo o apontador para a posição onde inserir o próximo elemento a entrar na queue e QFront como o apontador para o primeiro elemento a ser retirado da queue.
+
+
+
+
+
+
+Estrutura de uma Queue.
+
+Implementação de queue’s sobre estruturas estáticas
+	Há semelhança das stack’s, também as queue’s podem ser implementadas recorrendo a sequências (arrays ou vectores) de tamanho suficientemente grande para garantir o continuo funcionamento da queue.
+Estrutura de uma queue estática.
+
+	Como se encontra representado na figura anterior, QFront e Qrear indicam respectivamente, a posição do próximo elemento a remover da queue e a posição onde inserir o próximo elemento a entrar na queue.
+
+Uma queue estática poderá então ser definida da seguinte forma:
+
+typedef struct
+  {TINFO *base;			// apontador para arrays de informações
+   int front,rear,size;
+  }TQUEUES;
+
+Operações sobre queue’s estáticas
+
+As operações típicas de uma queue estática são:
+    • Verificar se a queue está vazia (QEmpty),
+    • Verificar se a queue está cheia (QFull),
+    • Colocar um elemento na queue (QInsert),
+    • Remover um elemento da queue (QRemove).
+    • Verificar se a queue esta vazia (QEmpty)
+
+	Uma queue encontra-se vazia, quando QFront e QRear tiverem o mesmo valor.
+
+
+
+
+
+Representação de uma queue estática vazia.
+
+BOOL QEmptyE(TQUEUES fila)
+{if (fila.rear==fila.front)
+return TRUE;
+  else
+    return FALSE;
+}						Tendo previamente definido o tipo BOOL: 
+								typedef enum {FALSE=0,TRUE} BOOL;
+
+
+Inserir um novo elemento na queue (QInsert)
+
+	O procedimento de inserção consiste em colocar o novo elemento no local apontado por QRear e de seguida actualizar esse ponteiro (coloca e incrementa Qrear).
+Inserção de um elemento numa queue estática.
+
+STATUS QInsertE(TQUEUES *fila, TINFO *dados)
+{if (fila->rear==fila->size)			// se cheia
+    return ERRO;
+ fila->base[fila->rear]=*dados;
+ fila->rear = fila->rear + 1;
+ return OK
+}
+
+	O que acontece é que conforme se inserem novos elementos, QRear avança ao longo da sequência, até que inevitavelmente atinge o fim desta, tornando-se assim impossível de inserir mais elementos na queue, pelo que se pode afirmar que em termos de inserção de novos elementos a queue encontra-se inutilizada.
+
+
+Utilização de queue’s em forma circular
+	Uma melhoria possível de se fazer no algoritmo anterior, consiste em aproveitar as posições que vão ficando livres com a remoção dos elementos da queue. Pelo que é necessário testar quando é que QRear atinge o fim da sequência e nessa situação redireccionar o ponteiro QRear para o início da sequência. Desta forma a queue pode funcionar em continuo, desde que o número de elementos contidos na queue não ultrapasse o Tamanho da Sequência.
+
+
+	Esta nova abordagem permite-nos ver agora, a queue como um circulo.
+
+
+
+
+
+
+
+
+
+
+
+Queue com base numa sequência circular.
+
+	A verificação de queue vazia, mantém-se como anteriormente, ou seja uma queue esta vazia se QFront = QRear.
+
+Verificar se a queue está cheia (QFull)
+
+A verificação de queue cheia, obriga a testar as seguintes condições:
+    • Se o QRear é inferior ao QFront em uma unidade 
+    • ou se QFront e QRear encontram-se respectivamente na primeira e última posição da sequência.
+
+	As duas condições anteriores pressupõem que fica sempre uma posição da sequência por preencher. Só assim é possível distinguir a situação de queue cheia de queue vazia.
+
+O procedimento para testar se a queue está ou não cheia é o seguinte:
+BOOL QFullE(TQUEUES *fila)
+{if (fila->rear+1==fila->front || (fila->rear==fila->size-1 &&
+ fila->front==0))
+return TRUE;
+  else
+    return FALSE;
+}
+
+Inserção numa queue estática com funcionamento circular
+
+O procedimento completo para a inserção com sistema circular é o seguinte:
+
+STATUS QInsertE(TQUEUES *fila, TINFO *dados)
+{if (QFullE(fila))			// se cheia
+    	return;
+ fila->base[fila->rear]=*dados;
+ if (fila->rear==fila->size-1)
+     fila->rear=0;
+   else
+     fila->rear = fila->rear + 1;
+ return OK;
+}
+
+Remover um elemento da queue (QRemove)
+	A remoção de um elemento da queue passa por retirar o elemento que se encontra na posição assinalada por QFront, actualizando em seguida o apontador. Por fim devolve-se o valor removido.
+Ilustração do processo de remoção de uma queue estática.
+
+	Antes de se remover qualquer elemento da queue é necessário verificar se a queue possui pelo menos um elemento e se QFront atingiu a última posição da sequência, sendo então necessário redireccioná-lo para o início da mesma.
+STATUS QRemoveE(TQUEUES *fila, TINFO *dados)
+{if (QEmptyE(fila))
+    return ERRO;				// fila vazia
+ *dados = fila->base[fila->front];
+ if (fila->front==fila->size-1)
+    fila->front=0;
+  else
+	fila->front = fila->front + 1;  
+return OK;
+}
+
+Implementação de queue’s sobre estruturas dinâmicas
+
+	Uma outra forma mais eficiente (sem desperdício de memória) de implementar queue’s, é recorrendo a estruturas dinâmicas tipo listas.
+	A implementação de queue’s utilizando listas ligadas é muito simples, basta apenas inserir no fim da lista e remover do início da lista.
+	A estrutura física de uma queue implementada sobre listas ligadas encontra-se apresentada na seguinte figura.
+
+Estrutura de uma queue sobre listas simples.
+
+	Os nodos para este caso são mais uma vez semelhantes aos utilizados nas listas simples, contém um campo que representa a informação a reter em cada nodo (info) e um apontador para o elemento seguinte (next) da lista.
+	A implementação de queue’s dinâmicas, obriga (por uma questão de facilidade de gestão) a guardar o apontador inicial da lista (QFront) e o apontador para o último nodo (QRear).
+	As inserções na queue fazem-se através do operador Qtail e as remoções através de Qhead.
+
+	Formalmente a estrutura é definida, à custa da estrutura TNODO da lista ligada simples.
+
+typedef struct {
+    TNODO *Qhead,*Qtail
+}TQUEUED;      Sendo que TNODO já foi anteriormente definido
+
+E definindo também as seguintes Macro Funções
+#define QHEAD(L)	((L).Qhead)
+#define QTAIL(L)	((L).Qtail)   // sendo L uma estrutura TQUEUED
+
+
+	Onde, se podem utilizar todos os operadores previamente definidos para as listas simples.
+
+Operações sobre queue’s dinâmicas
+	Para demonstrar a construção de uma queue dinâmica, implementar-se-ão os seguintes operadores:
+
+    • Testar se queue está vazia
+    • Inserir um elemento na queue
+    • Retirar um elemento da queue.
+
+	Não é necessário testar se a queue está cheia, uma vez que o espaço desta apenas se encontra limitado, pela quantidade de memória disponibilizada pelo sistema operativo. Excepção faz-se caso se pretenda limitar o número de elementos na queue a um valor máximo.
+
+Testar se a queue está vazia
+
+	Para se verificar se a queue está vazia, basta testar se o apontador QHead é ou não NULO.
+
+SE QHEAD(fila) = NULO ENTÃO
+	ESCREVER ("Queue vazia")
+FIMSE
+
+Inserir um elemento na queue
+
+	O processo de inserção de um elemento numa queue com listas ligadas, é bastante simples, uma vez que, só podem ocorrer duas situações distintas:
+ 	a primeira, é quando a lista está vazia e;
+	a segunda, quando esta possui pelo menos um elemento.
+
+	Se a lista está vazia, com a inserção do primeiro nodo, QHead e QTail passam ambos a apontar para o nodo novo. A situação encontra-se representada na seguinte figura, onde lqueue representa a QUEUED:
+
+
+
+QHEAD(fila)=novo
+QTAIL(fila)=novo
+
+	No caso da queue possuir pelo menos um elemento, então a inserção faz-se pelo fim da lista.
+	Se lqueue representar a estrutura QUEUED e novo o apontador para a estrutura a inserir, a reordenação dos apontadores faz-se da seguinte forma:
+
+NEXT(QTAIL(fila))=novo;
+QTAIL(fila)=novo
+
+O Procedimento completo de Inserção será então:
+
+TQUEUED QInsertD(TQUEUED lqueue, TINFO *dados)
+{TNODO *novo;
+if ((novo=NOVO_NODO(dados))==NULL)
+   return lqueue;
+if (QHEAD(lqueue)==NULL)
+	{QHEAD(lqueue)=novo;
+	 QTAIL(lqueue)=novo;
+    }
+ else
+{NEXT(QTAIL(lqueue))=novo;
+ QTAIL(lqueue)=novo
+}
+ return lqueue;
+}
+
+Retirar um elemento da queue
+
+	A operação de remoção de uma queue, consiste em remover da lista o elemento que se encontra à cabeça desta. É no entanto necessário testar previamente se a queue não está vazia.
+	Seja lqueue a estrutura QUEUED e qaux um apontador para um NODO, a reordenação dos apontadores faz-se da seguinte forma:
+
+TQUEUED QREMOVED(TQUEUED lqueue, TINDO *dados)  
+{TNODO *aux;
+*dados=NULL;
+if (QHEAD(lqueue)==NULL)
+	return lqueue;			// retorna a mesma queue e dados NULL
+aux = QHEAD(lqueue);
+QHEAD(lqueue)=NEXT(aux);
+*dados = DATA(aux);
+free(aux);
+return lqueue;
+}
+
+
+
+
+
+
+Tabelas de Dispersão (hash)
+	Um dos aspetos mais importantes quando se lida com estruturas de dados e armazenamento de informação é sem dúvida a procura (pesquisa). Tal como já foi visto anteriormente encontrar um elemento específico numa lista ligada requer a procura em metade dos elementos (em média). Isto requer O(N/2) = O(N) comparações. Numa sequência ordenada também a procura significa O(N) para esta operação.	No entanto e como os arrays (sequências) são estruturas de acesso aleatório (podemos  aceder a qualquer elemento apenas a partir do seu índice): se a informação for organizada de determinada forma o acesso aos seus elementos pode chegar a ser de ordem O(1).
+	Isto é facilmente compreendido através de um exemplo:
+	Supondo que se quer guardar a informação de aproximadamente 500 alunos da ESACT-IPB usando para identificar cada aluno o seu número mecanográfico. A informação a guardar seria então:
+
+typedef info{
+   int chave;		//número mecanográfico
+   char nome[30];
+   char morada[40];
+   char curso[20];
+   int ano;
+}TINFO
+
+	Como os números mecanográficos variam entre 00000 e possivelmente 99999, poderíamos guardar toda a informação num vector  de 100 000 posições.
+ 	Desta forma tanto a inserção como a pesquisa seriam muito rápidas - O(1) - pois a informação sobre o aluno com o número mecanográfico XX estaria guardada na posição vect[XX].
+	Mas esta abordagem é "absurda", por causa do espaço total requerido (queremos guardar cerca de 500 elementos e vamos precisar de 100.000). Existe a necessidade de reduzir os 100.000 elementos para um valor mais apropriado (talvez para cerca de 1000)
+
+	Outro problema: Se em vez de organizar a informação pelo número mecanográfico se fosse preciso organizar a informação pelo Nome ?
+
+
+Tabelas de Dispersão (hash)
+
+	As tabelas de hash são estruturas de dados que permitem relacionar através de uma função finita, designada por função de hash, um conjunto de elementos A, designado por domínio ou conjunto das chaves, com um conjunto de elementos B, designado por contradomínio ou conjunto das informações. E onde o cardinal do conjunto A é muito superior ao cardinal do conjunto B.
+	Uma sequência (vector) pode ser vista como uma tabela de hash, onde o domínio ou conjunto das chaves são os índices e os elementos da sequência formam o conjunto das informações ordenados por um índice, em ordem ao qual se encontra definida a função de hash.
+
+		result  	hash(índicen),
+
+	O índice zero (ou um) definiria assim o primeiro elemento da sequência.
+	A função seria então injectiva uma vez que, para cada elemento do conjunto das chaves corresponde a uma única posição da sequência.
+	As tabelas de hash aplicam-se para situações em que o cardinal do domínio é bastante superior ao cardinal do contra domínio ou seja, em que o número de chaves é bastante superior ao número das informações (caso anterior em que os números mecanográficos possíveis eram 100000 mas o contradomínio seria de 1000)
+De uma forma genérica, aplicam-se tabelas de hash nas situações em que existam algumas limitações de espaço e tempo no que se refere ao armazenamento e pesquisa de informação.
+
+Uma tabela de hash é então definida da seguinte forma:
+
+    • Uma sequência (vector) com n componentes do tipo chave x informação
+    • E uma função h designada por função de hash (ou de dispersão), que tem por finalidade relacionar os elementos do conjunto das chaves {ch1 ...chn} com as posições da sequência.
+    • Algoritmos de para resolução de colisões (se necessário)
+
+	No exemplo visto até aqui, uma alternativa para diminuir o espaço seria o de usar um vector de 1000 posições (cerca do dobro dos valores esperados - 500) e em que a informação de cada aluno estaria na posição vect[num%1000], usando aqui o operador % de C, que representa o "resto da divisão".
+	O espaço foi reduzido a um total aceitável e o acesso continua simples e rápido - O(1) -, mas surgiu um problema adicional: dois alunos que tenham no número mecanográfico os mesmos três algarismos finais (ex: 2543 e 7543) passam a ter as informações guardadas  na mesma posição do vector. Esta situação é chamada de "colisão", e deve ser resolvida encontrando-se uma posição alternativa para os dados de um dos alunos.
+	Neste exemplo a função de hash não foi mais do que o resultado do resto da divisão do número mecanográfico por 1000.
+	A propriedade fundamental da função de hash é a de espalhar bem as chaves de pesquisa (o "campo" pelo qual se vai fazer a procura/inserção), para que o número de colisões seja o menor possível, ou seja a utilização de tabelas de hash passa pela minimização e tratamento das colisões. De tal forma que o objectivo é:
+    • Determinar uma função hash que minimize as colisões
+    • Implementar funções eficientes para tratamento das colisões.
+
+Funções de hash
+	Como atrás se definiu, a função de hash é responsável por, converter uma qualquer chave ch pertencente ao conjunto das chaves num índice da sequência das informações.
+	É também importante que a função seja rápida a calcular o índice da sequência, pois se esta for demasiado complexa pode ocorrer que demore mais tempo a determinar o índice do que a tratar de uma eventual colisão motivada por uma função menos elaborada.
+	É possível determinar uma função de hash que optimize este tipo de características, recorrendo a métodos numéricos e conhecendo o comportamento da procura das chaves através de métodos estatísticos.
+	De forma muito genérica, pode-se resumir a ideia ao seguinte: tentar agrupar as chaves de forma a obter n (tamanho da sequência) subconjuntos em que a procura esperada entre os diversos subconjuntos seja aproximadamente igual. Em seguida atribuir a cada um destes uma fracção da sequência (1/n).
+
+	A primeira propriedade desejável para uma função de hash (ou de re-hash) é a
+facilidade de sua avaliação. Por essa razão, normalmente as operações utilizadas em uma função de hash são as operações correspondentes às instruções mais rápidas de um computador: AND (e), OR (ou), XOR (ou exclusivo) e os deslocamentos de bits. (A linguagem C tem operadores para cada uma dessas instruções.)
+	Operações como a soma podem ser utilizadas, embora sejam mais lentas que
+as outras mencionadas, mas funções matemáticas como senos ou logaritmos, que
+envolvem o cálculo de séries normalmente não são consideradas.
+	Por exemplo, para acelerar o cálculo da função de hash, em vez de usar o resto da divisão por 1000, como proposto no exemplo inicial, seria preferível usar o resto da divisão pela potência de 2 mais próxima, 1024, uma vez que o valor x%1024 pode ser calculado de forma mais rápida em C como x&1023, usando o operador & (AND) de C. Isto acontece porque 1023 é em binário 00...01111111111, de maneira que x&1023 tem todos os bits iguais a zero, com excepção dos últimos 10 bits, que são iguais aos bits correspondentes de x.
+	Mesmo neste caso simples, a escolha dos bits do numero mecanográfico que serão usados na função de hash precisa ser feita com cuidado. No nosso caso, escolhemos os últimos porque os números mecanográficos são atribuídos em princípio, consecutivamente, o que faz com que os valores dos três últimos dígitos possam, na prática, ser considerados aleatórios. Se usássemos os três primeiros, provavelmente teríamos mais colisões.
+
+Funções de hash típicas
+	A função de hash mais utilizada é a divisão, mais concretamente o resto da divisão tal como aplicado no exempo anterior.
+Uma função de hash simples e eficiente para chaves de números inteiros, é a seguinte então a seguinte:  h(x) = ( x % n ), em que n representa o tamanho da sequência da tabela de hash.
+Exemplos: 
+	Chave x	x % 1000	x %1024	x%1021
+	32699	699	955	027
+	15114	114	778	820
+	41502	502	542	662
+	81699	699	803	019
+	30651	651	955	021
+	23670	670	118	187
+	12219	219	955	988
+	75745	745	993	191
+	Como se pode ver pelos exemplos a utilização da função de hash x%1000 levou à ocorrência de 2 colisões, a utilização da função x%1024, apesar de ser executada de forma muito rápida pelo processador levou à ocorrência de 3 colisões. Por fim, a utilização de um número primo como factor de divisão (1021) levou a que não existisse colisão alguma para o conjunto de chaves apresentadas.
+Como nem sempre é possível garantir que a sequência possua tamanho n, recorre-se então à seguinte função:
+h(x) = (( x mod p) mod n) +1
+	onde p é o número primo maior do que n (tamanho da sequência).
+
+	Quando as chaves são do tipo string, é necessário convertê-las para um valor decimal. Uma solução possível, consiste em somar os valores decimais dos caracteres da string, o que por si só é má solução, uma vez que esta função é muito pouco injectiva. Outra solução, consiste em utilizar o valor decimal do primeiro carácter ou então calcular a média pesada dos valores decimais dos caracteres que compõem a string (primeiro carácter com mais valor, ...).
+
+Tratamento de colisões 
+	No processo de inserção é sempre necessário testar se a posição indicada pela função de hash para o novo elemento está ou não livre. No caso da posição estar livre, o novo elemento é imediatamente inserido, caso contrário, ocorre colisão.
+	Para uma tabela de tamanho M, quantas inserções podem ser feitas até à primeira colisão ?
+Este é um problema clássico de probabilidades: para uma função de dispersão “aleatória” as primeiras colisões ocorrem ao fim de SQRT(PI*M/2):
+	M	SQRT(PI*M/2)
+	100	12
+	1021	40
+	10000	125
+	Independentemente da qualidade da função de hash, existe sempre a possibilidade de ocorrerem colisões, pelo que é sempre necessário implementar mecanismos que permitam lidar com estas situações.
+	
+Linear Probing (procura linear)
+	Este tipo de abordagem procura pela próxima posição vazia em caso de colisão. É a forma mais simples de tratar colisões. Para inserir um elemento x numa tabela, usando a função de hash h, podemos usar a primeira das posições h(x), h(x)+1, h(x)+2, … que estiver vazia.
+	A sequência a utilizar na implementação desta estratégia, deve funcionar de forma circular, à semelhança das situações descritas para as queues estáticas, de forma a que, ao se atingir o fim da sequência, a procura de uma posição livre continue a partir do início da mesma.
+	Um elemento só não é inserido, se não existir nenhuma posição livre em toda a sequência. 
+	Para esta estratégia funcionar, cada elemento da sequência deve ser composto pela chave, pela informação e por um campo que permita controlar se a posição do elemento na sequência está ou não livre.
+
+Formalmente, em C,  a estrutura pode ser definida da seguinte forma:
+typedef struct info{
+	...;
+	BOOL ocupado;
+}TINFO;
+typedef struct thash{
+    {TINFO *vdados;
+     int limite;
+}THASH;
+
+Bem com deverá existir uma função de hash do género:
+
+int hash(TIPOX chave, int limite)	
+{...
+return indice;			// um valor entre 0 e limite-1
+}
+
+Podendo também ter definido as seguintes Macro Funções
+#define DATAH(H,i)	((H).vdados[i])
+#define CHAVEH(H,i)	(DATA(H,i).chave)
+#define OCUPADO(H,i)	(DATA(H,i).ocupado)
+
+(sendo H uma estrutura do tipo THASH e i o indice)
+Definição do operador Nova_THASH (operador responsável pela alocação de memória para uma nova tabela de hash)
+Existem várias formas de definir este operador, a versão aqui apresentada é apenas uma delas, podendo não ser a mais eficiente nem a mais genérica.
+
+THASH Nova_THASH(int size)
+{THASH tabhash;
+tabhash.limite=0;
+tabhash.vdados=(TINFO *)calloc(size,sizeof(TINFO));
+if (tabhash.vdados==NULL) 
+  return tabhash;   // retorna uma tabelaHASH vazia
+tabhash.limite=size;
+return tabhash;
+}
+// caso não se utiliza-se o operador calloc seria necessário colocar a zero o // campo ocupado de todos os elementos do vector tabela da TabHash
+
+Inserção numa tabela de hash
+
+Uma possível função de inserção poderá ser definida da seguinte forma:
+
+STATUS InserirTHLP(THASH tab,TINFO *dados)
+{int posinicial,pos;
+pos = hash(dados->chave,tab.limite);
+posinicial=pos;
+while (OCUPADO(tab,pos)==TRUE &&
+COMPARAR(CHAVEH(tab,pos),dados->chave)!=0)
+  {pos=pos+1;
+   if (pos==tab.maxsize)	// se chegou ao fim do vector
+      pos=0;
+   if (pos==posinicial)    // já deu uma volta
+     break;
+  }
+if (OCUPADO(tab,pos)==FALSE || 
+COMPARAR(CHAVEH(tab,pos),dados->chave)==0)
+   {DATAH(tab,pos)=*dados;
+    OCUPADO(tab,pos)=TRUE;
+    return OK;
+   }
+ else
+   return ERRO;		// tabela de hash cheia
+}
+
+Tendo definido STATUS como typedef enum {ERRO, OK} STATUS
+
+
+Pesquisa numa tabela de hash
+
+	Utilizando este processo de inserção, pode acontecer que a posição indicada por h(chi) se encontre ocupada pelo elemento chj, tal que chi  chj. Pelo que na realização de uma pesquisa, não basta aceder directamente à posição indicada pela função de hash, é igualmente indispensável testar se na posição indicada se encontra realmente o elemento procurado. Caso tal não aconteça, é necessário continuar a percorrer a sequência até se encontrar a chave pretendida, ou então até a pesquisa completar uma volta à sequência.
+
+A função de pesquisa é então definido da seguinte forma:
+
+TINFO *PesquisaTHLP(THASH tab,TIPOX chave)
+{int posinicial,pos;
+pos = hash(chave,tab.limite);
+posinicial=pos;
+while (COMPARAR(CHAVEH(tab,pos),chave)!=0)
+  {pos=pos+1;
+   if (pos==tab.maxsize)	// se chegou ao fim do vector
+      pos=0;
+   if (pos==posinicial)    // já deu uma volta
+     break;
+  }
+if(OCUPADO(tab,pos)==TRUE && COMPARAR(CHAVEH(tab,pos),chave)==0)
+	return &DATAH(tab,pos);
+ else
+   return NULL;
+}
+
+Remoção numa tabela de hash
+
+As mesmas considerações tomadas para a pesquisa, são utilizadas para a remoção.
+De notar que, normalmente não se utilizam tabelas hash em situações em que elementos devem ser removidos.
+
+STATUS RemoverTHLP(THASH tab,TIPOX chave)
+{int posinicial,pos;
+pos = hash(chave,tab.limite);
+posinicial=pos;
+while (COMPARAR(CHAVEH(tab,pos),chave)!=0)
+  {pos=pos+1;
+   if (pos==tab.maxsize)	// se chegou ao fim do vector
+      pos=0;
+   if (pos==posinicial)    // já deu uma volta
+     break;
+  }
+if(OCUPADO(tab,pos)==TRUE && COMPARAR(CHAVEH(tab,pos),chave)==0)
+	{OCUPADO(tab,pos)=FALSE;
+     return OK;
+}
+ else
+   return ERRO;   //elemento não existe na Tabela de hash
+}
+
+Desvantagens do Linear Probing
+
+	Esta forma de tratamento de colisões tem algumas desvantagens.
+	Uma desvantagem fundamental, que é a tendência de formação de grupos de posições ocupadas consecutivas, fazendo com que a primeira posição vazia, na prática, possa ficar muito longe da posição original, dada pela função de hash (clustering). Para inserir um determinado valor x na tabela, ou para concluir que o valor não se encontra na tabela, é necessário encontrar a primeira posição vazia após a posição h(x).
+	Para melhor compreender este facto, suponhamos que inserimos A, x, B, C, y e z na tabela, nessa ordem, e que h(A)=h(B)=h(C)=423, e h(x)=h(y)=h(z)=425. Inicialmente, inserimos A na posição h(A)=423, e x na posição h(x)=425.
+
+422
+423
+424
+425
+426
+427
+428
+429
+
+A
+
+x
+
+
+
+
+
+Em seguida, como h(B)=423 está ocupada, B é inserido na posição seguinte, 424.
+
+422
+423
+424
+425
+426
+427
+428
+429
+
+A
+B
+x
+
+
+
+
+
+De forma semelhante, C vai ser inserido na primeira posição vazia após h(C)=423,
+ou sejam na posição 426.
+
+422
+423
+424
+425
+426
+427
+428
+429
+
+A
+B
+x
+C
+
+
+
+
+Idem, y e z, nas posições 427 e 428.
+
+422
+423
+424
+425
+426
+427
+428
+429
+
+A
+B
+x
+C
+y
+z
+
+
+    • Se formos procurar na tabela se o elemento n existe, em que h(n)=424. Temos que visitar 6 posições da tabela para concluir que este valor não se encontra lá (desde a posição 424 até à 429).
+
+	Normalmente não se utilizam tabelas hash em situações em que elementos devem ser removidos, pelas dificuldades impostas pelos esquemas de tratamento de colisões. Continuando o exemplo anterior, suponha que x é simplesmente removido:
+
+422
+423
+424
+425
+426
+427
+428
+429
+
+A
+B
+
+C
+y
+z
+
+
+    • De todos os elementos mencionados, apenas A e B continuam acessíveis: o acesso a C, y e z foi perdido. Para remover x, de forma correcta, seria necessário mudar alguns outros elementos de posição na tabela.
+
+Concluindo, algumas das desvantagens da utilização de Linear Probing, para resolução de colisões são:
+- Elementos tendem a ficar agrupados (Clusters)
+- Os agrupamentos grandes tendem a crescer ainda mais
+- O tempo médio de procura tende a crescer para M (tamanho do vetor) à medida que a tabela enche.
+- Operações na tabela de dispersão torna-se demasiado lentas quando a tabela atinge 70-80% da sua capacidade.
+
+Alternativas ao Linear Probing
+	Se a posição correspondente ao índice devolvido pela função de dispersão estiver ocupada, utilizar outra função de dispersão para determinar o valor a incrementar na procura de uma posição livre para o elemento.
+
+Quadratic Probing - Exame Quadrático	
+
+	O exame quadrático é uma tentativa de evitar que os clusteres se formem. A ideia é examinar células mais separadas, em vez daquelas adjacentes ao local de hashing inicial.
+	No exame linear, se o índice de hashing primário for x, os exames seguintes serão x+1, x+2, x+3, etc. No exame quadrático, os testes são x+1, x+4, x+9, x+16, etc. A distância do local inicial é a segunda potência do número da etapa: x + 12, x + 22, x + 32, x + 42, etc.
+	Este tipo de abordagem resolve parcialmente o problema de clustering, mas não por completo. Pode ocorrer que uma chave não visite todos os "lugares" vagos na sequência.
+
+
+
+Re-Hashing
+
+	Um esquema um pouco mais complicado utiliza uma segunda função r, a função de re-hash, para resolver colisões. Assim, um elemento x seria inserido na primeira das posições vazias entre h(x), h(x)+r(x), h(x)+2*r(x), … A vantagem de usar uma função r diferente de h é que se tivermos h(x)=h(y)=h(z)=i, será pouco provável que tenhamos também r(y)=r(z).
+	Assim, x seria inserido na posição i, y seria inserido na posição i+r(y), e z seria inserido numa posição diferente i+r(z). Com isso, a busca de z não passaria pela posição ocupada por y, e seria mais rápida.
+	Também aqui existe (na maioria das vezes) a necessidade de se utilizar para dimensão da sequência um número primo.
+
+	Para qualquer umas das alternativas apresentadas existe uma melhoria no desempenho da tabela de dispersão, fazendo com que as operações na tabela só se tornem demasiado lentas quando a tabela atinge 90-95% da sua capacidade.
+
+Listas de colisões
+	Como se pode verificar o Linear Probing, é adequado para a implementação de tabelas de hash sobre estruturas estáticas.
+	As tabelas de hash com listas de colisões são estruturas que, apesar de ser possível a sua implementação sobre uma sequência de sequências (array bidimensional), recorrem normalmente a uma solução intermédia, entre o estático e o dinâmico, a qual é definida formalmente como uma sequência de listas. Será esta última solução a utilizada para exemplificar esta estratégia.
+	O funcionamento da sequência faz-se de forma normal, ao contrário da solução anterior onde era circular. Cada elemento da sequência não é mais do que o primeiro nodo de uma lista ligada, a qual pode ser do tipo simples ou duplamente ligada.
+	A estrutura encontra-se representada na seguinte figura:
+Estrutura de uma tabela de Hash com Listas de Colisões.
+Definição formal da estrutura e de alguns operadores
+typedef struct info{
+	...;
+}TINFO;
+typedef struct thash{
+    {TNODO **aplista;
+     int limite;
+}THASH;
+
+int hash(TIPOX chave, int limite)	
+{...
+ ...
+ return indice;			// um valor entre 0 e limite
+}
+Podendo também ter definido as seguintes Macro Funções
+#define LISTA(H,i)	((H).aplista[i])
+ (sendo H uma estrutura do tipo THASH e i o indice)
+e todas as macro definições utilizadas nas listas ligadas
+Definição do operador Nova_THASH (operador responsável pela alocação de memória para uma nova tabela de hash)
+THASH Nova_THASH(int size)
+{THASH tabhash;
+int i;
+tabhash.limite=0;
+tabhash.apdados=(TNODO **)malloc(size*sizeof(TNODO *));
+if (tabhash.apdados==NULL) 
+  return tabhash;   // retorna uma tabelaHASH vazia
+tabhash.limite=size;
+for (i=0;i<tabhash.limite;i++)
+	tabhash.apdados[i]=NULL;	// inicializar todas as listas a NULL;
+return tabhash;
+}
+
+Pesquisa numa tabela de hash (Lista de Colisões)
+	A pesquisa de um elemento numa tabela de hash com listas de colisões, consiste em determinar o índice da sequência, correspondente à chave a pesquisar. Através do índice e da sequência das listas, acede-se ao apontador inicial da lista, bastando depois realizar uma pesquisa em tudo semelhante ao apresentado no capítulo sobre listas simples ou duplamente ligadas.
+	Os algoritmos que se apresentam em seguida, utilizam soluções recursivas para pesquisa, inserção e remoção sobre listas.
+
+TINFO *PesquisaTHLC(THASH tab,TIPOX chave)
+{int pos;
+pos = hash(chave,tab.limite);
+return PesquisarLC(LISTA(tab,pos),chave);
+}
+	A função PesquisaLC pode ser uma função semelhante ás funções apresentadas para pesquisa sobre listas simples. No entanto, a solução aqui utilizada será do tipo recursivo. Para tal há que identificar as seguintes situações, tendo em conta que se convencionou que a lista está ordenada de forma crescente:
+    • Lista é nula,
+    • Lista não é nula,
+    • A chave a pesquisar encontra-se no primeiro nodo da lista,
+    • A chave a pesquisar encontra-se no resto da lista.
+
+TINFO *PesquisarLC(TNODO *lista, TipoX chave)
+{TINFO *resultado=NULL;
+if (lista!=NULL)
+  if (COMPARAR(CHAVE(lista),chave)==0)
+		resultado=&DATA(lista);
+    else
+      if (COMPARAR(CHAVE(lista),chave)<0)
+        resultado = PesquisarLC(NEXT(lista),chave);
+return resultado;
+}
+
+Inserção numa tabela de hash (Lista de Colisões)
+	O processo de inserção é muito semelhante ao da pesquisa, ou seja, dado uma chave ch, determina-se o índice i através de h(ch). Acedendo depois à posição i da sequência de listas, obtém-se o apontador inicial da lista onde se deve inserir o novo elemento.
+
+STATUS InserirTHLC(THASH tab,TINFO *dados)
+{int pos;
+TNODO *novo;
+novo=NOVO_NODO(dados);
+if (novo==NULL)
+  return ERRO;		// erro, falta de memória
+pos = hash(dados->chave,tab.limite);
+LISTA(tab,pos) = InserirLC(LISTA(tab,pos),novo);
+Return OK;
+}
+A inserção na lista faz-se segundo as estratégias definidas anteriormente para as listas simples ou duplamente ligadas. No entanto a situação aqui apresentada é do tipo recursivo, de onde se distinguem as seguintes situações:
+    • Lista é nula,
+    • Lista não é nula,
+    • A chave a inserir já se encontra no primeiro nodo da lista,
+    • A chave a inserir é inferior à do primeiro nodo da lista,
+    • A chave a inserir é superior à do primeiro nodo, pelo que deve então ser inserida na restante lista.
+
+TNODO *InserirLC(TNODO *lista, TNODO *p)
+{TNODO *naux;
+ if (lista==NULL)
+	{NEXT(p)=NULL;
+     return p;
+	}
+if (COMPARAR(CHAVE(lista),CHAVE(p))==0)
+	{DATA(lista)=DATA(p);
+	 Free(p);
+     return lista;
+}
+if (COMPARAR(CHAVE(lista),CHAVE(p))>0)
+	{NEXT(p)=lista;
+     return p;
+}
+naux=InserirLC(NEXT(lista),p);
+NEXT(lista)=naux;
+return lista;
+}
+
+Remoção numa tabela de hash (Lista de Colisões)
+	O algoritmo de remoção é muito semelhante aos algoritmos anteriores, há apenas a necessidade de actualizar os valores da sequência, caso o elemento a remover seja um elemento de topo de uma das listas.
+
+STATUS RemoverTHLC(THASH tab,TipoX chave)
+{int pos;
+pos = hash(chave,tab.limite);
+LISTA(tab,pos) = RemoverLC(LISTA(tab,pos),chave);
+return OK;
+}
+A remoção sobre a lista também se pode fazer segundo as estratégias definidas anteriormente para as listas simples ou duplamente ligadas. Como alternativa, apresenta-se um algoritmo do tipo recursivo, onde é necessário identificar as seguintes situações
+    • Lista é nula,
+    • Lista não é nula,
+    • A chave a remover encontra-se no primeiro nodo da lista,
+    • A chave a remover encontra-se na restante lista.
+
+TNODO *RemoverLC(TNODO *lista, TIPOX chave)
+{TNODO *naux;
+if (lista==NULL)
+  return NULL;
+if (COMPARAR(CHAVE(lista),chave)==0)
+	{naux=NEXT(lista);
+     free(lista);
+     return naux;
+	}
+if (COMPARAR(CHAVE(lista),chave)<0)
+	{naux=RemoverLC(NEXT(lista),chave);
+     NEXT(lista)=naux;
+	}
+return lista;
+}
+
+Estruturas de Dados Não Lineares
+
+Introdução às estruturas em árvore
+	As árvores (invertidas) são estruturas de dados fundamentais usadas na programação. Este tipo de estrutura oferece vantagens que as estruturas de dados que vimos até agora (vectores e Listas) não oferecem.
+	Tal como já foi visto anteriormente a ordem de complexidade para pesquisa num array ordenado, é de O(logN) - no caso de se utilizar a pesquisa binária. Mas a inserção e remoção são de ordem O(N).	Numa lista ligada, tanto a pesquisa, como inserção ordenada e remoção são algoritmos de ordem O(N/2) = O(N).
+	Numa árvore, podemos efectuar pesquisas rapidamente, como se faz num array ordenado, e também inserir e remover elementos rapidamente, como se faz nas listas ligadas (ou mais rápido). Nas árvores, nomeadamente nas árvores balanceadas, este tipo de operações têm complexidade O(logN).
+	A representação de dados recorrendo a estruturas em árvore (invertida) é um processo vulgar de representação nas mais variadas áreas do conhecimento, tais como:
+- Administração de grandes quantidades de dados, numa ordem qualquer, permitindo a divisão de um conjunto de dados em subconjuntos menores, e consequentemente mais eficiência nos métodos de procura de informação;
+- Administração de informações hierárquicas, permitindo representar de uma forma natural a hierarquia existente entre essa informação;
+- Representação de processos decisórios, permitindo a obtenção de soluções através da eliminação sucessiva de condições.
+
+ 
+	De forma genérica uma árvore é formada por um Nodo a partir do qual podem, ou não, descender várias outras árvores. A Figura seguinte ilustra a forma genérica de uma árvore, bem como a terminologia utilizada em árvores.
+
+
+
+
+
+
+Exemplo de uma árvore.
+
+	A árvore da figura é um caso muito genérico da representação de estruturas de dados em árvore, uma vez que, cada nodo pode possuir entre zero e um qualquer número de descendentes.
+	Existem diversas formas de representar árvores, desde diagramas de inclusão até representação matriciais, passando pela representação hierárquica (exemplo apresentado em cima)
+
+(  A (B) ( C (D (G) (H)) (E) (F (I)) )  )
+
+
+
+
+
+
+
+	Por questões de organização da própria estrutura de dados, uma vez que nem sempre é fácil implementar o processo de classificação dos nodos dentro da árvore e também por questões de eficiência computacional, recorre-se a modelos mais simples de árvores. É o caso das árvores binárias, onde cada nodo pode possuir no máximo dois descendentes.
+	São estas últimas árvores que se pretende estudar com maior detalhe no decorrer desta disciplina, principalmente a sua utilização como árvores de pesquisa e como árvores de decisão.
+
+Árvores Binárias 
+	As árvores do tipo binário caracterizam-se por, possuir no máximo dois descendentes por cada nodo. Em que cada descendente não é mais do que uma sub árvore. Como no máximo existem dois descendentes, designa-se um por sub árvore esquerda (ou nodo descendente esquerdo) e outro por sub árvore direita (ou nodo descendente direito).
+
+
+
+
+Estrutura base de uma árvore binária.
+
+Definição formal das árvores binárias
+A definição em C de uma árvore binária genérica é em todo semelhante às definições de NODOS utilizados nas listas ligadas:
+
+typedef struct info
+{…
+ …		(estrutura que contém a informação a guardar)
+}TINFO;
+
+typedef struct nodo
+{TINFO info;
+ struct nodo *esq;
+ struct nodo *dir;
+}ARVBIN;
+
+	Para os quais poderiam ser definidos alguns operadores genéricos, tais como NovoNodo, GetInfo,  GetEsq, SetEsq, etc.
+
+Os Operadores GetEsq, SetEsq, GetInfo, SetInfo podem ser directamente definidos utilizando as potencialidades das macros (directivas) de pré-processamento da linguagem C.
+
+#define ESQ(A)	((A)->esq)
+#define DIR(A)	((A)->dir)
+#define DATA(A)	((A)->info)
+
+(sendo A um apontador para uma estrutura do tipo TARVB)
+
+
+Aplicações de árvores Binárias
+A estrutura ARVBIN pode ser utilizada em casos onde os dados ou objetos a serem representados possuem uma relação de hierarquia entre si, como por exemplo no caso de expressões matemáticas: 
+
+a * b + c / (d + e)
+
+onde a relação hierárquica aparece na medida em que alguns operadores da expressão têm maior precedência sobre outros, tornando possível a sua representação através da seguinte árvore binária:
+
+
+
+A representação é feita de modo que a prioridade das operações fique implícita: o operador de menor prioridade da expressão fica na raiz da árvore. A subexpressão que forma o operando da esquerda do operador dá origem a subárvore à esquerda da raiz. Analogamente, o operando da direita dá origem à subárvore da direita.
+Outra aplicação das árvore binárias é a ordenação e pesquisa de conjuntos de dados. Estas árvores são denominadas árvores binárias de pesquisa/ordenação.
+
+Árvores Binárias de Pesquisa
+	Para o caso das árvores binárias de pesquisa, é ainda necessário existir uma chave por cada nodo, da qual depende a organização dos mesmos na árvore.
+	Define-se então que uma árvore binária de pesquisa deve estar organizada da seguinte forma:
+
+Numa árvore binária de pesquisa, a chave de todo e qualquer nodo da árvore, é sempre maior do que qualquer chave que pertença a sub árvore esquerda do nodo e sempre menor que qualquer chave que pertença à sub árvore direita do nodo.
+
+A definição anterior resume-se à seguinte expressão:
+
+MÁX(Sub Árvore Esq.nodoi)< Chavenodoi < MIN(Sub Árvore Dir.nodoi),
+						nodoi  {Conjunto de nodos da árvore }
+
+Definindo também a seguinte macro função:
+
+#define CHAVE(A)	(((A)->info).chave)
+
+
+Operadores das árvores binárias de pesquisa
+Criação de um Novo Nodo de uma árvore binária
+A definição do operador Nova_ARVB (operador responsável pela alocação de memória para um Novo Nodo da árvore binária), pode ser a seguinte:
+
+
+ARVBIN *NOVA_ARVB(TINFO *dados)
+{ARVBIN *pnovo;
+pnovo=(ARVBIN *)malloc(sizeof(ARVBIN));
+if (pnovo==NULL) 
+  return NULL;
+DATA(pnovo)=*dados;
+ESQ(pnovo)=NULL;
+DIR(pnovo)=NULL;
+return pnovo;
+}
+
+Inserção numa árvore binária de pesquisa
+	O processo de inserção deve garantir que a organização de uma árvore binária de pesquisa se mantém para todo e qualquer nodo da árvore, ou seja que nenhuma chave da sub árvore esquerda de um nodo seja superior à chave do próprio nodo e que este seja inferior a todas as chaves da sub árvore direita. Com esta definição não se admitem elementos repetidos.
+
+	O seguinte exemplo demonstra o processo de inserção numa árvore binária de pesquisa:
+
+
+								Árvore Inicial
+
+
+
+
+								Inserção do elemento com chave 12
+
+
+
+
+
+									Inserção do elemento com chave 85
+
+
+
+
+
+
+									Inserção do elemento com chave 22
+
+
+
+
+
+	Antes de se realizar a inserção propriamente dita, é necessário determinar a posição onde inserir a nova chave, o que se consegue através da comparação desta com a chave da raiz da árvore. A procura prossegue na sub árvore esquerda ou direita, mediante a chave a inserir seja inferior ou superior a chave da raiz.
+	Este tipo de solução facilmente se adapta à utilização de algoritmos recursivos, onde o problema consiste em subdividir a árvore inicial em sub árvores, até se determinar o nodo onde se deve inserir a nova chave. É esta a solução apresentada para a inserção numa árvore binária de pesquisa. O algoritmo identifica as seguintes situações:
+
+    • A árvore onde inserir é nula,
+    • A árvore onde inserir não é nula,
+    • A chave a inserir encontra-se no nodo raiz,
+    • Se a chave a inserir é inferior à chave do nodo raiz, então inserir na sub árvore esquerda,
+    • Se a chave a inserir é superior à chave do nodo raiz, então inserir na sub árvore direita.
+
+Resultando no seguinte procedimento:
+
+ARVBIN *InserirABP(ARVBIN *arv, TINFO *dados)
+{ARVBIN *novo;
+ if (arv==NULL)
+   {novo=Nova_ARVB(dados);
+    return novo;
+   }
+ if (COMPARAR(CHAVE(arv),dados->chave)==0)
+     DATA(arv)=*dados;			//edição: altera informação lá contida
+  else
+     if (COMPARAR(CHAVE(arv),dados->chave)>0)
+		 ESQ(arv)= InserirABP(ESQ(arv),dados);
+      else
+		 DIR(arv)= InserirABP(DIR(arv),dados);
+return arv;
+}
+
+Pesquisa numa árvore binária de pesquisa
+	O processo de pesquisa é muito semelhante ao processo de inserção, ou seja é necessário encontrar o nodo com a chave pretendida, utilizando a mesma abordagem do algoritmo de inserção, em seguida devolver a informação associado á chave. O algoritmo identifica as mesmas situações do algoritmo de inserção.
+
+TINFO *PesquisaABP(ARVBIN *arv, TipoX chave)
+{TINFO *aux;
+ if (arv==NULL)
+   return NULL;				// elemento não encontrado
+ if (COMPARAR(CHAVE(arv),chave)==0)
+   return &DATA(arv);	//Encontrado
+ if (COMPARAR(CHAVE(arv),chave)>0)
+	aux = PesquisaABP(ESQ(arv),chave);		// procura à esquerda
+  else
+	aux = PesquisaABP(DIR(arv),chave);		// procura à direita
+return aux;
+}
+
+Remoção numa árvore binária de pesquisa
+	O processo de remoção de um nodo de uma árvore binária de pesquisa, coloca a seguinte questão, o que fazer com as duas sub árvores do nodo removido?
+	Para exemplificar esta situação pegue-se na seguinte árvore e remova-se o nodo com a chave de valor 20.
+
+	Após a remoção obtêm-se três sub árvores, uma cuja chave da raiz é 30, outra que é 12 e ainda outra que é 25
+
+
+	Existem várias formas de lidar com esta situação:
+	Uma consiste em pegar nos elementos de cada sub árvore do nodo removido e voltá-los a inserir na árvore principal, um de cada vez. De preferência a começar pelas folhas de cada sub árvore (ex: 12, 22, 25). No entanto esta solução não é de forma alguma a melhor.
+
+	Outra solução será a substituição do elemento removido por um dos seus descendentes. Qual ?
+
+	As situações em que o nodo a remover apenas possui um descendente, o algoritmo a utilizar na remoção substitui o nodo removido pelo seu único descendente.
+	Este caso pode ser ilustrado com a árvore do exemplo anterior, com a remoção do nodo com a chave 25.
+	Antes da remoção do elemento 25		Depois da remoção do elemento 25
+
+	O problema que se coloca é o que fazer nas situações em que o nodo a remover possui os dois descendentes. 
+	A solução consiste em substituir o nodo removido pelo nodo da sub árvore esquerda que possui a maior chave ou então, pelo nodo da sub árvore direita com a menor chave.
+	Esta situação pode ser ilustrada reutilizando a árvore do exemplo inicial, em que se quer remover o elemento de chave 20.
+	As soluções possíveis encontram-se representadas na figura seguinte, onde a árvore da esquerda reutiliza a maior chave da sub árvore esquerda do nodo a remover e a árvore da direita reutiliza a menor chave da sub árvore direita do nodo a remover.
+Maior chave da sub.árvore esquerda		Menor chave da sub.árvore direita
+
+	Com este conjunto de soluções é possível garantir que após a remoção de um qualquer nodo de uma árvore binária de pesquisa, esta continua a verificar todas as condições necessárias para ser considerada como tal.
+
+
+	O algoritmo completo utilizando a menor chave da sub árvore direita, possui as seguintes sequências de instruções:
+    • A árvore onde remover é nula,
+    • A árvore onde remover não é nula,
+    • A chave a remover encontra-se no nodo raiz,
+    • Se a sub árvore direita do nodo raiz é nula, substituir o nodo com a sub árvore esquerda,
+    • Se a sub árvore esquerda do nodo raiz é nula, substituir o nodo com a sub árvore direita,
+    • Senão substituir o nodo pelo nodo com a menor chave da sub árvore direita,
+    • Caso a chave do nodo a remover seja inferior à chave do nodo raiz, então remover o nodo na sub árvore esquerda,
+    • Caso a chave do nodo a remover seja superior à chave do nodo raiz, então remover o nodo na sub árvore direira.
+
+
+Procedimento para descobrir e devolver a menor chave de uma árvore binária (a menor chave a existir, estará sempre no ramo mais à esquerda a partir da raiz da árvore):
+
+TipoX menorChave(ARVBIN *arv)
+{if (arv==NULL)
+   return NULL;
+ if (ESQ(arv)==NULL)
+    return CHAVE(arv);			// é esta a menor chave
+ return menorChave(ESQ(arv));
+}
+
+
+
+Procedimento completo de Remoção:
+
+ARVBIN *RemoverABP(ARVBIN *arv, TipoX chave)
+{ARVBIN * naux;
+TipoX chaux;
+TINFO * infaux;
+if (arv==NULL)
+  return NULL;		// não encontrado
+if (COMPARAR(CHAVE(arv),chave)==0)   // encontrado
+	{if (DIR(arv)==NULL)
+         {naux=ESQ(arv);
+          free(arv);
+          return naux;
+     }
+     if (ESQ(arv)==NULL)
+         {naux=DIR(arv);
+          free(arv);
+		  return naux;
+     }
+ chaux = menorChave(DIR(arv));
+ infaux = PesquisaABP(DIR(arv),chaux);
+ DATA(arv)=*infaux;
+ DIR(arv) = RemoverABP(DIR(arv),chaux);
+ return arv;
+}
+if (COMPARAR(CHAVE(arv),chave)>0)   
+   ESQ(arv)= RemoverABP(ESQ(arv),chave);
+ else
+   DIR(arv)= RemoverABP(DIR(arv),chave);
+return arv;
+}
+	De notar que a algoritmo não só é recursivo, como utiliza a função PesquisarABP(...) e ainda a função designada por menorChave(...), vista anteriormente.
+
+Outra possível solução:
+
+	A remoção pode ser feita apenas considerando as seguintes situações, onde arv representa o nodo a remover: 
+    • Se arv possui sub árvore direita então substituir pelo menor nodo da sub árvore direita,
+    • Senão, então se arv possui sub árvore esquerda então substituir pelo maior nodo da sub árvore esquerda,
+    • Senão remover simplesmente o nodo.
+	Desta forma é possível simplificar consideravelmente o algoritmo proposto, sendo apenas necessário implementar a mais a função maiorChave(...).
+
+Travessias de árvores
+	As árvores para além das funções típicas das estruturas de dados como o inserir, remover ou pesquisar, possuem ainda funções para realizar travessias sobre a árvore, ou seja, funções que permitem percorrer toda a árvore segundo determinada ordem.
+
+São três as formas de travessia mais utilizadas, a saber:
+    • Travessia INORDER
+    • Travessia PREORDER
+    • Travessia POSORDER
+
+Travessia INORDER
+
+	Este tipo de travessia permite visitar os nodos da árvore de forma ordenada, o que no caso das árvores binárias de pesquisa, consiste em visitar em primeiro o nodo da esquerda, depois o nodo raiz e por fim o nodo da direita.
+	O que implica que a visita começa no nodo mais à esquerda da árvore e termina no nodo mais à direita. É assim possível obter uma lista ordenada dos nodos de uma árvore.
+	O algoritmo encontra-se representado em seguida onde a função processar(...), representa o tratamento a dar aos nodos conforme estes são visitados.
+
+void Inorder(ARVBIN * arv)
+{
+ if (arv!=NULL)
+  {Inorder(ESQ(arv);
+   Processar(DATA(arv));
+   Inorder(DIR(arv);
+  }
+}
+
+Travessia PREORDER
+
+	Neste tipo de travessia, primeiro é processado o nodo raiz, depois o nodo esquerdo e por fim o nodo direito, permitindo assim percorrer a árvore de cima para baixo e da esquerda para a direita.
+	Este tipo de travessia é utilizado para representar os dados contidos na árvore sob a forma de uma sequência, que permita reconstituir a árvore com a sua estrutura inicial. Um caso concreto de aplicação, é o de salvaguardar a informação contida na árvore em ficheiro, de forma a ser possível voltar a reconstruir a árvore com a forma inicial.
+
+void Preorder(ARVBIN * arv)
+{
+ if (arv!=NULL)
+  {Processar(DATA(arv));
+   Preorder(ESQ(arv);
+   Preorder(DIR(arv);
+  }
+}
+
+
+Travessia POSORDER
+
+	Este tipo de travessia permite percorre a árvore visitando primeiro o nodo da esquerda, depois o nodo da direita e por fim o nodo raiz. É normalmente utilizado na destruição das árvores, ou seja no processo para libertar todos os nodos da árvore.
+
+void Posorder(ARVBIN * arv)
+{
+ if (arv!=NULL)
+  {Posorder(ESQ(arv);
+   Posorder(DIR(arv);
+   Processar(DATA(arv));
+  }
+}
+
+
+
+
+Representação sequencial de árvores binárias
+	A implementação de árvores pode ser feita sobre estruturas dinâmicas, como até aqui se mostrou, ou sobre estruturas estáticas, como por exemplo arrays.
+	Para se conseguir implementar uma árvore sobre uma sequência, é necessário que os descendentes directos do nodo se encontrar na posição i, estejam em (2 * i) e em (2 * i + 1), isto para toda e qualquer posição i da sequência.
+
+O seguinte figura exemplifica como se organiza uma árvore sobre uma sequência.
+utilização de memória dinâmica
+
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+...
+30
+20
+70
+12
+25
+Nulo
+85
+Nulo
+Nulo
+22
+Nulo
+...
+
+
+utilização de memória estática
+
+
+Peso/Altura de uma árvore binária de pesquisa
+	Uma das características de uma árvore é o seu peso, ou seja o número de máximo de camadas que a árvore possui.
+	O cálculo do peso de uma árvore é determinado pela soma de uma unidade ao maior dos pesos das suas sub árvores. Caso a árvore seja nula então o seu peso é zero.
+O algoritmo proposto para determinar o peso de uma árvore é o seguinte:
+
+int Peso(ARVBIN *arv)
+{int pesq,pdir;
+ if (arv==NUL)
+   return 0;
+ else
+	{pesq = Peso(ESQ(arv));
+	 pdir = Peso(DIR(arv));
+	 return 1 + ((pesq>pdir)?pesq:pdir);
+}
+}
+
+
+Peso da árvore no nó “30” é  4
+
+
+
+Árvores Binárias de Pesquisa Balanceadas
+
+	Um dos aspectos mais importantes quando se trabalham com grandes quantidades de informação é sem dúvida a rapidez com que os dados são acedidos e a rapidez com que estres são armazenados.
+	Exemplos das situações extremas encontram-se representados na seguinte figura, por X (melhor situação) e Y (pior situação), para o caso de uma árvore balanceada e não balanceada:
+
+			Árvore balanceada					árvore não balanceada
+
+	Para se chegar ao elemento X (melhor situação), o algoritmo de pesquisa é de ordem O(1) em qualquer das árvores. Mas no caso da chave se encontrar sempre posicionada na pior situação (Y), no caso extremo de uma árvore não balanceada estamos na presença de um algoritmo de O(n), enquanto que no caso da árvore balanceada o algoritmo é apenas de O(log n), onde n representa o número de nodos da árvore.
+	À primeira vista seria natural afirmar que em termos médios as árvores balanceadas são mais eficientes, por outro lado há que considerar que o processo para manter uma árvore balanceada também tem os seus custos. Está no entanto comprovado que se a inserção for sempre feita de forma a garantir o balanceamento da árvore, então o algoritmo de inserção é de ordem O(log n), pelo que são na realidade mais eficientes.
+
+	Existem diversas técnicas que permitem manter uma árvore balanceada ao longo do seu processo de inserção/remoção de dados, mesmo que a ordem de inserção implique a criação de uma árvore desbalanceada.
+	Dois exemplos dessas estruturas são:
+    • Árvores RED-BLACK - A definição formal deste tipo de árvore binária de pesquisa implica a criação de mais dois campos: um para a cor do nodo (Vermelho ou Preto) e outro campo com a indicação de quem é o seu ascendente (pai).
+    • Árvores AVL (Adelson-Velskii and Landis) - são também árvores binárias de pesquisa em que o balanceamento de cada um dos nós da árvore é sempre  1. Este tipo de árvore implica a criação de mais dois campos adicionais: um para o balanceamento do Nodo e outro com a indicação de quem é o seu ascendente (este último poderá ser omitido).
+
+Determinação do balanceamento uma árvore binária 
+
+	Através dos pesos dos ramos de uma árvore é possível determinar uma outra característica destas, o balanceamento. Ou seja, uma árvore binária (arv) diz-se balanceada, se e só se:
+
+|Peso(arv.getArvEsq())–Peso(arv.getArvDir())| 1
+
+	Caso a diferença dos pesos seja igual a zero, então a árvore diz-se perfeitamente balanceada.
+
+Inserção em árvores balanceadas
+	Então a questão que se levanta é: como é possível inserir numa árvore de forma a que esta se mantenha balanceada?
+	Parte-se do princípio que a árvore está balanceada e que a nova chave a inserir desequilibra a árvore. É então necessário identificar o ramo que está a provocar desequilíbrio. O mesmo é dizer que é necessário identificar a posição relativa onde o nodo é inserido.
+	De notar que, a inserção de uma chave só poderá fazer com que uma árvore fique não balanceada, caso o módulo da diferença entre os pesos da sub árvore esquerda e direita do nodo raiz seja um, o que nem sempre acontece.
+	Antes de se identificarem as situações cuja inserção faz com que a árvore fique não balanceada, há que redefinir a estrutura de ArvBin, acrescentando um novo campo de informação e respectivos operadores, o bal.
+
+typedef struct nodo
+{TINFO info;
+ int bal;
+ struct nodo *esq;
+ struct nodo *dir;
+}ARVBIN;
+
+Definindo também a seguinte macro função:
+
+#define BALANC(A)	((A)->bal)
+
+
+
+
+	O novo campo serve para guardar o valor da diferença entre os pesos das sub árvores esquerda e direita do nodo. Desta forma uma árvore só está balanceada caso | bal |  1.
+	Existem quatro situações, onde a inserção de uma nova chave numa árvore balanceada pode provocar o seu desbalanceamento, as quais serão identificadas como:
+    • (Des)Balanceamento Esquerda-Esquerda
+    • (Des)Balanceamento Esquerda-Direita
+    • (Des)Balanceamento Direita-Esquerda
+    • (Des)Balanceamento Direita- Direita
+
+	Estas quatro situações são descritas nas secções seguintes, após as quais se apresenta o algoritmo completo para a inserção em árvores balanceadas.
+
+(Des)Balanceamento Esquerda-Esquerda
+
+Esta situação caracteriza-se por: 
+    • Nodo raiz com bal igual a 1, 
+    • A nova chave é inserida à esquerda  esquerda do nodo raiz. 
+
+	A situação encontra-se representada na seguinte figura, onde novo representa o nodo com a chave a inserir e arv representa a árvore onde inserir:
+
+Após a Inserção do elemento de chave 12 (<20) ficamos com a seguinte árvore:
+
+
+
+
+
+	Como se pode verificar a árvore ficou desbalanceada. Para que volte a ficar balanceada há que realizar o seguinte conjunto de operações:
+
+ARVBIN *BalanceamentoEE(ARBIN *arv)
+{ARVBIN *nesq;
+ nesq =  ESQ(arv);
+ ESQ(arv)=DIR(nesq);
+ BALANC(arv)=0;
+ DIR(nesq)=arv;
+ BALANC(nesq)=0;
+ return nesq;
+}
+
+O que resulta na seguinte árvore, que como se pretendia está balanceada:
+
+
+ (Des)Balanceamento Esquerda-Direita
+
+Esta situação caracteriza-se por: 
+    • Nodo raiz com bal igual a 1,
+    • A sub árvore esquerda com bal igual a 0
+    • A nova chave é inserida à esquerda  direita  esquerda do nodo raiz. 
+
+	A situação encontra-se representada na seguinte figura, onde novo representa o nodo com a chave a inserir e arv representa a árvore onde inserir:
+
+
+
+
+
+
+
+
+
+
+
+	O novo elemento, devido ao seu valor será inserido na sub árvore esquerda do nodo com a chave 28, ou seja em arvEDE, o que resulta na seguinte árvore:
+
+
+Para que a árvore fique balanceada há que realizar a seguinte reestruturação:
+
+	Para o caso de se pretender inserir uma nova chave:
+    • à esquerda  direita  direita do nodo raiz 
+
+	Por exemplo, a chave 31, o ponto de partida é semelhante à situação anterior. O resultado é que é ligeiramente diferente:
+
+
+
+
+
+
+
+
+
+
+
+
+
+	No entanto a forma de balancear é igual para as duas situações, surgem apenas algumas diferenças nos valores de bal, como se pode verificar pela seguinte figura:
+
+
+O algoritmo para balancear estas situações é o seguinte:
+
+ARVBIN *BalanceamentoED(ARBIN *arv)
+{ARVBIN *nesq, *nesqdir;
+ nesq =  ESQ(arv);
+ nesqdir = DIR(nesq);
+ DIR(nesq)=ESQ(nesqdir);
+ ESQ(arv)=DIR(nesqdir);
+ if (BALANC(nesqdir)==-1) 
+	{BALANC(arv)=0;BALANC(nesq)=1;
+}
+  else
+    if (BALANC(nesqdir)==0)
+		{BALANC(arv)=0;BALANC(nesq)=0;
+}
+      else
+    	if (BALANC(nesqdir)==1)
+			{BALANC(arv)=-1;BALANC(nesq)=0;
+}
+ ESQ(nesqdir)=nesq;
+ DIR(nesqdir)=arv;
+ BALANC(nesqdir)=0;
+ return nesqdir;
+}
+
+
+(Des)Balanceamento Direita-Direita
+
+Esta situação caracteriza-se por: 
+    • Nodo raiz com bal igual a -1, 
+    • A nova chave é inserida à direita  direita do nodo raiz. 
+
+	A situação encontra-se representada na seguinte figura, onde novo representa o nodo com a chave a inserir e arv representa a árvore onde inserir:
+
+
+	A nova chave, devido ao seu valor é inserida na sub árvore direita do nodo com a chave 40, ou seja em arvDD. Resultando na seguinte árvore:
+
+
+	Para voltar a balancear a árvore há que realizar um determinado conjunto de operações, do qual resulta na seguinte árvore, que como se pretendia está balanceada:
+
+
+
+
+
+O Algoritmo para efectuar este balanceamento é o seguinte:
+
+ARVBIN *BalanceamentoDD(ARBIN *arv)
+{ARVBIN *ndir;
+ ndir =  DIR(arv);
+ DIR(arv)=ESQ(ndir);
+ BALANC(arv)=0;
+ ESQ(ndir)=arv;
+ BALANC(ndir)=0;
+ return ndir;
+}
+
+
+(Des)Balanceamento Direita-Esquerda
+
+Esta situação caracteriza-se por: 
+    • Nodo raiz com bal igual a -1,
+    • A sub árvore direita com bal igual a 0
+    • A nova chave é inserida à direitaesquerdaesquerda do nodo raiz. 
+
+
+
+
+
+
+
+	A situação encontra-se representada na seguinte figura, onde novo representa o nodo com a chave a inserir e arv representa a árvore onde inserir:
+
+	De notar que a nova chave, devido ao seu valor será inserida na sub árvore esquerda do nodo com a chave 35, ou seja em arvDEE, o que resulta na seguinte árvore:
+
+
+Para que a árvore fique balanceada há que realizar a seguinte reestruturação:
+
+
+
+
+Para o caso de se pretender inserir uma nova chave
+    • à direitaesquerdadireita do nodo raiz 
+
+Por exemplo, a chave 37, o ponto de partida é semelhante à situação anterior. O resultado é que é ligeiramente diferente:
+
+	A forma de balancear é igual para as duas situações, ocorrem apenas algumas diferenças nos valores de bal, como se pode verificar pela seguinte figura:
+
+
+O algoritmo para balancear estas situações é o seguinte:
+
+ARVBIN *BalanceamentoDE(ARBIN *arv)
+{ARVBIN *ndir, *ndiresq;
+ ndir =  DIR(arv);
+ ndiresq = ESQ(ndir);
+ ESQ(ndir)=DIR(ndiresq);
+ DIR(arv)=ESQ(ndiresq);
+ if (BALANC(ndiresq)==-1) 
+	{BALANC(arv)=1;BALANC(ndir)=0;
+}
+  else
+    if (BALANC(ndiresq)==0)
+		{BALANC(arv)=0;BALANC(ndir)=0;
+}
+      else
+    	if (BALANC(ndiresq)==1)
+			{BALANC(arv)=0;BALANC(ndir)=-1;
+}
+ DIR(ndiresq)=ndir;
+ ESQ(ndiresq)=arv;
+ BALANC(ndiresq)=0;
+ return ndiresq;
+}
+
+Algoritmo Final de Balanceamento
+
+	O algoritmo final parte do princípio que árvore está equilibrada e insere de forma semelhante à do algoritmo de inserção em árvores não balanceadas. Caso a inserção provoque o desequilíbrio da árvore, então esta é reestruturada segundo os algoritmos anteriores.
+	À semelhança dos algoritmos até aqui apresentados, também este é do tipo recursivo.
+
+ARVBIN *InsereBalanceado(ARVBIN *arv, BOOL *alt, TINFO *dados)
+{ARVBIN *novo, *naux;
+ if (arv==NULL)
+   {novo=Nova_ARVB(dados);
+    BALANC(novo)=0;
+    *alt=TRUE;
+    return novo;
+   }
+ if (COMPARAR(CHAVE(arv),dados->chave)==0)
+   {DATA(arv)=*dados;			//edição: altera informação lá contida
+    return arv;
+   }
+ if (COMPARAR(CHAVE(arv),dados->chave)>0)
+	{naux=InsereBalanceado(ESQ(arv),alt,dados);
+     ESQ(arv)=naux;
+     if (alt==TRUE) 
+         if (BALANC(arv)==1)
+             {arv  = BalancerEsq(arv);
+              *alt = FALSE;
+ }
+          else
+ if (BALANC(arv)==0)
+    BALANC(arv)=1;
+  else 
+    {BALANC(arv)=0;
+     *alt=FALSE;
+}
+}         
+ else
+	{naux=InsereBalanceado(DIR(arv),alt,dados);
+     DIR(arv)=naux;
+     if (alt==TRUE) 
+         if (BALANC(arv)==1)
+  {BALANC(arv)=0;
+   *alt=FALSE;
+			  }
+          else
+ if (BALANC(arv)==0)
+    BALANC(arv)=-1;
+  else 
+    {arv = BalancerDir(arv);
+     *alt=FALSE;
+}
+}         
+return arv;
+}
+
+ARVBIN *BalancearEsq(ARVBIN *arv)
+{ARVBIN *nesq;
+ nesq=ESQ(arv);
+ if (BALANC(nesq)==-1)
+    arv = BalanceamentoED(arv)
+  else
+arv = BalanceamentoEE(arv)
+ return arv;
+}
+
+ARVBIN *BalancearDir(ARVBIN *arv)
+{ARVBIN *ndir;
+ ndir=DIR(arv);
+ if (BALANC(ndir)==-1)
+    arv = BalanceamentoDD(arv)
+  else
+arv = BalanceamentoDE(arv)
+ return arv;
+}
+
+	As mesmas considerações feitas para a inserção devem ser feitas para a remoção, pois também esta operação pode desbalancear a árvore.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Grafos
+Introdução histórica
+	O estudo dos grafos teve origem no trabalho desenvolvido por Leonhard Euler a quando da resolução do chamado problema das Pontes de Konisgsberg, por volta de 1735/36.
+O problema era o seguinte: Consta que em Konigsberg (hoje Kaliningrad), junto ao mar báltico (primeiramente uma cidade da Prússia Oriental, é agora parte da Rússia), um rio que passava pela cidade tinha uma pequena ilha e, logo depois de passar por essa ilha se bifurcava em dois ramos. Nessa região existiam sete pontes. 
+
+Pontes de Konigsberg
+O povo de Konigsberg queria saber se era possível sair de uma ilha, passar uma única vez em cada uma das pontes e retornar ao ponto de origem?
+	Este problema foi resolvido pelo matemático Leornard Euler, o qual, para a sua resolução desenvolveu um modelo para representar este problema. Este modelo consistia na abstracção de detalhes irrelevantes para a resolução do problema, tal como: A área de cada ilha, o formato de cada ilha, o tipo de ponte, etc.
+
+Modelo e grafos aplicado às pontes de Konigsberg
+Desta forma, Leornard Euler matematizou o problema, provando que é impossível fazer o percurso sem passar duas vezes pela mesma ponte. Para que isto fosse possível, cada ponto teria de ter um número par de arestas.
+
+Grafos
+	Os grafos são uma importante ferramenta matemática com aplicação nas mais diversas áreas do conhecimento.
+	São das estruturas mais genéricas de dados que é possível conceber. Da mesma forma que se pode ver uma lista (simples) como um caso particular de uma árvore, esta por sua vez pode ser vista como um caso particular de um grafo.
+	Informalmente pode-se dizer que os grafos são compostos por vértices e por ramos (ou arestas, ou arcos), em que os vértices são, à semelhança das estruturas até aqui apresentadas, uma espécie de nodos (guardam informação sobre: pessoas, cidades, números, etc.) e os ramos as ligações entre estes (guardam informação sobre existência de ligação entre vértices, valor da ligação, etc.).
+
+O que é que os grafos podem representar?
+
+- redes rodoviárias, ferroviárias, aéreas, eléctricas, etc.;
+- Redes de Computadores;
+- sequência lógica da execução das tarefas de um projecto;
+- relações de parentesco de um grupo social;
+- bases de Dados: modelos Entidade-Relação
+- etc.
+Algumas Definições (recordar)
+Grafo
+	Define-se então formalmente um grafo G como sendo um par (V,R), em que V é o conjunto finito dos vértices do grafo e R uma relação binária de V para V, de tal forma que se (vi,vj)  R, então é porque há um ramo com origem em vi e destino em vj.
+
+
+
+
+
+
+
+	Na definição de grafo podem ser permitidos laços (veja a aresta a6) e arestas paralelas (as arestas a2 e a3). 
+
+Grafo Não Orientado
+	Um grafo não orientado é que aquele em que a ligação entre quaisquer dois dos seus vértices não tem orientação. O exemplo anterior é um exemplo de um grafo não orientado, sendo definido pelo conjunto V ={v1,v2,v3,v4,v5} e pelo conjunto A = {a1,a2,a3,a4,a5,a6,a7,a8}. Nestes casos (vi,vj) = (vj,vi).
+
+MultiGrafo 
+	Um grafo que contém arestas paralelas é um multigrafo.
+
+PseudoGrafo/HiperGrafo 
+	Um grafo que contém no mínimo um laço é um pseudografo/hipergrafo.
+
+Grafo simples
+	Um grafo que não contém nenhum laço e nenhumas arestas paralelas é chamado grafo simples.
+
+Subgrafo
+ G’=(V’,R’) é um subgrafo de G=(V,R), caso se verifique que:  V’  V  R’  R
+
+Vértices Adjacentes
+	Dois vértices dizem-se adjacentes se ligados por uma aresta (no exemplo anterior: v2 e v3 são adjacentes, pois estão ligados pela aresta a4)
+
+Aresta Incidente
+	Uma aresta que ligue dois Vértices diz-se incidente de cada um dos vértices (no exemplo anterior: a aresta a4 é incidente de v2 e v3)
+
+Arestas Adjacentes
+	Duas arestas dizem-se adjacentes se têm um vértice em comum (no exemplo anterior: as arestas a1 e a5 são adjacentes)
+
+Grau de um Vértice
+O grau de um vértice denomina-se por DEG(v) e é igual ao o número de arestas incidentes nesse vértice. (no exemplo anterior: o grau do vértice v2 é 3)
+
+Vértice isolado
+Quando o grau de um vértice é zero, diz-se que esse vértice é um vértice isolado.
+
+Caminho
+	Uma sequência de vértices na qual os vértices sucessivos estão ligados por arestas do grafo diz-se um caminho. Há caminho entre Vx e Vz e representa-se por Vx ~> Vz, se e só se: 
+(vx,vz)R
+
+ vy  V: vy  vx  vy  vz  (vx,vy)  R  vy ~> vz
+
+Caminho Simples
+	Um caminho Vi ~> Vj pode ser classificado como simples (caminho único) se os vértices são distintos (existe uma ligação entre Vx e Vz sem repetir Vértices e arestas)
+ i, j, i  j  vi  vj, em que vi, vi+1,...vj-1, vj  vi~>vj
+
+Caminho Cíclico (ou ciclo)
+	Um caminho em que não há repetição de arestas nem vértices, com excepção do primeiro e último vértice que são iguais, diz-se um ciclo.
+
+Caminhos disjuntos
+	Dois caminhos dizem-se disjuntos se não possuírem vértices comuns, excepto possivelmente para os vértices extremos.
+
+Grafo Ligado (Conexo)
+	Um grafo diz-se ligado, se e só se, entre quaisquer dois vértices desse grafo existir sempre um caminho.
+ vi, vj  V, vi ~>vj
+
+Árvore
+Uma árvore é um grafo ligado que não contém ciclos. Aos vértices de grau UM de uma árvore chama-se folhas.
+
+Árvore de Suporte (cobertura) / Spanning Tree
+A árvore de suporte de um grafo ligado é um seu subgrafo que contém todos os vértices e é uma árvore.
+
+
+
+Exemplos:
+
+		
+Exemplos de Grafos (G e G’-Subgrafo de G)
+No exemplo anterior podemos ver, por exemplo:
+
+- G’ é um SubGrafo de G;
+- Os vértices 7 e 8 de G são adjacentes;
+- Os vértices 1 e 5 de G não são adjacentes;
+- O Vértice 7 de G’ tem grau 2;
+- O Grafo G é um Grafo ligado;
+- O Grafo  G’ não é um grafo ligado;
+- Exemplo de um caminho em G: 1-2-4-5-7-8;
+- Exemplo de um ciclo em G: 4-5-6-7-8-3-4
+
+G’’ é o exemplo de uma árvore de Suporte de G.
+
+
+
+Grafo Orientado (Digrafo)
+	Se para todo e qualquer par de vértices Vi e Vj de um grafo G, tal que Vi diferente de Vj, se verificar que (Vi,Vj) e (Vj,Vi), caso existam, são dois ramos (arcos) distintos, então diz-se que G é um grafo orientado.
+vi, vj  V, vi  vj  (vi,vj)  (vj,vi)
+	Nesta situação, diz-se que um qualquer ramo (Vi,Vj) tem início no vértice Vi e fim no vértice Vj
+
+Exemplo de um Grafo Orientado
+
+Aresta Incidente (redefinição)
+	Uma aresta que ligue dois Vértices diz-se incidente de cada um dos vértices (no exemplo anterior: a aresta Rb é incidente para o exterior de v5 – v5 é o extremo inicial de Rb -  e incidente para o interior de v3 – v3 é o extremo final de Rb )
+
+Grafo Completo
+	Um grafo pode ser classificado como completo, se contém todas as arestas possíveis:
+	Estendendo a definição para grafos orientados, Um grafo diz-se Completo se qualquer par de vértices vi e vj está ligado pelo menos num dos sentidos (relaxando a orientação das ligações, há uma aresta entre cada par de vértices).
+O número de aresta de um grafo completo é: n(n-1)/2 (n número de vértices)
+
+Complemento de um Grafo
+	Um grafo G’ diz-se complemento do Grafo G quando se obtém a partir de um grafo completo com o mesmo número de vértices de G, retirando-lhe todas as arestas de G.
+
+Grafo Denso
+	Um grafo que possua um número de arestas próximo do número máximo diz-se denso.
+
+Grafo Esparso
+	Um grafo cujo complemento seja denso diz-se esparso.
+
+Densidade de um Grafo Orientado
+	A densidade de um grafo é dada pelo número de arestas do grafo sobre o número de ramos de um grafo completo com o mesmo número de vértices, ou seja Densidade de um grafo : = R / (V*(V-1)), em que R representa o número de arestas e V representa o número de vértices.
+
+Alcançáveis
+	Diz-se ainda que, se existir um caminho entre os vértices Vi e Vj, então Vi alcança Vj. 
+	Ao conjunto de todos os vértices alcançáveis por Vi, designa-se por alcançáveis de Vi e representa-se por Alcançáveis(Vi). 
+	Formalmente o conjunto é definido da seguinte forma: 
+Alcançávies(Vi) = {Vx  V: Vi ~> Vx}
+No Grafo G anterior os Alcançaveis(V3) são {V2,V4}
+
+Antecessor e Sucessor
+	Se (Vi,Vj) pertencer ao conjunto de ramos de um grafo orientado, diz-se então que:
+		Vi é antecessor de Vj
+		Vj é sucessor de Vi
+	Define-se então o conjunto dos antecessores do vértice Vi, que se representa por Antecessores(Vi), da seguinte forma:
+	{Vx  V : (Vx,Vi)  R }
+	E o conjunto dos sucessores do vértice Vi, que se representa por Sucessores(Vi), da seguinte forma:
+	{Vx  V : (Vi,Vx)  R }
+
+Grafo Identidade
+	Ao grafo I=(V,R’), para o qual todo e qualquer ramo (Vi, Vj)  R’ verifica que Vi = Vj, designa-se por grafo Identidade. 
+		Grafo identidade correspondente do grafo G 
+
+Grafo Pesado/Ponderado
+Quando se atribuem pesos às arestas de um grafo (representando distâncias, tempos, custos, etc.), então esse grafo diz-se Pesado ou Ponderado. O peso do grafo, w(G), é a soma dos pesos de todas as arestas.
+
+Árvore de cobertura mínima
+	Uma árvore de cobertura mínima de um grafo ligado e pesado é uma árvore de peso mínimo, isto é, que a soma dos pesos das suas arestas é a menor de entre todas as árvores de cobertura.
+
+Operações típicas sobre Grafos
+	Para ilustrar as operações sobre grafos, e meramente a título de exemplo, serão utilizados os dois grafos G1 e G2 representados na seguinte figura
+Grafos a utilizar nos exemplos.
+
+União
+	Seja G a união entre G’ e G’’, representado por: G = G’  G’’
+tal que: R = R’  R’’ = { (Vx,Vy) : (Vx,Vy)  R’  V(Vx,Vy)  R’’}
+	Na figura anterior encontra-se representado o grafo correspondente à união entre os grafos G1 e G2.
+
+
+Composição
+	Seja G a composição entre G’ e G’’, que se representa por: G = G’  G’’
+tal que: R = {(Vx,Vy) : Va  V , (Vx,Va)  R’’  (Va,Vy)  R’}
+Representação das composições entre G1 e G2 e entre G2 e G1.
+
+
+Exponenciação
+	Seja Gn o expoente n de G, que resulta de:
+
+			I		se n=0
+	Gn = 
+			G º Gn-1	se n>0
+
+	O mesmo é dizer que, existe um ramo (Vx,Vy) em Gn, se e só se, existir em G um caminho de Vx para Vy composto por n ramos.
+
+Nas figuras seguintes encontram-se representados o expoente 1, 2 e três do grafo G1.
+				   = G1  I				     = G1  
+
+						 = G1  
+
+Da análise de  pode-se concluir que existe em G um caminho de comprimento 3 entre V1 para V2 (caminho que que passa por 3 ramos). Ou seja, permite responder facilmente à pergunta: Existe no Grafo G algum caminho de vi para vj de comprimento n?
+No entanto não é possível pela análise de  saber:
+- quantos caminhos há de comprimento 3 entre V1 e V2
+- a descrição do(s) caminho(s) de comprimento 3 que se sabe existir
+
+Exponenciação Algébrica
+	Caso o grafo a analisar possa ser representado sob a forma de matriz de adjacências (ver a seguir) então o cálculo da operação de exponênciação pode ser obtido através de operações algébricas de produtos matriciais:
+Seja G uma matriz Booleana do grafo G com "n" vértices". Calculando G2 = G x G, G3 = G2 x G , …, Gn = Gn-1 x G , os elementos da matriz Gk, têm valor "1" se e só se há caminho de comprimento "k" entre vi e vj.
+
+	Este tipo de operação é muito útil em diversas aplicações em que se torna necessário saber se existirá alguma ligação entre dois vértices de um grafo que não exceda um determinado número de ramos.
+
+Fecho Transitivo
+O fecho transitivo de G, representa-se por G+ e resulta de: 
+Representação do fecho transitivo do grafo G1
+
+O Fecho Transitivo de um grafo G, permite saber entre que vértices de G existem caminhos. Isto é,  se existir uma ligação (Vx,Vy) em G+, então é porque existe um caminho (de comprimento >0) de Vx para Vy em G.
+
+Representação de Grafos
+	Mesmo com os poucos conhecimentos até aqui fornecidos, não é difícil perceber a potencialidade que os grafos possuem como forma de representação. Infelizmente tais potencialidades também acarretam custos, um dos quais é a forma de representar um grafo. É que, como já foi possível verificar, o número de ramos que podem sair de um vértice, varia entre zero e o número total de vértices do grafo, o que elimina, à partida, a utilização de estruturas estáticas como forma de representar cada ramo, à semelhança dos campos arvesq e arvdir das árvores binárias. Mesmo a utilização de arrays de “ramos” é pouco eficiente, uma vez que seria necessário possuir para cada vértice um array com tantos elementos quantos os vértices do grafo. Não é fácil obter uma solução consensual, dependendo muito do problema em causa.
+	De seguida, apresentam-se algumas formas de representação de grafos mais utilizadas, a Matriz de Incidências, Matriz de Adjacências e as Listas de Adjacências.
+
+Matriz de Incidências
+	Uma maneira natural de representar um grafo num computador é o de utilizar matrizes, aproveitando assim todas as manipulações permitidas pela álgebra linear.
+	Este tipo de representação é muito usual na matemática, neste ponto vamos apenas referi-la, não entrando em detalhe quanto à sua implementação. Uma matriz de incidências não é mais do que uma matriz de dimensões nxm (n:vértices, m:ramos), onde cada elemento Ejk da matriz é determinado da seguinte maneira:
+	= 1 se o ramo Ak é incidente no vértice Vj
+	= 0 caso contrário
+Grafo exemplo
+
+
+a1
+a2
+a3
+a4
+a5
+a6
+a7
+a8
+v1
+0
+0
+0
+1
+0
+1
+0
+0
+v2
+0
+0
+0
+0
+1
+1
+1
+1
+v3
+0
+0
+0
+0
+0
+0
+0
+1
+v4
+1
+1
+1
+0
+1
+0
+0
+0
+v5
+0
+0
+1
+1
+0
+0
+1
+0
+v6
+1
+1
+0
+0
+0
+0
+0
+0
+Matriz de incidências do grafo anterior
+
+	No caso de se trabalhar com grafos direccionados, é necessário distinguir os ramos divergentes dos ramos convergentes. Para cada ramo, temos que especificar qual o vértice de onde provém qual o vértice de destino. Podemos simplesmente utilizar 1 no primeiro caso e -1 no segundo.
+
+Matriz de Adjacências
+	Consiste em utilizar uma matriz bidimensional (VxV), onde cada um dos índices da matriz representa um vértice. 
+	A uma das dimensões da matriz estão associados os vértices de onde partem os ramos, ou sejam, os vértices origem, enquanto há outra dimensão estão associados os vértices onde terminam os ramos (vértices destino).
+	Os elementos da matriz podem ser do tipo booleano, assinalando se entre um vértice origem e um vértice destino existe, ou não, um ramo. Ou então, pode-se utilizar uma estrutura de dados que permita descrever cada um dos ramos (ou a sua ausência). Cada elemento Ejk da matriz é determinado da seguinte maneira:
+	= 1 se o ramo Ak é incidente no vértice Vj
+	= 0 caso contrário
+Matriz de adjacências de G2.
+
+	Apesar desta forma de representar os grafos ser de fácil implementação e simplificar os algoritmos tipicamente deste tipo de estrutura, é no entanto extremamente ineficiente em relação ao espaço que ocupa, uma vez que, obriga a ter uma matriz de V x V elementos, em que V representa o número total de vértices do grafo, independentemente do número de ramos que nele existam. É, Por isso mesmo, apropriada para grafos densos (em que o número de ramos se aproxima de V2)
+	Em compensação a aplicação de determinados algoritmos é extremamente simples. Por exemplo, para se determinar o conjunto dos antecessores de um vértice basta detectar os elementos da matriz cujo destino é o vértice em causa e que assinalam a presença de ramos.
+Definição formal 
+
+
+
+
+
+
+
+Esquema de um grafo representado sob a forma de matriz de adjacência
+
+Para a definição de uma estrutura do tipo Matriz de Adjacência teremos que previamente definir os vértices e os ramos:
+
+typedef struct 
+{...				// definição dos campos necessários 
+ ...				// Ex. nome, população, capacidade, etc.
+}TVERTICE;
+
+	Quando se utiliza matrizes de adjacências, tipicamente Ramo não é mais do que uma variável do tipo booleano ou uma estrutura que contenha a informação sobre esse ramo (distância, tempo, secção, etc.).
+
+typedef struct 
+{...				
+ BOOL existe;
+}TRAMO;
+
+E finalmente a definição do tipo Matriz de Adjacências
+
+typedef struct 
+{char nome[20];				
+ TVERTICE *vvertices;			// vector de vertíces
+ TRAMO **ramos;				// matriz de adjacências
+ int numv;						// número de vertices
+}TGRAFO;
+
+Podendo também definir as seguintes Macro Funções
+
+#define VERTICE(G,v) ((G)->vvertices[(v)]
+#define EXISTERAMO(G,i,j) ((G)->ramos[(i)][(j)].existe)
+#define RAMO(G,i,j) ((G)->ramos[(i)][(j)])
+
+Operadores sobre Gráficos utilizando Matriz de Adjacências
+A definição do operador Novo_GRAFO (operador responsável pela alocação de memória para um novo grafo e para os elementos dessa estrutura). A função devolve o endereço de memória onde ficou guardado o grafo no caso de sucesso, devolvendo NULL no caso de não existir memória suficiente para a alocação de espaço para esse Grafo.
+
+TGRAFO *NOVO_GRAFO(int size)
+{TGRAFO *grafo;
+ int i,j;
+grafo = (TGRAFO *)malloc(sizeof(TGRAFO));
+if (grafo==NULL)
+  return NULL;  				// sem memória, devolver grafo “vazio”
+grafo->vvertices=(TVERTICE *)malloc(sizeof(TVERTICE)*size);
+if (grafo->vvertices==NULL)
+{free(grafo);
+     return NULL;}				// sem memória, devolver grafo “vazio”
+grafo->ramos=(TRAMO **)malloc(sizeof(TRAMO *)*size);
+if (grafo->ramos==NULL)
+{free(grafo->vvertices);
+ free(grafo);
+     return NULL;}	    // sem memória, devolver grafo “vazio”	
+for (i=0;i<size;i++)	// alocar espaço para cada linha da matriz
+  {grafo->ramos[i]=(TRAMO *)calloc(sizeof(TRAMO),size);
+   if (grafo->ramos[i]==NULL) // se erro libertar memória
+        {for (j=0;j<i;j++) free(grafo->ramos[i]);
+         free(grafo->ramos);
+         free(grafo->vvertices);
+		 free(grafo);
+         return NULL;	// sem memória, devolver grafo “vazio”
+        }
+  }
+grafo->numv=size;		// caso sucesso
+return grafo;
+}
+
+Total de ramos existentes no Grafo 
+int TotalRamos(TGRAFO *G)
+{int i,j,c=0;
+for (i=0;i<G->numv;i++)
+  for (j=0;j<G->numv;j++)
+     if (EXISTERAMO(G,i,j))
+			c++;
+return c;
+}
+	Como ser pode ver, esta operação é executada em O(V2) tempo, sendo V o número de vértices existentes no Grafo.
+	Esta função poderia não ser necessário implementar, caso na definição do grafo se tivesse optado pela colocação um campo adicional para guardar o número total de ramos existentes no Grafo. Este campo seria actualizado a quando da inserção remoção de um qualquer ramo de ligação entre dois vértices.
+
+Listar os sucessores de um dado vértice 
+
+void ListarSucessores(TGRAFO *G, int vert)
+{int i;
+for (i=0;i<G->numv;i++)
+  if (EXISTERAMO(G,vert,i))
+     PROCESSAR(G->vvertice[i]);
+}
+De forma semelhante determina-se o conjunto dos antecessores de um vértice.
+
+Composição de dois Grafos 
+
+	A operação de composição de Grafos fica bastante simplificada quando se utiliza matrizes de Adjacências:
+
+// esta função calcula g2 = g1 º g2
+void ComposicaoG(TGRAFO *g1, TGRAFO *g2)
+{int x,y,z;
+TGRAFO *r;
+if (g1->numv!=g2->numv)			// têm que ter igual n. de vertices
+  return;
+r=CriarGrafo(g1->numv);  // criar espaço para grafo resultado
+//fazer a composição
+for (x=0;x<r->numv;x++)
+    for (z=0;z<r->numv;z++)
+       {r->ramos[x][z].existe=0;
+		for (y=0;y<r->numv;y++)
+	  	if (EXISTERAMO(g2,x,y) && EXISTERAMO(g1,y,z))
+				r->ramos[x][z].existe=TRUE;
+       }
+//copiar informação de r para g2 (bastaria alterar apontadores)
+for (x=0;x<r->numv;x++)
+    for (z=0;z<r->numv;z++)
+       g2->ramos[x][z].existe=r->ramos[x][z].existe;
+EliminarGrafo(r);
+}
+De notar que esta operação (G1 o G2), tal como foi já referido anteriormente, poderia ser substituída pela operação do produto matricial G2 x G1.
+
+Fecho Transitivo de um Grafo 
+
+	Tal como já foi referido anteriormente, o Fecho Transitivo de um grafo G, permite saber entre que vértices de G existem caminhos. Isto é,  se existir uma ligação (Vx,Vy) em G+, então é porque existe um caminho (de comprimento >0) de Vx para Vy em G.
+	Um algoritmo que permite determinar em tempo O(V3) o Fecho Transitivo de um Grafo é o sugerido por WARSHALL
+
+void WarshallTC (TGRAFO *W)
+{int k,i,j;
+for (k=0; k<W->numv; k++)
+  for (i=0; i< W->numv; i++)
+    for (j=0; j< W->numv; j++)
+      if (EXISTERAMO(W,i,k) && EXISTERAMO(W,k,j])
+RAMO(W,i,j).existe=TRUE;
+}
+
+	Inicialmente W conterá uma cópia do Grafo para o qual se pretende calcular o Fecho Transitivo, ou seja contém apenas os ramos iniciais de G.
+	No final da execução o ciclo tem-se: EXISTERAMO(W,i,j) se e só se existe um caminho (de comprimento >0) de Vi para Vj em G. 
+
+Generalização do algoritmo de Warshall 
+
+Uma generalização do algoritmo de Warshall para grafos pesados permite calcular um grafo contendo os pesos dos caminhos mais curtos entre todos os pares de vértices de um grafo. (algoritmo a ver mais à frente)
+
+Listas de Adjacências
+	As listas de adjacências são uma outra forma de representação de grafos, com base em estruturas mistas (estáticas e dinâmicas), que tenta ultrapassar os defeitos inerentes às matrizes de adjacências. É o caso de grafos Esparsos, em que a relação entre o número de ramos que partem de um vértice e o número total de vértices é muito baixa, esta forma de representação pode tornar-se substancialmente mais compacta do que a matriz de adjacências.
+	A estrutura tem por base um array, onde cada posição deste contém a informação de um determinado vértice e uma lista com todos os vértices a este adjacentes. No caso dos grafos orientados a lista é composta pelos vértices sucessores.
+	A título de exemplo, o grafo G2 encontra-se representado sob a forma e uma lista de adjacências na seguinte figura.
+
+Lista de adjacências de G2.
+	É fácil de perceber que esta forma de representação é bastante mais compacta e eficiente para grafos grandes (com muitos vértices) com um baixo número de ramos por vértice.
+	No entanto, e de forma geral, também dificulta a implementação de algumas rotinas típicas de grafos, como no caso em que se pretende determinar os antecessores de um vértice.
+	Mas para o caso de grafos muito grandes em que normalmente a relação entre o número de ramos que partem de um vértice e o número total de vértices é muito baixa, esta forma de representação pode tornar-se substancialmente mais compacta do que a matriz de adjacências.
+	Formalmente esta estrutura pode ser definida da seguinte forma:
+
+
+
+
+
+
+
+
+
+
+
+
+Esquema de um grafo representado sob a forma de Listas de adjacência
+
+	Quando se utilizam lista de adjacências, os ramos, não são mais do que nodos onde a Informação guardada diz respeito à ligação entre os vértices
+
+typedef struct 
+{...
+ int vert;				// índice do vertice “a quem liga”
+ TipoX valor;		// informação sobre o ramo de ligação		
+}TINFO;
+
+Definição do tipo Lista de Adjacências
+
+typedef struct 
+{char nome[20];				
+ TVERTICE *vvertices;			// vector de vertíces
+ TNODO **lstadj;				// vector de lista de adjacências
+ int numv;						// número de vertices
+}TGRAFO;
+
+
+Podendo também definir as seguintes Macro Funções
+
+#define LISTAG(G,v) ((G)->lstadj[(v)])
+
+
+Operadores sobre Gráficos utilizando lista de Adjacências
+A definição do operador Novo_GRAFO (operador responsável pela alocação de memória para um novo grafo e para os elementos dessa estrutura):
+
+TGRAFO *NOVO_GRAFO(int size)
+{TGRAFO *grafo;
+ int i;
+grafo = (TGRAFO *)malloc(sizeof(TGRAFO));
+if (grafo==NULL)
+  return NULL;  				// sem memória, devolver grafo “vazio”
+grafo->vvertices=(TVERTICE *)malloc(sizeof(TVERTICE)*size);
+if (grafo->vvertices==NULL)
+{free(grafo);
+     return NULL;}				// sem memória, devolver grafo “vazio”
+grafo->lstadj=(TNODO **)malloc(sizeof(TNODO *)*size);
+if (grafo->lstadj==NULL)
+{free(grafo->vvertices);
+ free(grafo);
+     return NULL;}	    // sem memória, devolver grafo “vazio”	
+for (i=0;i<size;i++)	
+	grafo->lstadj[i]=NULL;	// inicializar todas as listas a NULL;
+grafo->numv=size;			// caso sucesso
+return grafo;
+}
+
+	Desta forma, e apenas a título de exemplo, o algoritmo para Processar (mostrar, guardar, etc.) os sucessores de um vértice fica resumido ao seguinte:
+
+void SUCESSORES(TGRAFO *grafo,int vs)
+{TNODO *aux;
+aux = LISTAG(grafo,vs);
+while (aux)
+	{PROCESSAR(VERTICE(grafo,DATA(aux).vert));
+     aux=NEXT(aux);
+}
+}
+
+	O algoritmo para determinar os antecessores, como já se disse, complica-se substancialmente.
+
+void ANTECESSORES(TGRAFO *grafo,int vs)
+{TNODO *aux;
+int i;
+for (i=0;i<grafo->numv;i++)
+  {aux = LISTAG(grafo,i);
+   while (aux)
+	{if (DATA(aux).vert==vs)
+PROCESSAR(VERTICE(grafo,i));
+     aux=NEXT(aux);
+}
+}
+
+Outros Algoritmos para grafos – Existe Caminho
+	A solução para determinar se há, ou não, caminho entre dois vértices pode ser directamente obtida da definição de caminho, isto é, diz-se que há caminho entre Vx e Vz, se e só se, existe um ramo entre estes dois vértices, ou se existe um ramo entre Vx e um vértice Vy, de tal forma que haja caminho entre Vy e Vz. (de onde se pode obter uma solução recursiva do tipo procura em profundidade)
+O algoritmo utiliza ainda um conjunto de vértices visitados (visit), prevenindo assim que se entre em ciclo infinito caso exista um ciclo no grafo. O vector Visit assinala os vértices já visitados e é consultado sempre que se tenta nova visita.
+
+BOOL ExisteCaminho(TGRAFO *g, int vi, int vf)
+{BOOL *visit;
+ visit=(BOOL *)calloc(g->numv,sizeof(BOOL));
+ return Ha_Caminho(g,vi,vf,visit);
+}
+
+//Versão para a utilização de matriz de adjacências
+BOOL Ha_Caminho(TGRAFO *g, int orig, int dest, BOOL *visit)
+{BOOL res;
+ int y;
+ visit[orig]=TRUE;			//marca como visitado
+ if (EXISTERAMO(g,orig,dest))
+     return TRUE;
+res=FALSE;
+y=0;
+while (y < g->numv && res==FALSE)
+  {if (EXISTERAMO(g,orig,y) && visit[y]==FALSE)
+       res = Ha_Caminho(g,y,dest,visit);
+   y++;
+  }
+return res;
+}
+
+//Versão para a utilização de Listas de Adjacência
+BOOL Ha_Caminho(TGRAFO *g, int orig, int dest, BOOL *visit)
+{TNODO *aux;
+BOOL res;
+int y;
+visit[orig]=TRUE;			//marca como visitado
+aux= LISTA(g,orig);
+while (aux && DATA(aux).vert!=dest)
+aux = NEXT(aux);
+if (aux!=NULL)			
+   return TRUE;			// um sucessor era “dest”
+res=FALSE;
+aux = LISTA(g,orig);	
+while (res==FALSE && aux!=NULL)
+  	{y=DATA(aux).vert;
+     if (visit[y]==FALSE)
+		res=Ha_Caminho(g,y,dest,visit);
+     aux=NEXT(aux);
+}
+return res;
+}
+
+Complexidade
+
+Na representação por matrizes de adjacência, o algoritmo tem um tempo de execução da ordem de V2 (em que V representa o total de vértices do grafo). Solução preferível se o grafo for denso.
+Na representação por listas de adjacências, o algoritmo tem um tempo de execução da ordem de R (em que R representa o número de ramos existentes no grafo). Solução preferível se o grafo for esparso
+
+Qual o Caminho 
+Para além de saber se existe ou não um caminho entre dois vértices distintos, poderemos querer saber qual o caminho (um dos caminhos possíveis) entre esses dois vértices.
+O algoritmo para este efeito é baseado no anterior com a utilização de mais um parâmetro que serve para devolver a lista de vértices que contem os vértices a percorrer entre o vértice origem e o vértice destino.
+A ideia consiste em fazer com que o algoritmo quando alcança o vértice destino comece por devolver uma sequência formada pelo próprio vértice destino. Como a solução é recursiva, ao voltar para a invocação anterior basta “concatenar” o vértice inicial da instância actual da função com a sequência devolvida.
+Pode-se por assim dizer que o caminho é construído do fim para o início.
+
+BOOL ExisteCaminho(TGRAFO *g, int vi, int vf, TNODO **caminho )
+{BOOL *visit;
+ visit=(BOOL *)calloc(g->numv,sizeof(BOOL));
+ return Ha_Caminho(g,vi,vf,visit,caminho);
+}
+BOOL Ha_Caminho(TGRAFO *g, int orig, int dest,
+ BOOL *visit, TNODO **caminho)
+{TNODO *aux;
+...
+if (EXISTERAMO(g,orig,dest))
+   {*caminho=InserirNODO(*caminho,VERTICE(g,dest));
+    return TRUE;
+   }
+...
+       res = Ha_Caminho(g,y,dest,visit);
+	   if (res==TRUE)
+*caminho=InserirNODO(*caminho,VERTICE(g,y));
+   y++;
+  }
+…
+
+Travessias de grafos (Pesquisa em Grafos)
+Algumas propriedades simples em grafos são fáceis de determinar, independentemente da ordem pela qual se examinam os ramos (ex.: grau de todos os vértices). 
+Outras propriedades estão associadas a caminhos, pelo que se torna necessário identificá-las através de pesquisa feita de vértice em vértice ao longo dos ramos. Neste grupo de propriedades estão a maioria dos algoritmos utilizados em grafos (ex.: o algoritmo de existe_caminho anteriormente descritos). Torna-se então necessário analisar o essencial dos algoritmos de procura em grafos:
+	À semelhança das árvores, os grafos também permitem travessias. No entanto o processo é mais complicado uma vez que, podem existir vários sucessores para cada vértice, bem como situações de caminhos cíclicos.
+	De forma a garantir que qualquer forma de travessia não fique em ciclo infinito, devido aos caminhos cíclicos, é necessário controlar os vértices processados, como se fez nos algoritmos para determinar o caminho entre dois vértices e o conjunto de alcançáveis de um vértice.
+	A duas formas mais comuns para se realizar uma travessia, são: o Depth First e o Breath First. Em ambos casos é necessário fornecer o vértice onde se inicia a travessia.
+
+Breath First Search
+	Dados G = (V, E) e um vértice fonte Vi, O Breath First (pesquisa em Largura) explora sistematicamente vértices de G para descobrir todos os vértices alcançáveis a partir de Vi.
+	O algoritmo começa por processar em primeiro lugar o vértice inicial, depois todos os seus sucessores (distância 1 ramo) e em seguida os sucessores destes (distância 2 ramos), e por ai adiante. Garantindo assim que qualquer vértice é processado antes de qualquer um dos seus descendentes, quer estes sejam sucessores ou sucessores dos sucessores. 
+A ordem segundo a qual estes são processados pode variar de implementação para implementação, cada uma produzindo resultados ligeiramente diferentes.
+
+Exemplo de uma travessia DFS: 
+a) Grafo original; b) Ordem das “visitas” a partir de v1
+//Versão para a utilização de matriz de adjacências
+void BreathFirst(TGRAFO *g, int vi)
+{BOOL *visit;
+TQUEUE q;
+int vx;
+visit=(BOOL *)calloc(g->numv,sizeof(BOOL));
+q=nova_QUEUE(g->numv);		// espaço para uma nova fila de Inteiros
+visit[vi]=TRUE;
+QInsertE(&q,vi);
+while (Qempty(&q)==FALSE)
+ {Qremove(&q,&vx);
+  PROCESSAR(VERTICE(g,vx));
+  for (i=0;i<g->numv;i++)
+       if (EXISTERAMO(g,vx,i) && visit[i]==FALSE)
+             {visit[i]=TRUE;
+  QInsertE(&q,i);
+ }
+ }
+}
+//Versão para a utilização de Lista de Adjacências
+void BreathFirts(TGRAFO *g, int vi)
+{TNODO *aux;
+...
+while (Qempty(&q)==FALSE)
+ {Qremove(&q,&vx);
+  PROCESSAR(VERTICE(g,vx));
+  aux=LISTAG(g,vx);
+  while (aux)
+     {if (visit[DATA(aux).vert]==FALSE)
+             {visit[DATA(aux).vert]=TRUE;
+  QInsertE(&q, DATA(aux).vert);
+ }
+      aux=NEXT(aux);
+ }
+ }
+}
+Existem várias variações e aplicações deste tipo de travessia, que permitem por exemplo:
+Calcular a distância de Vi a cada um dos vertices do Grafo, devolvendo o vector de distância (d[]) em que cada elemento d[j] guarda o valor correspondente ao menor número de ramos necessários para ir de Vi a Vj.
+Produzir uma árvore (sub-grafo de G) com raiz em Vi e contendo todos os vértices alcançáveis a partir de Vi. Nessa árvore o caminho da raiz a cada vértice corresponde ao caminho mais curto (entenda-se com menor número de ramos) entre dois nodos.
+
+Complexidade 
+
+Pela análise do algoritmo anterior, pode-se ver que cada vértice é QinsertE e Qremove uma vez (tanto QinsertE e QRemove executam em tempo O(1)), logo o tempo total gasto em operações sobre Queues é O(V).
+	A lista de adjacência de cada vértice é percorrida no máximo uma vez (quando o vértice é retirado da Fila), sendo que o comprimento total de todas as listas é O(R), logo o tempo necessário para atravessar as listas de adjacências é O(R). Desta forma o tempo de execução do algoritmo BFS é O(V+R).
+
+Depth First Search
+	O Depth First (pesquisa em profundidade) é uma travessia em que se processa em primeiro lugar o vértice e imediatamente a seguir processa os seus sucessores.
+Este género de algoritmo utiliza a seguinte estratégia para efectuar a travessia do grafo: Os próximos ramos a explorar têm origem no mais recente vértice descoberto que ainda tenha vértices adjacentes não explorados. Assim, quando todos os adjacentes a V tiverem sido explorados, o algoritmo recua (“backtracks") para explorar vértices com origem no nodo a partir do qual V foi descoberto.
+Esta forma de travessia nada impõem em relação à ordem segundo a qual os sucessores são processados, pelo que, o resultado final pode variar conforme a implementação. O que se traduz na ordem global segundo a qual os vértices são processados.
+	A seguinte figura representa um grafo e ilustra o processo de travessia para duas situações, na primeira os sucessores processam da esquerda para a direita, enquanto na segunda pela ordem inversa.
+
+Exemplo de duas travessias Depth First sobre o mesmo grafo
+
+O subprograma para esta forma de travessia poderá então ser o seguinte:
+void DepthFirst1(TGRAFO *g, int vi)
+{BOOL *visit;
+ visit=(BOOL *)calloc(g->numv,sizeof(BOOL));
+ DepthFirstR(g,vi,visit);
+}
+//Versão para a utilização de matriz de adjacências
+void DepthFirstR(TGARFO *g,int vi, BOOL *visit)
+{int i;
+visit[vi]=TRUE;
+PROCESSAR(VERTICE(g,vi));
+For (i=0;i<g->numv;i++)
+  if (EXISTERAMO(g,vi,i) && visit[i]==FALSE)
+		DepthFirstR(g,i,visit);
+}
+//Versão para a utilização de Listas de Adjacência
+void DepthFirstR(TGARFO *g,int vi, BOOL *visit)
+{TNODO *aux;
+visit[vi]=TRUE;
+PROCESSAR(VERTICE(g,vi));
+aux= LISTA(g,vi);
+while (aux)
+  {if (visit[DATA(aux).vert]==FALSE)
+       DepthFirstR(g,DATA(aux).vert,visit);
+   aux=NEXT(aux);
+  }
+}
+
+Complexidade 
+
+Este algoritmo executa também em tempo O(V+R) uma vez que a função DepthFirstR é chamada uma vez para vértice do grafo (é apenas chamada sempre que o vértice em análise não foi ainda visitado). O ciclo while é executado para cada chamada uma valor igual ao número de vértices adjacentes de Vi, sendo que no total é executado O(R) vezes. Logo o tempo de execução total é O(V+R).
+
+Algoritmos para grafos Pesados
+	Até aqui vimos aplicações em que os grafos não eram pesados, ou seja a existência de uma ligação entre Vi e Vj era caracterizada apenas, pela existência de um valor booleano verdadeira indicando que existia ligação entre Vi e Vj. No entanto e na maior parte das situações reais isso não é suficiente, existindo necessidade de quantificar essas ligações:
+Exemplos: Rede de computadores, com custo de comunicação e de atraso dependente do encaminhamento; Ligações aéreas, o problema típico poderá ser: Dado um aeroporto de partida obter o caminho mais curto para um destino.
+
+Exemplo de um grafo pesado não orientado
+Caminho Mais Curto - Algoritmo de Dijkstra’s
+O problema do menor caminho é bastante conhecido e tem como objectivo obter um percurso mínimo entre dois ou mais vértices de um grafo.
+
+Problema: Dado um grafo pesado G = (V, R) e um vértice vini, obter o caminho pesado mais curto de vini para cada um dos outros vértices em G
+
+O Algoritmo de Dijkstra (E.W. Dijkstra) é um dos algoritmos que permite calcular o caminho de custo mínimo entre vértices de um grafo. Parte do principio que para encontrar o caminho mais curto entre dois vértices vini e vfim, nada melhor do que começar por encontrar o melhor caminho entre vini e todos os outros vértices do Grafo, ou seja, permite calcular o menor caminho entre um dado vértice fixo e todos os restantes vértices do grafo. Por exemplo, saber a distância mínima de Mirandela a todas as cidades de Portugal.
+É um algoritmo simples, embora de complexidade elevada. Este algoritmo não garante contudo, a exactidão da solução caso haja a presença de ramos com valores negativos (só funciona se os custos, caso existam, sejam sempre positivos). Para os casos onde existam ramos com pesos negativos deverá ser utilizado outro algoritmo (ex: Algortimo de Bellman-Ford) 
+O algoritmo consiste basicamente em fazer uma visita por todos os nós do grafo, iniciando no nó fixo dado (vini) e encontrando sucessivamente o nó mais próximo, o segundo mais próximo, o terceiro mais próximo e assim sucessivamente, um de cada vez, até que todos os nós do grafo tenham sido visitados.
+O algoritmo parte de uma estimativa inicial para o custo mínimo e vai sucessivamente ajustando esta estimativa:
+- Atribuir valor zero à estimativa do custo mínimo do vértice vini (a raiz da pesquisa) e infinito (ou zero) às demais estimativas; 
+- Atribuir um valor qualquer aos antecessores (o antecessor de um vértice t é o vértice que precede t no caminho de custo mínimo de vini para t);
+- Enquanto houver vértices abertos (sem ainda terem sido visitados):
+- seja vx um vértice não visitado cuja estimativa seja a menor de entre todos os vértices não visitados; 
+- marcar vx como visitado;
+- Para todos os vértices (i) não visitados e sucessores de vx fazer
+- Calcular a estimativa do vértice vx adicionando-lhe o custo do ramo que une vx a i; 
+- Caso essa estimativa seja melhor que a estimativa anterior fazer
+- Substituir essa estimativa pela calculada;
+- Marcar vx como antecessor de i
+
+Algoritmo de Dijkstra’s
+
+void AlgoritmoDijkstra(TGARFO *gr,int vi)
+{BOOL *visit;
+ int i,vx,*anterior,*dist;
+ visit=(BOOL *)calloc(gr->numv,sizeof(BOOL));
+ anterior=(int *)calloc(gr->numv,sizeof(int));
+ dist=(int *)calloc(gr->numv,sizeof(int));
+ // iniciar campos;
+for (i=0;i<gr->numv;i++)
+    {visit[i]=FALSE; anterior[i]=vi; dist[i]=RAMO(gr,vi,i);
+    }
+dist[vi]=0;
+// algoritmo propriamente dito
+while((vx=IndMenorDistanciaNVisitado(dist,visit,gr->numv))!=-1)
+   {visit[vx]=TRUE;
+    for (i=0;i<gr->numv;i++)
+      if (EXISTERAMO(gr,vx,i) && visit[i]==FALSE)
+            if (dist[i]>dist[vx]+RAMO(gr,vx,i))
+                  {dist[i]=dist[vx]+RAMO(gr,vx,i)
+                   anterior[i]=vx;}
+	}
+}    
+
+Complexidade
+
+A ordem de complexidade deste algoritmo pode ser vista da seguinte forma:
+- Inicialização							O(V)
+- Pesquisa do índice de menor custo		O(V)
+- Pesquisa nos sucessores de vx		O(V) 
+
+Complexidade: O(V + VxV) = O(V2)
+
+	A ordem de complexidade pode ser melhorada se for utilizada uma fila com prioridades, em que o vértice não visitado de menor custo estará sempre na primeira posição da Fila. Passando a complexidade para O(R.logV)
+
+Caminhos Mais Curtos - Algoritmo de Floyd-Warshall
+É também comum a necessidade de para um dado grafo calcular o menor caminho entre todos os pares de nós de um grafo (all-pairs shortest paths). Exemplos: Tabelas de distâncias mínimas entre todas as capitais de distrito de um mapa rodoviários; obter o menor caminho que parta de um dado vértice, passe por alguns vértices intermédios bem conhecidos e chegue a um vértice final, etc.
+Uma solução óbvia para este tipo de problemas, seria o de repetir o algoritmo de Dijkstra sucessivamente para todos os vértices do grafo. Existe no entanto uma solução mais eficiente que é conhecida como algoritmo de Floyd-Warshall e que utiliza programação dinâmica.
+A ideia geral desse algoritmo é o de actualizar uma matriz de menores distâncias V vezes (onde V é o número de vértices do grafo) procurando na K‑ésima iteração por melhores distâncias entre pares de vértices que passem pelo vértice K
+
+void AlgoritmoFloydW(TGARFO *gr)
+{TRAMO **dist;        // matriz das distancias minimas
+int **anteriores      // matriz de anteriores
+int k,i,j,d;
+// inicialização matriz de distâncias e Matriz de anteriores
+dist=COPIARRAMOS(gr);  // matriz de ramos igual a gr com dist. iniciais
+anterior=MATRIZ(gr->numv,gr->numv);  //reserva espaço para matriz 
+for (i=0;i<gr->numv;i++)
+  for (j=0;j<gr->numv;j++)
+     if (ExisteRAMO(gr,i,j) && i!=j)
+           anterior[i][j]=i;
+       else
+           anterior[i][j]=INF;
+// algoritmo propriamente dito
+for (k=0;k<gr->numv;k++)
+   for (i=0;i<gr->numv;i++)
+      for (j=0;j<gr->numv;j++)
+        if dist[i][j]>dist[i][k]+dist[k][j])
+          {dist[i][j]=dist[i][k]+dist[k][j];
+           anterior[i][j]=anterior[k][j];
+          }
+}
+
+Complexidade
+Este Algoritmo é executado com uma complexidade de O(|V|³) – 3 ciclos “for” encadeados - e, também resolve o problema da existência de ramos com pesos negativos. Não resolve no entanto o problema da existência de ciclos com pesos negativos!
+
+
+Exemplo de aplicação do algoritmo de Floyd
+
+Árvores de Cobertura Mínima - Minimum Spanning Tree
+	Dado um Grafo G=(V,R) não orientado com ramos pesados, uma árvore (sub-grafo) de cobertura do grafo G, é uma árvore (grafo sem ciclos) que contém todos os vértices de G.
+Este tipo de árvore pode ser obtida utilizando a travessia do grafo em Profundidade (visto anteriormente).
+A árvore de cobertura mínima de G é a árvore de cobertura cuja soma dos valores dos ramos é mínima (pode existir mais do que uma solução).
+Exemplos de aplicação: Dado um mapa de n cidades, conseguir um desenho de estradas tal que se minimize o uso de alcatrão na construção da rede viária que liga todas essas cidades;
+
+Algoritmo de Prim
+
+O Algoritmo de Prim é um algoritmo “guloso” cuja idéia básica é: Escolher inicialmente um nó arbitrário, visitando a partir desse, todos os seus sucessores, escolhendo como próximo a ser visitado o nó mais “perto” de um dos vértices já visitados:
+- Escolher um vértice como raiz da árvore (vi);
+- Manter sempre actualizada uma lista de vértices (Árvore A), estendida a partir de vi.
+- A cada iteração escolher o ramo com menor peso que liga um vértice em A com um vértice do grafo que não esteja em A.
+
+void AlgoritmoPrim(TGARFO *gr,int vi)
+{BOOL *visit;
+ int i,vx,*anterior,*dist;
+ visit=(BOOL *)calloc(gr->numv,sizeof(BOOL));
+ arvant=(int *)calloc(gr->numv,sizeof(int));
+ dist=(int *)calloc(gr->numv,sizeof(int));
+ // iniciar campos;
+for (i=0;i<gr->numv;i++)
+    {visit[i]=FALSE; dist[i]=INF;
+    }
+dist[vi]=0;
+arvant[vi]=-1;  // raiz da árvore
+// algoritmo propriamente dito
+while((vu=IndMenorDistanciaNVisitado(dist,visit,gr->numv))!=-1)
+   {visit[vu]=TRUE;
+    for (i=0;i<gr->numv;i++)
+      if (EXISTERAMO(gr,vu,i) && visit[i]==FALSE)
+            if (RAMO(gr,vu,i)<dist[i])
+                  {dist[i]=RAMO(gr,vu,i)
+                   arvant[i]=vu;}
+	}
+}    
+
+Exemplo: Considere o seguinte esquema representativo da localização de tomadas de TV (e respectivas distâncias entre tomadas) de uma casa de habitação com 5 divisórias. Calcule a quantidade de cabo mínimo a utilizar por forma a ligar todas as tomadas e sabendo que a saída para o exterior é feita pela divisória C.
+
+
+Após 1ª iter.
+A
+B
+C
+D
+E
+
+No fim
+A
+B
+C
+D
+E
+Visit
+
+
+X
+
+
+
+Visit
+X
+X
+X
+X
+X
+Arvant
+C
+C
+-1
+C
+C
+
+Arvant
+B
+C
+-1
+A
+B
+Dist
+7.2
+6.7
+0
+7.5
+10.4
+
+Dist
+2.3
+6.7
+0
+1.6
+5.4
+
+
+Quantidade de cabo necessária para ligar todas as tomadas é: 16 metros.
+
+Outros algoritmos para criação de árvores de cobertura mínima são: O algoritmo de Kruskal e o algoritmo de Boruvka
+
+
+Ordenação Topológica
+A ordenação topológica é uma operação que se define para um caso particular dos grafos orientados, que são os grafos acíclicos (sem ciclos).
+• Este tipo de grafo é utilizado em muitas aplicações para representar, por exemplo, a dependência ou precedência de eventos.
+• Uma ordenação topológica de um grafo G produz uma ordenação linear dos seus vértices tal que, se existe ramo (vi, vj) em G, então vi aparece antes de vj na ordenação.
+• Um exemplo será um grafo cujos nós representam peças de roupa, e os ramos orientados (vi, vj) indicam que a peça representada pelo nó vi tem de ser vestida antes da peça representada pelo nó vj.
+
+
+Uma ordenação topológica válida para este caso seria: socks, shorts, pants, shoes, watch, shirt, belt, tie, jacket.
+
+Com pesquisa em profundidade é possível de ser feito
+Garantindo que se começa em todos… ver graph d:\
+
+
+
+
+
+
+
+
+
+ FIM 
+
+
+
+Índice
+
+
+
+

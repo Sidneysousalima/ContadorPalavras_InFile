@@ -1,0 +1,8 @@
+C:\IPB_Materias- 2º ano(1º smt)\Prog 3\Tb N02\_ProjetoA53572\ProjetoAxxxxx\bin\Debug\ContadorPalavras_inFile.exe.config
+C:\IPB_Materias- 2º ano(1º smt)\Prog 3\Tb N02\_ProjetoA53572\ProjetoAxxxxx\bin\Debug\ContadorPalavras_inFile.exe
+C:\IPB_Materias- 2º ano(1º smt)\Prog 3\Tb N02\_ProjetoA53572\ProjetoAxxxxx\bin\Debug\ContadorPalavras_inFile.pdb
+C:\IPB_Materias- 2º ano(1º smt)\Prog 3\Tb N02\_ProjetoA53572\ProjetoAxxxxx\obj\x86\Debug\ContadorPalavras_inFile.csprojResolveAssemblyReference.cache
+C:\IPB_Materias- 2º ano(1º smt)\Prog 3\Tb N02\_ProjetoA53572\ProjetoAxxxxx\obj\x86\Debug\ProjetoA53572.MainForm.resources
+C:\IPB_Materias- 2º ano(1º smt)\Prog 3\Tb N02\_ProjetoA53572\ProjetoAxxxxx\obj\x86\Debug\ContadorPalavras_inFile.csproj.GenerateResource.Cache
+C:\IPB_Materias- 2º ano(1º smt)\Prog 3\Tb N02\_ProjetoA53572\ProjetoAxxxxx\obj\x86\Debug\ContadorPalavras_inFile.exe
+C:\IPB_Materias- 2º ano(1º smt)\Prog 3\Tb N02\_ProjetoA53572\ProjetoAxxxxx\obj\x86\Debug\ContadorPalavras_inFile.pdb
